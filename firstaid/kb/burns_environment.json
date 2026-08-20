@@ -1,0 +1,1509 @@
+{
+  "protocols": [
+    {
+      "id": "burn_thermal",
+      "family": "burn",
+      "name": "Burn or scald (heat)",
+      "age_group": "any",
+      "severity": "urgent",
+      "ems": "conditional",
+      "sources": [
+        "IFRC First Aid Guidelines 2020",
+        "ISBI Practice Guidelines"
+      ],
+      "keywords": [
+        [
+          "burn",
+          6
+        ],
+        [
+          "burned",
+          6
+        ],
+        [
+          "burnt",
+          6
+        ],
+        [
+          "scald",
+          6
+        ],
+        [
+          "scalded",
+          6
+        ],
+        [
+          "boiling water",
+          6
+        ],
+        [
+          "touched the stove",
+          6
+        ],
+        [
+          "hot oil",
+          6
+        ],
+        [
+          "burned my hand",
+          7
+        ],
+        [
+          "caught fire",
+          6
+        ],
+        [
+          "steam burn",
+          6
+        ],
+        [
+          "the iron",
+          4
+        ],
+        [
+          "kettle",
+          5
+        ],
+        [
+          "stove",
+          4
+        ],
+        [
+          "hot soup",
+          5
+        ],
+        [
+          "hot tea",
+          5
+        ],
+        [
+          "pressure cooker",
+          5
+        ],
+        [
+          "burned my tongue",
+          6
+        ],
+        [
+          "boiling soup",
+          7
+        ],
+        [
+          "boiling",
+          5
+        ],
+        [
+          "seared",
+          6
+        ],
+        [
+          "went all over",
+          4
+        ],
+        [
+          "kettle tipped",
+          8
+        ],
+        [
+          "tipped over onto",
+          6
+        ],
+        [
+          "tipped",
+          4
+        ]
+      ],
+      "exemplars": [
+        "i burned my hand on the stove",
+        "boiling water spilled on my kid",
+        "she scalded her arm with hot tea",
+        "burn from hot oil while cooking",
+        "his sleeve caught fire and burned his arm",
+        "toddler grabbed the iron and burned his palm"
+      ],
+      "visual_findings": [
+        "burned_skin",
+        "blister_skin",
+        "charred_clothing"
+      ],
+      "entry": "stop_burning",
+      "nodes": {
+        "stop_burning": {
+          "type": "step",
+          "text": "Stop the burning: move away from the heat. If clothing is on fire — stop, drop and roll. Remove clothing and jewelry near the burn now, unless stuck to the skin.",
+          "donot": [
+            "Do not pull off clothing that is stuck to the burn."
+          ],
+          "next": "cool_water"
+        },
+        "cool_water": {
+          "type": "step",
+          "text": "Cool the burn under cool running water for a full 20 minutes. This is the single most important step and helps even if you start late. Keep the rest of the body warm.",
+          "donot": [
+            "Do not use ice or ice water.",
+            "Do not put butter, oil, toothpaste, egg or any cream on the burn."
+          ],
+          "next": "q_burn_severity",
+          "figure": "burn_cooling"
+        },
+        "q_burn_severity": {
+          "type": "question",
+          "prompt": "Check: is the burn larger than the person's palm, on the face, hands, feet, groin or a joint, deep, white, brown or charred, caused by electricity or chemicals, or is the person a baby or elderly?",
+          "yes": "ems_burn",
+          "no": "cover_burn",
+          "unsure": "ems_burn"
+        },
+        "ems_burn": {
+          "type": "step",
+          "text": "That is a serious burn — call emergency services now. Keep cooling with water while you wait, up to 20 minutes, and keep them warm otherwise.",
+          "flags": [
+            "ems"
+          ],
+          "next": "cover_burn_severe"
+        },
+        "cover_burn_severe": {
+          "type": "step",
+          "text": "After cooling, cover the burn loosely with cling film laid on — not wrapped tight — or a clean, non-fluffy cloth. Keep the person warm and lying down.",
+          "donot": [
+            "Do not burst blisters.",
+            "Do not wrap cling film around a limb tightly."
+          ],
+          "next": "monitor_burn_severe"
+        },
+        "monitor_burn_severe": {
+          "type": "monitor",
+          "text": "Watch them until help arrives. Tell me if they become pale, cold, drowsy, or their breathing changes — especially if smoke or flames were near the face."
+        },
+        "cover_burn": {
+          "type": "step",
+          "text": "After the full 20 minutes of cooling, cover the burn loosely with cling film, a clean plastic bag, or a sterile non-stick dressing.",
+          "donot": [
+            "Do not burst blisters.",
+            "Do not apply cotton wool or fluffy fabric directly."
+          ],
+          "next": "pain_burn"
+        },
+        "pain_burn": {
+          "type": "step",
+          "text": "An over-the-counter pain reliever like paracetamol or ibuprofen, at the dose on the packet, can help. Keep the burn clean and covered.",
+          "next": "monitor_burn"
+        },
+        "monitor_burn": {
+          "type": "monitor",
+          "text": "See a doctor if the burn blisters widely, looks deeper than red, gets more painful or smelly, shows spreading redness, or has not healed in 2 weeks. Any burn on a young child deserves a medical check."
+        }
+      }
+    },
+    {
+      "id": "burn_chemical",
+      "family": "chemical_burn",
+      "name": "Chemical burn",
+      "age_group": "any",
+      "severity": "urgent",
+      "ems": "immediate",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "chemical burn",
+          8
+        ],
+        [
+          "acid on skin",
+          8
+        ],
+        [
+          "bleach on skin",
+          7
+        ],
+        [
+          "caustic",
+          6
+        ],
+        [
+          "drain cleaner on",
+          7
+        ],
+        [
+          "chemical splash",
+          7
+        ],
+        [
+          "acid attack",
+          8
+        ],
+        [
+          "acid on",
+          6
+        ],
+        [
+          "pool chemicals",
+          6
+        ],
+        [
+          "oven cleaner",
+          7
+        ],
+        [
+          "mixed chemicals",
+          6
+        ],
+        [
+          "acid burn",
+          9
+        ],
+        [
+          "battery acid",
+          8
+        ],
+        [
+          "pool acid",
+          8
+        ],
+        [
+          "acid tub",
+          7
+        ],
+        [
+          "skin is going white",
+          6
+        ],
+        [
+          "splashed his",
+          4
+        ],
+        [
+          "splashed her",
+          4
+        ]
+      ],
+      "exemplars": [
+        "i spilled drain cleaner on my arm",
+        "acid splashed on his skin",
+        "bleach burned my hand",
+        "chemical from the factory got on her leg",
+        "battery acid on my skin"
+      ],
+      "visual_findings": [
+        "burned_skin",
+        "chemical_container"
+      ],
+      "entry": "brush_off",
+      "nodes": {
+        "brush_off": {
+          "type": "step",
+          "text": "Put on gloves or protect your hands. If the chemical is a dry powder, brush it off the skin first with a cloth or gloved hand.",
+          "next": "flush_chem"
+        },
+        "flush_chem": {
+          "type": "step",
+          "text": "Flush the area with a gentle flow of cool running water for at least 20 minutes. Remove contaminated clothing and jewelry while flushing, letting the water run AWAY from unaffected skin and from you.",
+          "donot": [
+            "Do not try to neutralize the chemical with another chemical.",
+            "Do not rub the area."
+          ],
+          "next": "q_eye_chem",
+          "figure": "burn_cooling"
+        },
+        "q_eye_chem": {
+          "type": "question",
+          "prompt": "Did any chemical get into the eyes?",
+          "yes": "to_eye_chem",
+          "no": "cover_chem",
+          "unsure": "cover_chem"
+        },
+        "to_eye_chem": {
+          "type": "escalate",
+          "protocol": "eye_chemical",
+          "text": "Eyes take priority — we flush them now."
+        },
+        "cover_chem": {
+          "type": "step",
+          "text": "After flushing, cover the burn loosely with cling film or a clean non-stick dressing. Keep the chemical container or its name for the medical team.",
+          "next": "monitor_chem"
+        },
+        "monitor_chem": {
+          "type": "monitor",
+          "text": "Keep the area covered and the person calm until help arrives. Tell me if pain spreads, they feel faint, or breathing becomes difficult — fumes can injure the lungs."
+        }
+      }
+    },
+    {
+      "id": "eye_chemical",
+      "family": "eye_chemical",
+      "name": "Chemical in the eye",
+      "age_group": "any",
+      "severity": "urgent",
+      "ems": "immediate",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "chemical in eye",
+          9
+        ],
+        [
+          "bleach in eye",
+          9
+        ],
+        [
+          "acid in my eye",
+          9
+        ],
+        [
+          "cleaning product in eye",
+          8
+        ],
+        [
+          "eye burning chemical",
+          8
+        ],
+        [
+          "splashed in his eye",
+          7
+        ],
+        [
+          "eyeball",
+          6
+        ],
+        [
+          "cleaning product",
+          7
+        ],
+        [
+          "sanitizer",
+          6
+        ],
+        [
+          "flushing",
+          4
+        ],
+        [
+          "splashed into her eye",
+          8
+        ],
+        [
+          "into her eye",
+          6
+        ],
+        [
+          "into his eye",
+          6
+        ],
+        [
+          "bleach",
+          4
+        ]
+      ],
+      "exemplars": [
+        "bleach splashed in my eye",
+        "cleaning spray got in her eyes",
+        "acid in the eye what do i do",
+        "my kid sprayed sanitizer in his eye and it burns",
+        "chemical splash in the eye",
+        "cleaning spray got into my eyeball it burns"
+      ],
+      "visual_findings": [
+        "red_eye",
+        "person_holding_eye"
+      ],
+      "entry": "flush_eye",
+      "nodes": {
+        "flush_eye": {
+          "type": "step",
+          "text": "Flush the eye NOW: hold it open under gently running lukewarm water — a tap, shower or bottle — for at least 15 to 20 minutes. Tilt the head so water runs from the nose side outward, away from the other eye.",
+          "donot": [
+            "Do not rub the eye.",
+            "Do not let them keep the eye squeezed shut — it must be flushed open."
+          ],
+          "next": "lens_out"
+        },
+        "lens_out": {
+          "type": "step",
+          "text": "If they wear contact lenses, remove them during the flushing as soon as it is easy to. Keep flushing — the full 15 to 20 minutes matters.",
+          "next": "after_flush_eye"
+        },
+        "after_flush_eye": {
+          "type": "step",
+          "text": "After flushing, cover the eye loosely with a clean pad. Bring the chemical container or its name with you.",
+          "next": "monitor_eye_chem"
+        },
+        "monitor_eye_chem": {
+          "type": "monitor",
+          "text": "Every chemical eye splash needs urgent medical assessment even if it feels better. Keep them from rubbing the eye until they are seen."
+        }
+      }
+    },
+    {
+      "id": "eye_foreign_object",
+      "family": "eye_object",
+      "name": "Something in the eye",
+      "age_group": "any",
+      "severity": "minor",
+      "ems": "self_care",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "something in my eye",
+          8
+        ],
+        [
+          "sand in eye",
+          7
+        ],
+        [
+          "dust in my eye",
+          7
+        ],
+        [
+          "eyelash in eye",
+          6
+        ],
+        [
+          "metal in eye",
+          7
+        ],
+        [
+          "grit in eye",
+          7
+        ],
+        [
+          "speck in my eye",
+          7
+        ],
+        [
+          "stuck in my eye",
+          8
+        ],
+        [
+          "flew into my eye",
+          8
+        ],
+        [
+          "under my eyelid",
+          8
+        ]
+      ],
+      "exemplars": [
+        "i have sand in my eye and it hurts",
+        "something flew into my eye",
+        "there is grit under my eyelid",
+        "a bug went in my eye",
+        "metal shaving in the eye from grinding"
+      ],
+      "visual_findings": [
+        "red_eye",
+        "person_holding_eye"
+      ],
+      "entry": "q_embedded_eye",
+      "nodes": {
+        "q_embedded_eye": {
+          "type": "question",
+          "prompt": "Is the object stuck INTO the eyeball, is it metal from grinding or hammering, or did something hit the eye at high speed?",
+          "yes": "ems_eye",
+          "no": "blink_flush",
+          "unsure": "ems_eye"
+        },
+        "ems_eye": {
+          "type": "step",
+          "text": "Do not touch or remove anything. Cover BOTH eyes loosely — the eyes move together — keep them still, and get emergency care now.",
+          "flags": [
+            "ems"
+          ],
+          "donot": [
+            "Do not remove an object stuck in the eyeball.",
+            "Do not press on the eye."
+          ],
+          "next": "monitor_eye"
+        },
+        "blink_flush": {
+          "type": "step",
+          "text": "Do not rub. Blink several times and let tears work. Then rinse the open eye with clean lukewarm water or saline, pouring from the nose side outward.",
+          "donot": [
+            "Do not rub the eye.",
+            "Do not use tweezers or anything hard near the eyeball."
+          ],
+          "next": "q_eye_better"
+        },
+        "q_eye_better": {
+          "type": "question",
+          "prompt": "Is the eye feeling better and clear?",
+          "yes": "monitor_eye_ok",
+          "no": "lid_check",
+          "unsure": "lid_check"
+        },
+        "lid_check": {
+          "type": "step",
+          "text": "Pull the upper lid gently down over the lower lid and release — this can wipe the speck off. If you can see the speck on the white of the eye or inside a lid, touch it away with the damp corner of a clean tissue.",
+          "next": "q_eye_better2"
+        },
+        "q_eye_better2": {
+          "type": "question",
+          "prompt": "Better now?",
+          "yes": "monitor_eye_ok",
+          "no": "doctor_eye",
+          "unsure": "doctor_eye"
+        },
+        "doctor_eye": {
+          "type": "step",
+          "text": "If it still feels like something is in there, the eye stays red or painful, or vision is affected, keep the eye closed and see a doctor or optometrist today.",
+          "next": "monitor_eye"
+        },
+        "monitor_eye_ok": {
+          "type": "monitor",
+          "text": "Good. Mild scratchiness can linger a few hours. If pain, redness or blurred vision develop, see a doctor."
+        },
+        "monitor_eye": {
+          "type": "monitor",
+          "text": "Keep them from rubbing the eye. Tell me if pain suddenly worsens or vision changes."
+        }
+      }
+    },
+    {
+      "id": "sunburn",
+      "family": "sunburn",
+      "name": "Sunburn",
+      "age_group": "any",
+      "severity": "minor",
+      "ems": "self_care",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "sunburn",
+          8
+        ],
+        [
+          "sunburnt",
+          8
+        ],
+        [
+          "sunburned",
+          8
+        ],
+        [
+          "too much sun",
+          5
+        ],
+        [
+          "red from the sun",
+          6
+        ],
+        [
+          "lobster",
+          6
+        ],
+        [
+          "fell asleep in the sun",
+          7
+        ],
+        [
+          "beach",
+          3
+        ],
+        [
+          "peeling",
+          6
+        ],
+        [
+          "back is red",
+          5
+        ],
+        [
+          "shoulders are red",
+          6
+        ]
+      ],
+      "exemplars": [
+        "i got badly sunburned at the beach",
+        "my shoulders are bright red from the sun",
+        "kid got sunburnt what should i put on it",
+        "sunburn with small blisters"
+      ],
+      "visual_findings": [
+        "red_skin",
+        "blister_skin"
+      ],
+      "entry": "cool_sunburn",
+      "nodes": {
+        "cool_sunburn": {
+          "type": "step",
+          "text": "Get out of the sun. Cool the skin with a cool shower, bath, or damp towels for 10 to 20 minutes. Drink plenty of water.",
+          "next": "soothe_sunburn"
+        },
+        "soothe_sunburn": {
+          "type": "step",
+          "text": "Apply plain moisturizer or aloe vera gel to unbroken skin. A pain reliever like ibuprofen at packet dose helps. Leave blisters intact and cover them loosely.",
+          "donot": [
+            "Do not put butter or oil on it.",
+            "Do not pop blisters.",
+            "Do not go back in the sun until healed."
+          ],
+          "next": "monitor_sunburn"
+        },
+        "monitor_sunburn": {
+          "type": "monitor",
+          "text": "See a doctor if there is widespread blistering, fever, chills, vomiting, faintness or confusion — that can be sun poisoning or heat illness. Babies with sunburn should see a doctor."
+        }
+      }
+    },
+    {
+      "id": "heat_exhaustion",
+      "family": "heat_illness",
+      "name": "Heat exhaustion",
+      "age_group": "any",
+      "severity": "urgent",
+      "ems": "conditional",
+      "sources": [
+        "IFRC First Aid Guidelines 2020",
+        "ILCOR 2020"
+      ],
+      "keywords": [
+        [
+          "heat exhaustion",
+          8
+        ],
+        [
+          "overheated",
+          6
+        ],
+        [
+          "too hot dizzy",
+          6
+        ],
+        [
+          "heat cramps",
+          7
+        ],
+        [
+          "sweating dizzy hot day",
+          5
+        ],
+        [
+          "exhausted from the heat",
+          7
+        ],
+        [
+          "woozy",
+          4
+        ],
+        [
+          "drained",
+          3
+        ],
+        [
+          "cramping",
+          4
+        ],
+        [
+          "hot yoga",
+          6
+        ],
+        [
+          "hot day",
+          4
+        ],
+        [
+          "feel sick from the heat",
+          7
+        ]
+      ],
+      "exemplars": [
+        "he is dizzy and sweating heavily after working in the sun",
+        "i feel sick and weak from the heat",
+        "she is pale and cramping after the hot race",
+        "overheated at the festival feeling faint",
+        "heat exhaustion signs what to do"
+      ],
+      "visual_findings": [
+        "sweating_person",
+        "flushed_skin"
+      ],
+      "entry": "q_conscious_heat",
+      "nodes": {
+        "q_conscious_heat": {
+          "type": "question",
+          "prompt": "Are they fully awake and acting normally — not confused, staggering or slurring?",
+          "yes": "cool_rest",
+          "no": "to_heatstroke",
+          "unsure": "to_heatstroke"
+        },
+        "to_heatstroke": {
+          "type": "escalate",
+          "protocol": "heat_stroke",
+          "text": "Confusion or unusual behavior in the heat means heat stroke — a real emergency."
+        },
+        "cool_rest": {
+          "type": "step",
+          "text": "Move them to a cool, shaded place. Lie them down and raise their legs slightly. Remove excess clothing.",
+          "next": "cool_fluids"
+        },
+        "cool_fluids": {
+          "type": "step",
+          "text": "Cool them: spray or sponge with cool water and fan them. Give sips of water or a sports drink — not alcohol, not strong coffee.",
+          "next": "q_improve_heat"
+        },
+        "q_improve_heat": {
+          "type": "question",
+          "prompt": "Are they feeling better within 30 minutes?",
+          "yes": "monitor_heat",
+          "no": "ems_heat",
+          "unsure": "ems_heat"
+        },
+        "ems_heat": {
+          "type": "step",
+          "text": "Not improving within 30 minutes means call emergency services — this can be progressing to heat stroke. Keep cooling them while you wait.",
+          "flags": [
+            "ems"
+          ],
+          "next": "monitor_heat_sev"
+        },
+        "monitor_heat_sev": {
+          "type": "monitor",
+          "text": "Keep cooling and watch closely. Tell me immediately if they become confused, stop sweating, or stop responding."
+        },
+        "monitor_heat": {
+          "type": "monitor",
+          "text": "Have them rest in the cool for the remainder of the day and keep drinking. Tell me if dizziness returns, they vomit, or they become confused."
+        }
+      }
+    },
+    {
+      "id": "heat_stroke",
+      "family": "heat_stroke",
+      "name": "Heat stroke",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "ILCOR 2020",
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "heat stroke",
+          9
+        ],
+        [
+          "heatstroke",
+          9
+        ],
+        [
+          "confused in the heat",
+          6
+        ],
+        [
+          "hot and not sweating",
+          7
+        ],
+        [
+          "collapsed in the heat",
+          7
+        ],
+        [
+          "burning up outside",
+          5
+        ],
+        [
+          "marathon collapse",
+          6
+        ],
+        [
+          "staggering",
+          5
+        ],
+        [
+          "gibberish",
+          5
+        ],
+        [
+          "hot and dry",
+          6
+        ],
+        [
+          "burning hot",
+          6
+        ],
+        [
+          "in the sun",
+          5
+        ],
+        [
+          "stumbling",
+          5
+        ],
+        [
+          "working in the sun",
+          7
+        ],
+        [
+          "hot and confused",
+          8
+        ]
+      ],
+      "exemplars": [
+        "he collapsed during the marathon and is confused",
+        "she is burning hot and acting strange",
+        "heat stroke i think he stopped sweating and is red",
+        "worker passed out in the sun skin is hot and dry",
+        "runner staggering and confused in the heat"
+      ],
+      "visual_findings": [
+        "flushed_skin",
+        "person_collapsed",
+        "sweating_person"
+      ],
+      "entry": "q_heat_context",
+      "nodes": {
+        "move_cool_hs": {
+          "type": "step",
+          "text": "Move them out of the heat immediately. Remove outer clothing.",
+          "next": "aggressive_cooling"
+        },
+        "aggressive_cooling": {
+          "type": "step",
+          "text": "Cool them aggressively NOW — this saves the brain: if you can, immerse them up to the neck in a tub of cold water. Otherwise douse them with any cold water, cover with soaked sheets, put ice packs in armpits, neck and groin, and fan hard.",
+          "donot": [
+            "Do not give fever medicines like paracetamol or aspirin — they do not work for heat stroke.",
+            "Do not give drinks if they are confused or drowsy."
+          ],
+          "next": "q_responsive_hs"
+        },
+        "q_responsive_hs": {
+          "type": "question",
+          "prompt": "Are they still awake and responding?",
+          "yes": "keep_cooling_hs",
+          "no": "d_breathing_hs",
+          "unsure": "d_breathing_hs"
+        },
+        "d_breathing_hs": {
+          "type": "decision",
+          "fact": "breathing",
+          "cases": {
+            "not_breathing": "to_cpr_hs",
+            "abnormal": "to_cpr_hs"
+          },
+          "default": "q_breathing_hs"
+        },
+        "q_breathing_hs": {
+          "type": "question",
+          "prompt": "Are they breathing normally?",
+          "yes": "recovery_hs",
+          "no": "to_cpr_hs",
+          "unsure": "to_cpr_hs"
+        },
+        "to_cpr_hs": {
+          "type": "escalate",
+          "protocol": "cardiac_arrest",
+          "text": "We start CPR now."
+        },
+        "recovery_hs": {
+          "type": "step",
+          "text": "Roll them into the recovery position on their side and keep cooling their body while you watch their breathing.",
+          "next": "monitor_hs",
+          "figure": "recovery_position"
+        },
+        "keep_cooling_hs": {
+          "type": "step",
+          "text": "Keep cooling hard until they feel cool to the touch or help arrives — cooling first, transport second. Give sips of water only if fully alert.",
+          "next": "monitor_hs"
+        },
+        "monitor_hs": {
+          "type": "monitor",
+          "text": "Keep the cooling going until paramedics take over. Tell me immediately if they stop responding or their breathing changes."
+        },
+        "q_heat_context": {
+          "type": "question",
+          "prompt": "Quick check: have they been in hot conditions or exercising hard — sun, heat, a sealed car, a race?",
+          "yes": "move_cool_hs",
+          "no": "fever_path",
+          "unsure": "move_cool_hs"
+        },
+        "fever_path": {
+          "type": "step",
+          "text": "Hot skin with shivering and no heat exposure points to a high fever from illness, not heat stroke. Remove excess clothing and blankets, offer sips of water if fully alert, and give a fever reducer like paracetamol at the packet dose only if they can swallow safely.",
+          "donot": [
+            "Do not put a feverish person in cold water or cover them in ice.",
+            "Do not give anything by mouth if they are drowsy or confused."
+          ],
+          "next": "monitor_fever"
+        },
+        "monitor_fever": {
+          "type": "monitor",
+          "text": "Stay with them until help arrives. Tell me immediately if a rash appears, their neck is stiff, light hurts their eyes, they have a seizure, or they become drowsy or confused — those need the medics to know."
+        }
+      }
+    },
+    {
+      "id": "hypothermia",
+      "family": "hypothermia",
+      "name": "Hypothermia",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "ILCOR 2020",
+        "Wilderness Medical Society guidelines"
+      ],
+      "keywords": [
+        [
+          "hypothermia",
+          9
+        ],
+        [
+          "freezing cold",
+          6
+        ],
+        [
+          "shivering badly",
+          6
+        ],
+        [
+          "found in the snow",
+          7
+        ],
+        [
+          "cold and confused",
+          6
+        ],
+        [
+          "fell through ice",
+          8
+        ],
+        [
+          "stopped shivering",
+          7
+        ],
+        [
+          "frozen",
+          5
+        ],
+        [
+          "cold water",
+          5
+        ],
+        [
+          "cold pool",
+          5
+        ],
+        [
+          "icy",
+          4
+        ],
+        [
+          "mumbling",
+          3
+        ],
+        [
+          "soaked and",
+          4
+        ],
+        [
+          "shivering violently",
+          8
+        ],
+        [
+          "freezing lake",
+          7
+        ],
+        [
+          "freezing",
+          5
+        ],
+        [
+          "shivering",
+          5
+        ]
+      ],
+      "exemplars": [
+        "he fell through the ice and is freezing",
+        "found her outside all night she is barely conscious and cold",
+        "hiker is shivering violently and slurring words",
+        "old man very cold and confused in unheated house",
+        "she stopped shivering and is getting sleepy in the cold",
+        "he has been in the cold water for twenty minutes"
+      ],
+      "visual_findings": [
+        "person_in_snow",
+        "shivering_person",
+        "pale_skin"
+      ],
+      "entry": "gentle_move",
+      "nodes": {
+        "gentle_move": {
+          "type": "step",
+          "text": "Handle them very gently and keep them horizontal — rough movement can stop a cold heart. Move them out of wind, wet and cold, indoors or into shelter.",
+          "donot": [
+            "Do not rub or massage their limbs.",
+            "Do not let them walk around if they are confused or drowsy."
+          ],
+          "next": "dry_insulate"
+        },
+        "dry_insulate": {
+          "type": "step",
+          "text": "Remove wet clothing by cutting it off if needed. Wrap them in dry blankets or sleeping bags, covering the head, with insulation under them too. Warm the trunk first — chest, neck, armpits, groin — with wrapped warm water bottles or your own body heat.",
+          "donot": [
+            "Do not use hot baths, heating pads or direct high heat on the skin.",
+            "Do not give alcohol."
+          ],
+          "next": "q_alert_hypo"
+        },
+        "q_alert_hypo": {
+          "type": "question",
+          "prompt": "Are they alert enough to swallow safely?",
+          "yes": "warm_drink",
+          "no": "d_breathing_hypo",
+          "unsure": "d_breathing_hypo"
+        },
+        "warm_drink": {
+          "type": "step",
+          "text": "Give warm, sweet, non-alcoholic drinks. Keep them still, wrapped and warm, and keep talking with them.",
+          "next": "monitor_hypo"
+        },
+        "d_breathing_hypo": {
+          "type": "decision",
+          "fact": "breathing",
+          "cases": {
+            "not_breathing": "to_cpr_hypo",
+            "abnormal": "to_cpr_hypo"
+          },
+          "default": "q_breathing_hypo"
+        },
+        "q_breathing_hypo": {
+          "type": "question",
+          "prompt": "Watch closely for up to 10 seconds — cold bodies breathe slowly. Any normal breathing?",
+          "yes": "insulate_monitor",
+          "no": "to_cpr_hypo",
+          "unsure": "to_cpr_hypo"
+        },
+        "to_cpr_hypo": {
+          "type": "escalate",
+          "protocol": "cardiac_arrest",
+          "text": "We start CPR now. Cold victims can survive long resuscitation — do not give up."
+        },
+        "insulate_monitor": {
+          "type": "step",
+          "text": "Keep them wrapped, horizontal and handled gently. Watch their breathing continuously.",
+          "next": "monitor_hypo"
+        },
+        "monitor_hypo": {
+          "type": "monitor",
+          "text": "Keep them insulated and still until help arrives. Tell me immediately if they stop shivering while still cold, become drowsier, or their breathing changes — those mean it is getting worse."
+        }
+      }
+    },
+    {
+      "id": "frostbite",
+      "family": "frostbite",
+      "name": "Frostbite",
+      "age_group": "any",
+      "severity": "urgent",
+      "ems": "conditional",
+      "sources": [
+        "Wilderness Medical Society guidelines",
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "frostbite",
+          9
+        ],
+        [
+          "frostbitten",
+          9
+        ],
+        [
+          "fingers frozen",
+          7
+        ],
+        [
+          "toes numb white cold",
+          7
+        ],
+        [
+          "waxy white skin cold",
+          7
+        ],
+        [
+          "wooden",
+          3
+        ],
+        [
+          "waxy",
+          5
+        ],
+        [
+          "white and numb",
+          7
+        ]
+      ],
+      "exemplars": [
+        "my toes are white and numb from the cold",
+        "fingers look waxy and frozen",
+        "frostbite on his nose and ears",
+        "hands frozen stiff after skiing",
+        "feet frostbitten they feel like wood"
+      ],
+      "visual_findings": [
+        "white_waxy_skin",
+        "pale_skin"
+      ],
+      "entry": "shelter_fb",
+      "nodes": {
+        "shelter_fb": {
+          "type": "step",
+          "text": "Get them somewhere warm and check for hypothermia first — if they are cold all over, confused or shivering violently, treating the whole body comes first. Remove rings, watches and wet gloves or socks now, before swelling.",
+          "next": "q_refreeze"
+        },
+        "q_refreeze": {
+          "type": "question",
+          "prompt": "Can you keep the area warm from now on — no chance it will freeze again before reaching care?",
+          "yes": "rewarm_fb",
+          "no": "no_thaw",
+          "unsure": "no_thaw"
+        },
+        "no_thaw": {
+          "type": "step",
+          "text": "Do not thaw it yet — freezing again after thawing does far more damage. Pad and protect the part, keep the whole person warm, and get to medical care.",
+          "donot": [
+            "Do not rub or massage the frozen part.",
+            "Do not use fires, stoves or heaters to warm it — numb skin burns easily."
+          ],
+          "next": "monitor_fb"
+        },
+        "rewarm_fb": {
+          "type": "step",
+          "text": "Rewarm in warm water, 37 to 39 degrees Celsius — comfortable for your own elbow — for 30 minutes or until the part is soft and pinkish. Expect strong pain as it thaws; a packet-dose pain reliever helps.",
+          "donot": [
+            "Do not rub or massage the area.",
+            "Do not use dry heat like heaters or fires."
+          ],
+          "next": "dress_fb"
+        },
+        "dress_fb": {
+          "type": "step",
+          "text": "Dry gently. Put clean gauze between fingers or toes, cover loosely, keep the part raised, and do not walk on thawed feet.",
+          "donot": [
+            "Do not pop any blisters that form."
+          ],
+          "next": "monitor_fb"
+        },
+        "monitor_fb": {
+          "type": "monitor",
+          "text": "All frostbite beyond mild redness needs medical assessment — go today. Tell me if the person is also cold all over, confused, or drowsy: that is hypothermia and an emergency."
+        }
+      }
+    },
+    {
+      "id": "electric_shock",
+      "family": "electric_shock",
+      "name": "Electric shock",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "IFRC First Aid Guidelines 2020",
+        "ERC 2021"
+      ],
+      "keywords": [
+        [
+          "electric shock",
+          8
+        ],
+        [
+          "electrocuted",
+          9
+        ],
+        [
+          "electrocution",
+          9
+        ],
+        [
+          "shocked by wire",
+          7
+        ],
+        [
+          "power line",
+          7
+        ],
+        [
+          "got shocked",
+          6
+        ],
+        [
+          "touched live wire",
+          8
+        ],
+        [
+          "outlet shock",
+          7
+        ],
+        [
+          "thrown back",
+          5
+        ],
+        [
+          "charger",
+          4
+        ],
+        [
+          "bit a cable",
+          6
+        ],
+        [
+          "rewiring",
+          5
+        ],
+        [
+          "live wire",
+          8
+        ],
+        [
+          "wire",
+          3
+        ],
+        [
+          "grabbed the wire",
+          7
+        ],
+        [
+          "burned by the electric",
+          9
+        ],
+        [
+          "electric burn",
+          8
+        ],
+        [
+          "burned by the wire",
+          9
+        ],
+        [
+          "burned by a wire",
+          9
+        ],
+        [
+          "electrical burn",
+          8
+        ]
+      ],
+      "exemplars": [
+        "he got electrocuted fixing the socket",
+        "she touched a live wire and fell",
+        "kid stuck a fork in the outlet and got shocked",
+        "worker electrocuted still touching the cable",
+        "electric shock from the dryer he is dazed"
+      ],
+      "visual_findings": [
+        "electrical_source",
+        "person_collapsed",
+        "burned_skin"
+      ],
+      "entry": "safety_first_es",
+      "nodes": {
+        "safety_first_es": {
+          "type": "step",
+          "text": "DO NOT touch them while they may still be in contact with electricity. Turn off the power at the switch, socket or breaker box first. If you cannot, push the source away with something dry and non-conducting — wood, plastic, rolled newspaper — while standing on something dry.",
+          "donot": [
+            "Do not touch the person with bare hands until the power is off.",
+            "Do not go within 20 meters of a fallen high-voltage power line — call emergency services and keep everyone back."
+          ],
+          "next": "q_power_off"
+        },
+        "q_power_off": {
+          "type": "question",
+          "prompt": "Is the power off, or is the person clear of the source now?",
+          "yes": "d_conscious_es",
+          "no": "safety_first_es",
+          "unsure": "safety_first_es"
+        },
+        "d_conscious_es": {
+          "type": "decision",
+          "fact": "consciousness",
+          "cases": {
+            "unresponsive": "d_breathing_es",
+            "responsive": "check_burns_es"
+          },
+          "default": "q_conscious_es"
+        },
+        "q_conscious_es": {
+          "type": "question",
+          "prompt": "Are they awake and responding?",
+          "yes": "check_burns_es",
+          "no": "d_breathing_es",
+          "unsure": "d_breathing_es"
+        },
+        "d_breathing_es": {
+          "type": "decision",
+          "fact": "breathing",
+          "cases": {
+            "not_breathing": "to_cpr_es",
+            "abnormal": "to_cpr_es",
+            "breathing": "recovery_es"
+          },
+          "default": "q_breathing_es"
+        },
+        "q_breathing_es": {
+          "type": "question",
+          "prompt": "Are they breathing normally?",
+          "yes": "recovery_es",
+          "no": "to_cpr_es",
+          "unsure": "to_cpr_es"
+        },
+        "to_cpr_es": {
+          "type": "escalate",
+          "protocol": "cardiac_arrest",
+          "text": "Electric shock can stop the heart — we start CPR now."
+        },
+        "recovery_es": {
+          "type": "step",
+          "text": "Roll them into the recovery position on their side and watch their breathing constantly.",
+          "next": "monitor_es",
+          "figure": "recovery_position"
+        },
+        "check_burns_es": {
+          "type": "step",
+          "text": "Look for burns where the current entered and left — often a hand and a foot. Cool any burns with running water for 20 minutes and cover loosely with cling film or clean cloth.",
+          "donot": [
+            "Do not put creams or butter on electrical burns."
+          ],
+          "next": "monitor_es"
+        },
+        "monitor_es": {
+          "type": "monitor",
+          "text": "Everyone who has had a real electric shock needs medical assessment — the heart can act up hours later. Tell me immediately if they feel faint, their heart races or skips, or they stop responding."
+        }
+      }
+    },
+    {
+      "id": "lightning",
+      "family": "lightning",
+      "name": "Lightning strike",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "Wilderness Medical Society guidelines",
+        "ERC 2021"
+      ],
+      "keywords": [
+        [
+          "lightning",
+          6
+        ],
+        [
+          "struck by lightning",
+          10
+        ],
+        [
+          "lightning strike",
+          10
+        ],
+        [
+          "hit by lightning",
+          10
+        ],
+        [
+          "storm",
+          5
+        ],
+        [
+          "was struck",
+          7
+        ],
+        [
+          "struck",
+          5
+        ]
+      ],
+      "exemplars": [
+        "someone was struck by lightning on the golf course",
+        "lightning hit him he is not moving",
+        "my friend got hit by lightning",
+        "lightning strike two people down"
+      ],
+      "visual_findings": [
+        "person_collapsed",
+        "storm_scene"
+      ],
+      "entry": "safe_scene_li",
+      "nodes": {
+        "safe_scene_li": {
+          "type": "step",
+          "text": "The person is safe to touch — lightning victims carry no charge. But lightning CAN strike twice: if the storm continues, move yourself and them to shelter or a vehicle if you can.",
+          "next": "q_multiple_li"
+        },
+        "q_multiple_li": {
+          "type": "question",
+          "prompt": "Is more than one person down?",
+          "yes": "triage_li",
+          "no": "d_conscious_li",
+          "unsure": "d_conscious_li"
+        },
+        "triage_li": {
+          "type": "step",
+          "text": "With lightning, treat the QUIET and still ones first — those moving or moaning are breathing. Go to the most lifeless person now.",
+          "next": "d_conscious_li"
+        },
+        "d_conscious_li": {
+          "type": "decision",
+          "fact": "consciousness",
+          "cases": {
+            "unresponsive": "d_breathing_li",
+            "responsive": "aftercare_li"
+          },
+          "default": "q_conscious_li"
+        },
+        "q_conscious_li": {
+          "type": "question",
+          "prompt": "Are they awake and responding?",
+          "yes": "aftercare_li",
+          "no": "d_breathing_li",
+          "unsure": "d_breathing_li"
+        },
+        "d_breathing_li": {
+          "type": "decision",
+          "fact": "breathing",
+          "cases": {
+            "not_breathing": "to_cpr_li",
+            "abnormal": "to_cpr_li",
+            "breathing": "recovery_li"
+          },
+          "default": "q_breathing_li"
+        },
+        "q_breathing_li": {
+          "type": "question",
+          "prompt": "Breathing normally?",
+          "yes": "recovery_li",
+          "no": "to_cpr_li",
+          "unsure": "to_cpr_li"
+        },
+        "to_cpr_li": {
+          "type": "escalate",
+          "protocol": "cardiac_arrest",
+          "text": "We start CPR now — lightning victims respond to CPR better than almost anyone. Do not give up."
+        },
+        "recovery_li": {
+          "type": "step",
+          "text": "Recovery position on their side, keep them warm, and watch their breathing constantly.",
+          "next": "monitor_li",
+          "figure": "recovery_position"
+        },
+        "aftercare_li": {
+          "type": "step",
+          "text": "Keep them still and warm — assume possible spine injury if they were thrown. Cool and cover any burns. They may be confused or deaf temporarily; stay reassuring.",
+          "next": "monitor_li"
+        },
+        "monitor_li": {
+          "type": "monitor",
+          "text": "Every lightning-strike victim must be medically assessed. Tell me immediately if breathing changes or they stop responding."
+        }
+      }
+    }
+  ]
+}

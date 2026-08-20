@@ -1,0 +1,16 @@
+{
+ "last_reviewed": "2026-08-20",
+ "review_due": "2027-09-24",
+ "kb_sha256": "be92263d30fb1617379bcd1d01b83999bf075989210625570107c1403494b648",
+ "guidelines_snapshot": [
+  "AHA 2025 Guidelines for CPR & ECC (published 2025-10-22; core lay-rescuer numbers verified unchanged)",
+  "AHA/ARC 2024 First Aid Focused Update",
+  "ERC 2021 Guidelines (2025 edition monitored)",
+  "IFRC International First Aid Guidelines 2020",
+  "WHO rabies fact sheet (fetched 2026-08-20)",
+  "NCPC Button Battery Triage Guideline (fetched 2026-08-20)",
+  "Wilderness Medical Society practice guidelines",
+  "Stop the Bleed (ACS)"
+ ],
+ "reviewer_note": "figure annotations added to 33 nodes; no clinical content change (text untouched); counterpressure delta previously reviewed"
+}

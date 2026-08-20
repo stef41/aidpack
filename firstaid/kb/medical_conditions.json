@@ -1,0 +1,1552 @@
+{
+  "protocols": [
+    {
+      "id": "heart_attack",
+      "family": "heart_attack",
+      "name": "Heart attack / chest pain",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "AHA 2020 ACS first aid",
+        "IFRC First Aid Guidelines 2020",
+        "AHA/ARC 2024 First Aid Focused Update"
+      ],
+      "keywords": [
+        [
+          "heart attack",
+          9
+        ],
+        [
+          "chest pain",
+          8
+        ],
+        [
+          "chest pressure",
+          8
+        ],
+        [
+          "crushing chest",
+          9
+        ],
+        [
+          "pain down left arm",
+          8
+        ],
+        [
+          "chest tightness",
+          8
+        ],
+        [
+          "heart pain",
+          7
+        ],
+        [
+          "elephant on my chest",
+          8
+        ],
+        [
+          "jaw pain sweating",
+          6
+        ],
+        [
+          "angina",
+          7
+        ],
+        [
+          "grabbed his chest",
+          7
+        ],
+        [
+          "grabbed her chest",
+          7
+        ],
+        [
+          "chest hurts",
+          7
+        ],
+        [
+          "left arm",
+          4
+        ],
+        [
+          "arm numb",
+          4
+        ],
+        [
+          "tight band chest",
+          7
+        ],
+        [
+          "belt around his chest",
+          6
+        ],
+        [
+          "tightening",
+          6
+        ],
+        [
+          "band around",
+          6
+        ],
+        [
+          "belt around",
+          6
+        ],
+        [
+          "jaw",
+          4
+        ],
+        [
+          "jaw hurts",
+          6
+        ],
+        [
+          "chest crushing",
+          9
+        ],
+        [
+          "cannot catch my breath",
+          5
+        ]
+      ],
+      "exemplars": [
+        "i think my dad is having a heart attack",
+        "crushing pain in my chest and my arm hurts",
+        "chest pressure sweating feeling of doom",
+        "his chest hurts and he is pale and sweaty",
+        "sudden chest tightness spreading to the jaw",
+        "heart attack symptoms what do i do",
+        "he grabbed his chest and went down but is awake"
+      ],
+      "visual_findings": [
+        "clutching_chest",
+        "sweating_person",
+        "pale_skin"
+      ],
+      "entry": "q_trauma_chest",
+      "nodes": {
+        "rest_position_ha": {
+          "type": "step",
+          "text": "Stop all activity now. Help them rest in the most comfortable position — usually sitting on the floor, knees bent, back supported against a wall. Loosen tight clothing.",
+          "donot": [
+            "Do not let them walk around or drive themselves anywhere."
+          ],
+          "next": "aspirin_q"
+        },
+        "aspirin_q": {
+          "type": "question",
+          "prompt": "Is the person an adult who is NOT allergic to aspirin and has no bleeding problems?",
+          "yes": "give_aspirin",
+          "no": "no_aspirin",
+          "unsure": "no_aspirin"
+        },
+        "give_aspirin": {
+          "type": "step",
+          "text": "Have them slowly CHEW one regular adult aspirin, 325 milligrams, or two low-dose 81 milligram tablets — chewing works faster than swallowing.",
+          "donot": [
+            "Do not give aspirin to anyone under 16.",
+            "Do not give other people's heart medication."
+          ],
+          "next": "nitro_q"
+        },
+        "no_aspirin": {
+          "type": "step",
+          "text": "Skip aspirin then. Keep them resting and calm.",
+          "next": "nitro_q"
+        },
+        "nitro_q": {
+          "type": "question",
+          "prompt": "Do they have their own prescribed nitroglycerin spray or tablets?",
+          "yes": "give_nitro",
+          "no": "watch_ha",
+          "unsure": "watch_ha"
+        },
+        "give_nitro": {
+          "type": "step",
+          "text": "Help them take their nitroglycerin exactly as prescribed — usually one dose under the tongue, repeated every 5 minutes up to 3 doses if pain continues.",
+          "next": "watch_ha"
+        },
+        "watch_ha": {
+          "type": "step",
+          "text": "Stay with them. Keep them warm, calm, and resting. If an AED is available nearby, have someone bring it — just in case.",
+          "next": "monitor_ha"
+        },
+        "monitor_ha": {
+          "type": "monitor",
+          "text": "Do not leave them alone. Tell me immediately if the pain worsens, they feel faint, or they stop responding — if they collapse we start CPR straight away."
+        },
+        "q_trauma_chest": {
+          "type": "question",
+          "prompt": "Quick check: did this chest pain start right after an injury — a fall, a blow, or a crash?",
+          "yes": "trauma_chest",
+          "no": "rest_position_ha",
+          "unsure": "rest_position_ha"
+        },
+        "trauma_chest": {
+          "type": "step",
+          "text": "Chest pain after an injury is treated differently. Help them rest in the position where breathing feels easiest — usually sitting up, leaning toward the sore side. Encourage normal-depth breaths even if it hurts — shallow breathing risks pneumonia.",
+          "donot": [
+            "Do not give aspirin for chest pain after an injury — it can worsen internal bleeding.",
+            "Do not strap or bandage the chest tightly."
+          ],
+          "next": "monitor_trauma_chest"
+        },
+        "monitor_trauma_chest": {
+          "type": "monitor",
+          "text": "Keep them still and comfortable until help arrives. Tell me immediately if breathing becomes harder, they cough blood, or they become pale, faint or confused."
+        }
+      }
+    },
+    {
+      "id": "stroke",
+      "family": "stroke",
+      "name": "Stroke",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "AHA/ASA stroke guidelines",
+        "IFRC First Aid Guidelines 2020",
+        "AHA/ARC 2024 First Aid Focused Update"
+      ],
+      "keywords": [
+        [
+          "stroke",
+          9
+        ],
+        [
+          "face drooping",
+          9
+        ],
+        [
+          "slurred speech",
+          8
+        ],
+        [
+          "arm weakness",
+          7
+        ],
+        [
+          "one side weak",
+          8
+        ],
+        [
+          "face droop",
+          9
+        ],
+        [
+          "can't speak suddenly",
+          8
+        ],
+        [
+          "sudden confusion",
+          6
+        ],
+        [
+          "numb on one side",
+          8
+        ],
+        [
+          "slurring",
+          7
+        ],
+        [
+          "speech is garbled",
+          7
+        ],
+        [
+          "lopsided",
+          5
+        ],
+        [
+          "face went slack",
+          8
+        ]
+      ],
+      "exemplars": [
+        "i think my mom is having a stroke",
+        "his face is drooping on one side",
+        "she suddenly cannot speak properly and her arm is weak",
+        "grandpa is slurring and one side of his face looks odd",
+        "sudden weakness on the left side of his body",
+        "stroke signs fast test",
+        "she is slurring and her arm went weak all of a sudden"
+      ],
+      "visual_findings": [
+        "face_droop",
+        "asymmetric_face"
+      ],
+      "entry": "fast_test",
+      "nodes": {
+        "fast_test": {
+          "type": "step",
+          "text": "Do the FAST check with me. Face: ask them to smile — does one side droop? Arms: ask them to raise both arms — does one drift down? Speech: ask them to repeat a simple sentence — is it slurred or strange? Any ONE of these means stroke.",
+          "next": "time_note",
+          "figure": "fast_stroke"
+        },
+        "time_note": {
+          "type": "step",
+          "text": "Time matters more than anything: note the exact time symptoms started, or the last time they were seen normal. Tell the paramedics this time — it decides their treatment.",
+          "next": "position_stroke"
+        },
+        "position_stroke": {
+          "type": "step",
+          "text": "Help them lie down with head and shoulders slightly raised and supported. Loosen tight clothing. Reassure them — they can often understand everything even if they cannot speak.",
+          "donot": [
+            "Do not give them anything to eat, drink, or any medicine — not even aspirin: some strokes are bleeds.",
+            "Do not let them sleep it off or wait for it to pass."
+          ],
+          "next": "q_conscious_st"
+        },
+        "q_conscious_st": {
+          "type": "question",
+          "prompt": "Are they awake and breathing normally?",
+          "yes": "monitor_stroke",
+          "no": "recovery_stroke",
+          "unsure": "recovery_stroke"
+        },
+        "recovery_stroke": {
+          "type": "step",
+          "text": "Roll them into the recovery position on their side — weak side down cushioned — and watch their breathing constantly.",
+          "next": "monitor_stroke",
+          "figure": "recovery_position"
+        },
+        "monitor_stroke": {
+          "type": "monitor",
+          "text": "Stay with them and keep them still until help arrives. Tell me immediately if they vomit, have a seizure, stop responding, or their breathing changes."
+        }
+      }
+    },
+    {
+      "id": "anaphylaxis",
+      "family": "anaphylaxis",
+      "name": "Severe allergic reaction (anaphylaxis)",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "World Allergy Organization anaphylaxis guidance",
+        "IFRC 2020",
+        "AHA/ARC 2024 First Aid Focused Update"
+      ],
+      "keywords": [
+        [
+          "anaphylaxis",
+          10
+        ],
+        [
+          "anaphylactic",
+          10
+        ],
+        [
+          "epipen",
+          9
+        ],
+        [
+          "throat closing",
+          9
+        ],
+        [
+          "allergic reaction can't breathe",
+          9
+        ],
+        [
+          "swelling tongue",
+          9
+        ],
+        [
+          "peanut allergy reaction",
+          8
+        ],
+        [
+          "lips swelling fast",
+          8
+        ],
+        [
+          "hives and wheezing",
+          8
+        ],
+        [
+          "bee sting allergy",
+          7
+        ],
+        [
+          "throat swelling",
+          9
+        ],
+        [
+          "nut allergy",
+          7
+        ],
+        [
+          "tongue swelling",
+          9
+        ],
+        [
+          "wheezing hives",
+          8
+        ],
+        [
+          "face is puffing",
+          8
+        ],
+        [
+          "puffing up",
+          6
+        ],
+        [
+          "shellfish",
+          6
+        ],
+        [
+          "wheezy",
+          5
+        ],
+        [
+          "face swelling",
+          8
+        ],
+        [
+          "ballooned",
+          8
+        ],
+        [
+          "hives spread",
+          7
+        ],
+        [
+          "hives everywhere",
+          8
+        ],
+        [
+          "prawns",
+          5
+        ],
+        [
+          "shrimp",
+          5
+        ],
+        [
+          "spread everywhere",
+          6
+        ],
+        [
+          "stung his tongue",
+          8
+        ],
+        [
+          "stung her tongue",
+          8
+        ],
+        [
+          "stung in the mouth",
+          8
+        ],
+        [
+          "throat feels tight",
+          8
+        ]
+      ],
+      "exemplars": [
+        "she ate peanuts and her throat is closing",
+        "severe allergic reaction his lips and tongue are swelling",
+        "anaphylaxis where is the epipen",
+        "he got stung and now has hives everywhere and is wheezing",
+        "allergic reaction and she is dizzy and can barely breathe",
+        "kid with milk allergy is vomiting and covered in hives and coughing"
+      ],
+      "visual_findings": [
+        "facial_swelling",
+        "hives_rash",
+        "distress_face"
+      ],
+      "entry": "epi_q",
+      "nodes": {
+        "epi_q": {
+          "type": "question",
+          "prompt": "Do they have an epinephrine auto-injector — an EpiPen — with them or nearby?",
+          "yes": "give_epi",
+          "no": "position_ana",
+          "unsure": "position_ana"
+        },
+        "give_epi": {
+          "type": "step",
+          "text": "Use it NOW — do not wait to see if it gets worse. Pull off the safety cap, press the orange tip hard against the outer mid-thigh — through clothes is fine — and hold for 3 seconds. Note the time.",
+          "donot": [
+            "Do not delay epinephrine to try antihistamines first — antihistamines cannot stop anaphylaxis."
+          ],
+          "next": "position_ana",
+          "figure": "epipen_thigh"
+        },
+        "position_ana": {
+          "type": "step",
+          "text": "Lie them flat and raise their legs. If breathing is hard, let them sit up with support. A pregnant person lies on their left side.",
+          "donot": [
+            "Do not stand them up or walk them around — that can cause collapse.",
+            "Do not leave them alone."
+          ],
+          "next": "q_second_dose"
+        },
+        "q_second_dose": {
+          "type": "question",
+          "prompt": "Has it been 5 minutes with no improvement — or are they getting worse?",
+          "yes": "second_epi",
+          "no": "watch_ana",
+          "unsure": "watch_ana"
+        },
+        "second_epi": {
+          "type": "step",
+          "text": "If a second auto-injector is available, give it now in the other thigh, the same way.",
+          "next": "watch_ana",
+          "figure": "epipen_thigh"
+        },
+        "watch_ana": {
+          "type": "step",
+          "text": "Keep them lying down with legs raised. Keep any used injectors to hand to the paramedics.",
+          "next": "monitor_ana"
+        },
+        "monitor_ana": {
+          "type": "monitor",
+          "text": "Watch them constantly — reactions can rebound even after improvement, so hospital follow-up is a must. Tell me immediately if breathing worsens or they stop responding."
+        }
+      }
+    },
+    {
+      "id": "allergic_mild",
+      "family": "allergy_mild",
+      "name": "Mild allergic reaction",
+      "age_group": "any",
+      "severity": "moderate",
+      "ems": "conditional",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "allergic reaction",
+          6
+        ],
+        [
+          "hives",
+          7
+        ],
+        [
+          "itchy rash",
+          6
+        ],
+        [
+          "rash after eating",
+          6
+        ],
+        [
+          "allergy rash",
+          7
+        ],
+        [
+          "swollen itchy skin",
+          5
+        ],
+        [
+          "itchy bumps",
+          6
+        ],
+        [
+          "welts",
+          5
+        ],
+        [
+          "breathing fine",
+          3
+        ]
+      ],
+      "exemplars": [
+        "i have itchy hives after eating shrimp",
+        "mild allergic reaction rash on arms",
+        "kid has a few hives after strawberries but is fine otherwise",
+        "itchy welts appearing on my skin",
+        "allergic rash but breathing okay"
+      ],
+      "visual_findings": [
+        "hives_rash",
+        "red_skin"
+      ],
+      "entry": "q_severe_check_al",
+      "nodes": {
+        "q_severe_check_al": {
+          "type": "question",
+          "prompt": "Critical check: any trouble breathing, wheeze, tongue or throat swelling, repeated vomiting, dizziness, or a known severe allergy?",
+          "yes": "to_anaphylaxis",
+          "no": "remove_trigger",
+          "unsure": "to_anaphylaxis"
+        },
+        "to_anaphylaxis": {
+          "type": "escalate",
+          "protocol": "anaphylaxis",
+          "text": "Any of those signs means we treat it as anaphylaxis."
+        },
+        "remove_trigger": {
+          "type": "step",
+          "text": "Move them away from the trigger — stop the food, wash off the contact, remove the stinger. Wash skin that touched the allergen with soap and water.",
+          "next": "antihistamine"
+        },
+        "antihistamine": {
+          "type": "step",
+          "text": "An over-the-counter antihistamine like cetirizine or loratadine at the packet dose eases itch and hives. A cool compress helps too.",
+          "next": "monitor_allergy"
+        },
+        "monitor_allergy": {
+          "type": "monitor",
+          "text": "Watch them for the next hours. If any breathing trouble, tongue or throat swelling, repeated vomiting or faintness appears, tell me immediately — that becomes an emergency. If hives keep spreading, see a doctor today."
+        }
+      }
+    },
+    {
+      "id": "seizure",
+      "family": "seizure",
+      "name": "Seizure / convulsion",
+      "age_group": "any",
+      "severity": "urgent",
+      "ems": "conditional",
+      "sources": [
+        "Epilepsy Foundation first aid",
+        "IFRC 2020"
+      ],
+      "keywords": [
+        [
+          "seizure",
+          9
+        ],
+        [
+          "convulsing",
+          9
+        ],
+        [
+          "convulsion",
+          9
+        ],
+        [
+          "epileptic fit",
+          9
+        ],
+        [
+          "fitting",
+          7
+        ],
+        [
+          "shaking all over",
+          7
+        ],
+        [
+          "jerking on the ground",
+          8
+        ],
+        [
+          "epilepsy attack",
+          8
+        ],
+        [
+          "foaming at the mouth",
+          8
+        ],
+        [
+          "seizing",
+          7
+        ],
+        [
+          "jerking",
+          6
+        ],
+        [
+          "eyes rolled back",
+          7
+        ],
+        [
+          "went stiff",
+          5
+        ],
+        [
+          "twitching",
+          5
+        ],
+        [
+          "epilepsy",
+          7
+        ],
+        [
+          "his usual ones",
+          5
+        ],
+        [
+          "usual seizure",
+          6
+        ],
+        [
+          "fit looks like",
+          5
+        ]
+      ],
+      "exemplars": [
+        "he is having a seizure right now",
+        "my friend collapsed and is convulsing",
+        "she is shaking all over and unresponsive",
+        "epileptic fit on the floor what do i do",
+        "someone is jerking and foaming at the mouth",
+        "my son is having a fit"
+      ],
+      "visual_findings": [
+        "person_convulsing"
+      ],
+      "entry": "protect_seizure",
+      "nodes": {
+        "protect_seizure": {
+          "type": "step",
+          "text": "Keep them safe where they are: move furniture and hard objects away, and put something soft — a folded jacket — under their head. Start timing the seizure now.",
+          "donot": [
+            "Do not hold them down or restrain their movements.",
+            "Do not put ANYTHING in their mouth — they cannot swallow their tongue.",
+            "Do not give food, drink or medicine during or right after."
+          ],
+          "next": "q_ems_seizure"
+        },
+        "q_ems_seizure": {
+          "type": "question",
+          "prompt": "Any of these: first-ever seizure, lasting over 5 minutes, repeated seizures, happened in water, they are pregnant or diabetic, they are injured, or they stay unresponsive after it stops?",
+          "yes": "ems_seizure",
+          "no": "during_seizure",
+          "unsure": "ems_seizure"
+        },
+        "ems_seizure": {
+          "type": "step",
+          "text": "Call emergency services now. Keep protecting their head and keep timing.",
+          "flags": [
+            "ems"
+          ],
+          "next": "during_seizure"
+        },
+        "during_seizure": {
+          "type": "step",
+          "text": "Let the seizure run its course — most stop within 1 to 3 minutes. Loosen anything tight around the neck. Stay calm and keep others back.",
+          "next": "q_stopped_seizure"
+        },
+        "q_stopped_seizure": {
+          "type": "question",
+          "prompt": "Has the shaking stopped?",
+          "yes": "recovery_seizure",
+          "no": "q_five_min",
+          "unsure": "q_five_min"
+        },
+        "q_five_min": {
+          "type": "question",
+          "prompt": "Has it been going for more than 5 minutes?",
+          "yes": "ems_seizure_5",
+          "no": "during_seizure",
+          "unsure": "ems_seizure_5"
+        },
+        "ems_seizure_5": {
+          "type": "step",
+          "text": "Over 5 minutes is an emergency — call emergency services now if not already done. Keep protecting their head.",
+          "flags": [
+            "ems"
+          ],
+          "next": "during_seizure"
+        },
+        "recovery_seizure": {
+          "type": "step",
+          "text": "Roll them into the recovery position on their side to keep the airway clear. Wipe away any saliva. They will likely be confused or sleepy — stay with them and speak calmly and simply.",
+          "donot": [
+            "Do not give food or drink until they are fully awake."
+          ],
+          "next": "monitor_seizure",
+          "figure": "recovery_position"
+        },
+        "monitor_seizure": {
+          "type": "monitor",
+          "text": "Stay until they are fully alert. If another seizure starts, they do not wake within 10 minutes, or breathing seems abnormal, tell me immediately. Known epilepsy with full recovery may not need an ambulance — follow their seizure plan."
+        }
+      }
+    },
+    {
+      "id": "febrile_seizure",
+      "family": "febrile_seizure",
+      "name": "Febrile seizure (child with fever)",
+      "age_group": "any",
+      "severity": "urgent",
+      "ems": "immediate",
+      "sources": [
+        "IFRC First Aid Guidelines 2020",
+        "AAP guidance"
+      ],
+      "keywords": [
+        [
+          "febrile seizure",
+          10
+        ],
+        [
+          "fever seizure",
+          9
+        ],
+        [
+          "convulsion with fever",
+          9
+        ],
+        [
+          "toddler seizure fever",
+          9
+        ],
+        [
+          "baby shaking fever",
+          8
+        ],
+        [
+          "burning with fever",
+          8
+        ],
+        [
+          "fever and twitching",
+          8
+        ],
+        [
+          "fever and shaking",
+          8
+        ]
+      ],
+      "exemplars": [
+        "my toddler has a fever and started convulsing",
+        "baby is having a seizure with a high fever",
+        "febrile seizure what do i do",
+        "my child is burning up and jerking",
+        "2 year old fever convulsion"
+      ],
+      "visual_findings": [
+        "child_convulsing",
+        "flushed_skin"
+      ],
+      "entry": "protect_fs",
+      "nodes": {
+        "protect_fs": {
+          "type": "step",
+          "text": "Lay the child on their side on a soft safe surface, away from hard objects. Do not restrain them. Start timing the seizure.",
+          "donot": [
+            "Do not put anything in their mouth.",
+            "Do not put them in a bath to cool them.",
+            "Do not give medicine during the seizure."
+          ],
+          "next": "cool_gently_fs"
+        },
+        "cool_gently_fs": {
+          "type": "step",
+          "text": "Loosen clothing and remove blankets so heat can escape. Nothing more aggressive — no cold water, no sponging.",
+          "next": "q_stopped_fs"
+        },
+        "q_stopped_fs": {
+          "type": "question",
+          "prompt": "Has the seizure stopped?",
+          "yes": "after_fs",
+          "no": "during_fs",
+          "unsure": "during_fs"
+        },
+        "during_fs": {
+          "type": "step",
+          "text": "Stay beside them, protect the head, keep timing. Most febrile seizures stop within 1 to 2 minutes.",
+          "next": "q_stopped_fs"
+        },
+        "after_fs": {
+          "type": "step",
+          "text": "Keep them on their side in the recovery position. They will be sleepy or dazed — that is expected. Stay with them.",
+          "next": "monitor_fs"
+        },
+        "monitor_fs": {
+          "type": "monitor",
+          "text": "Every first febrile seizure needs a medical check — tell the paramedics or doctor how long it lasted. Tell me immediately if another seizure starts, it lasts over 5 minutes, they have trouble breathing, a rash appears, or they are hard to wake."
+        }
+      }
+    },
+    {
+      "id": "diabetic_low",
+      "family": "diabetic",
+      "name": "Diabetic emergency (low blood sugar)",
+      "age_group": "any",
+      "severity": "urgent",
+      "ems": "conditional",
+      "sources": [
+        "IFRC First Aid Guidelines 2020",
+        "ILCOR 2020",
+        "AHA/ARC 2024 First Aid Focused Update"
+      ],
+      "keywords": [
+        [
+          "diabetic",
+          7
+        ],
+        [
+          "low blood sugar",
+          9
+        ],
+        [
+          "hypoglycemia",
+          9
+        ],
+        [
+          "hypo",
+          6
+        ],
+        [
+          "insulin",
+          6
+        ],
+        [
+          "blood sugar dropped",
+          9
+        ],
+        [
+          "diabetes shaky sweaty",
+          8
+        ],
+        [
+          "sugar crash diabetic",
+          8
+        ],
+        [
+          "low sugar",
+          7
+        ],
+        [
+          "sugar reading",
+          6
+        ],
+        [
+          "type one",
+          5
+        ],
+        [
+          "insulin and skipped",
+          7
+        ],
+        [
+          "insulin then never ate",
+          8
+        ],
+        [
+          "never ate",
+          5
+        ],
+        [
+          "took her insulin",
+          7
+        ],
+        [
+          "took his insulin",
+          7
+        ]
+      ],
+      "exemplars": [
+        "my diabetic friend is shaky and confused",
+        "her blood sugar is low she is sweating and pale",
+        "diabetic emergency he took insulin and skipped lunch",
+        "hypo attack what should i give",
+        "diabetic grandma is acting drunk and confused"
+      ],
+      "visual_findings": [
+        "sweating_person",
+        "pale_skin",
+        "confused_person"
+      ],
+      "entry": "q_conscious_diab",
+      "nodes": {
+        "q_conscious_diab": {
+          "type": "question",
+          "prompt": "Are they awake enough to sit up and swallow safely?",
+          "yes": "give_sugar",
+          "no": "ems_diab",
+          "unsure": "ems_diab"
+        },
+        "ems_diab": {
+          "type": "step",
+          "text": "Call emergency services now. Do NOT give an unconscious or drowsy person anything by mouth. Roll them into the recovery position on their side and watch their breathing.",
+          "flags": [
+            "ems"
+          ],
+          "donot": [
+            "Do not give food or drink to someone who is not fully awake.",
+            "Do not give insulin — insulin lowers sugar further."
+          ],
+          "next": "monitor_diab_sev"
+        },
+        "monitor_diab_sev": {
+          "type": "monitor",
+          "text": "Watch their breathing until help arrives. Tell me immediately if it changes or they stop responding."
+        },
+        "give_sugar": {
+          "type": "step",
+          "text": "Give 15 to 20 grams of fast sugar now: 4 glucose tablets, half a glass of regular — not diet — soda or juice, 3 teaspoons of sugar or honey in water, or glucose gel inside the cheek.",
+          "donot": [
+            "Do not give insulin.",
+            "Do not use diet or zero-sugar drinks.",
+            "Do not give chocolate as the main fix — its fat slows the sugar."
+          ],
+          "next": "wait_15"
+        },
+        "wait_15": {
+          "type": "step",
+          "text": "Wait 15 minutes. If they can, check their blood sugar. If still low or still symptomatic, give another 15 to 20 grams of sugar.",
+          "next": "q_improved_diab"
+        },
+        "q_improved_diab": {
+          "type": "question",
+          "prompt": "Are they improving — more alert, less shaky?",
+          "yes": "follow_meal",
+          "no": "ems_diab2",
+          "unsure": "ems_diab2"
+        },
+        "ems_diab2": {
+          "type": "step",
+          "text": "No clear improvement after two rounds of sugar means call emergency services now.",
+          "flags": [
+            "ems"
+          ],
+          "next": "monitor_diab_sev"
+        },
+        "follow_meal": {
+          "type": "step",
+          "text": "Once they feel better, give a longer-lasting snack — a sandwich, crackers with cheese, or a banana — to keep the sugar from dropping again.",
+          "next": "monitor_diab"
+        },
+        "monitor_diab": {
+          "type": "monitor",
+          "text": "Stay with them until fully recovered. If this hypo had no clear cause, or they use insulin and hypos keep happening, they should talk to their doctor."
+        }
+      }
+    },
+    {
+      "id": "fainting",
+      "family": "fainting",
+      "name": "Fainting",
+      "age_group": "any",
+      "severity": "moderate",
+      "ems": "conditional",
+      "sources": [
+        "IFRC First Aid Guidelines 2020",
+        "AHA/ARC 2024 First Aid Focused Update"
+      ],
+      "keywords": [
+        [
+          "fainted",
+          7
+        ],
+        [
+          "fainting",
+          7
+        ],
+        [
+          "feels faint",
+          7
+        ],
+        [
+          "about to pass out",
+          7
+        ],
+        [
+          "lightheaded",
+          6
+        ],
+        [
+          "dizzy about to fall",
+          6
+        ],
+        [
+          "went down briefly",
+          5
+        ],
+        [
+          "nearly fainted",
+          7
+        ],
+        [
+          "nearly blacked out",
+          6
+        ],
+        [
+          "crumpled",
+          4
+        ],
+        [
+          "keeled over",
+          5
+        ],
+        [
+          "blacking out",
+          7
+        ],
+        [
+          "almost blacking out",
+          8
+        ],
+        [
+          "when i stand",
+          6
+        ]
+      ],
+      "exemplars": [
+        "she fainted but woke up right away",
+        "i feel like i am about to pass out",
+        "he fainted in church and is coming around",
+        "my sister feels faint and dizzy",
+        "someone fainted at the concert"
+      ],
+      "visual_findings": [
+        "person_collapsed",
+        "pale_skin"
+      ],
+      "entry": "q_awake_faint",
+      "nodes": {
+        "q_awake_faint": {
+          "type": "question",
+          "prompt": "Are they awake now — or still feeling faint but conscious?",
+          "yes": "lie_flat_faint",
+          "no": "q_woke_delay",
+          "unsure": "q_woke_delay"
+        },
+        "q_woke_delay": {
+          "type": "question",
+          "prompt": "Have they been out for more than a minute?",
+          "yes": "to_unconscious",
+          "no": "lie_flat_faint",
+          "unsure": "to_unconscious"
+        },
+        "to_unconscious": {
+          "type": "escalate",
+          "protocol": "unresponsive_breathing",
+          "text": "Out for over a minute is not a simple faint — we treat this as unresponsiveness."
+        },
+        "lie_flat_faint": {
+          "type": "step",
+          "text": "Lie them flat on their back and raise their legs on a chair or against a wall for a few minutes. Loosen tight collars and belts. Fresh air helps.",
+          "donot": [
+            "Do not sit or stand them up quickly.",
+            "Do not give food or drink until fully recovered.",
+            "Do not splash water on their face or slap them."
+          ],
+          "next": "counterpressure"
+        },
+        "check_injury_faint": {
+          "type": "step",
+          "text": "Check whether they hurt themselves falling — especially the head. When they feel normal, sit them up slowly, wait, then stand slowly.",
+          "next": "q_red_flags_faint"
+        },
+        "q_red_flags_faint": {
+          "type": "question",
+          "prompt": "Any of these: fainted during exercise, chest pain or palpitations before it, known heart condition, pregnant, injured in the fall, over 50 with no previous faints, or repeated fainting?",
+          "yes": "ems_faint",
+          "no": "monitor_faint",
+          "unsure": "ems_faint"
+        },
+        "ems_faint": {
+          "type": "step",
+          "text": "Those warrant urgent medical assessment — call emergency services or get them to emergency care now.",
+          "flags": [
+            "ems"
+          ],
+          "next": "monitor_faint"
+        },
+        "monitor_faint": {
+          "type": "monitor",
+          "text": "Have them rest, drink water, and eat something light. If they faint again today or feel unwell, they should see a doctor."
+        },
+        "counterpressure": {
+          "type": "step",
+          "text": "If they are still awake and feeling faint, add counter-pressure moves while lying down: cross the legs and squeeze them together, clench the fists, and tense the arm and leg muscles for 15 to 20 seconds at a time — this pushes blood back to the brain.",
+          "next": "check_injury_faint"
+        }
+      }
+    },
+    {
+      "id": "shock",
+      "family": "shock",
+      "name": "Shock (circulatory)",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "going into shock",
+          9
+        ],
+        [
+          "in shock",
+          6
+        ],
+        [
+          "pale cold clammy",
+          8
+        ],
+        [
+          "clammy skin",
+          7
+        ],
+        [
+          "weak rapid pulse",
+          7
+        ],
+        [
+          "gray and sweaty",
+          7
+        ],
+        [
+          "white as a sheet",
+          5
+        ],
+        [
+          "cold and clammy",
+          7
+        ],
+        [
+          "gray",
+          4
+        ],
+        [
+          "spaced out",
+          5
+        ],
+        [
+          "shivery",
+          4
+        ],
+        [
+          "losing blood",
+          4
+        ]
+      ],
+      "exemplars": [
+        "he is pale cold and sweaty after the accident",
+        "i think she is going into shock",
+        "his skin is clammy and he is confused and thirsty",
+        "she lost blood and now looks gray and drowsy",
+        "signs of shock after injury"
+      ],
+      "visual_findings": [
+        "pale_skin",
+        "sweating_person"
+      ],
+      "entry": "lie_flat_shock",
+      "nodes": {
+        "lie_flat_shock": {
+          "type": "step",
+          "text": "Lie them down flat on their back. If there is no injury preventing it, raise their legs about 30 centimeters on a bag or cushion.",
+          "donot": [
+            "Do not raise the legs if a leg is broken or there is a head, chest, belly or spine injury — keep them flat then."
+          ],
+          "next": "treat_cause_shock"
+        },
+        "treat_cause_shock": {
+          "type": "step",
+          "text": "Treat the cause you can see: press firmly on any heavy bleeding with clean cloth. Tell me what caused this if you have not.",
+          "next": "warm_shock"
+        },
+        "warm_shock": {
+          "type": "step",
+          "text": "Keep them warm with a blanket or coat over and under them. Loosen tight clothing. Reassure them constantly — fear worsens shock.",
+          "donot": [
+            "Do not give them anything to eat or drink, even if thirsty — moisten lips with water only.",
+            "Do not leave them alone."
+          ],
+          "next": "monitor_shock"
+        },
+        "monitor_shock": {
+          "type": "monitor",
+          "text": "Watch them constantly. Tell me immediately if they become more drowsy or confused, vomit — roll them to their side — or stop responding."
+        }
+      }
+    },
+    {
+      "id": "childbirth",
+      "family": "childbirth",
+      "name": "Emergency childbirth",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "IFRC First Aid Guidelines 2020",
+        "WHO managing complications guidance"
+      ],
+      "keywords": [
+        [
+          "giving birth",
+          10
+        ],
+        [
+          "baby is coming",
+          10
+        ],
+        [
+          "in labor",
+          9
+        ],
+        [
+          "labour",
+          7
+        ],
+        [
+          "contractions close",
+          8
+        ],
+        [
+          "water broke",
+          8
+        ],
+        [
+          "delivering a baby",
+          10
+        ],
+        [
+          "crowning",
+          10
+        ],
+        [
+          "placenta",
+          8
+        ],
+        [
+          "delivered the baby",
+          8
+        ],
+        [
+          "waters broke",
+          8
+        ],
+        [
+          "need to push",
+          7
+        ],
+        [
+          "head is showing",
+          9
+        ],
+        [
+          "head is already showing",
+          9
+        ],
+        [
+          "baby is crowning",
+          9
+        ]
+      ],
+      "exemplars": [
+        "my wife is in labor and the baby is coming now",
+        "she is giving birth we cannot make it to the hospital",
+        "contractions are two minutes apart the head is showing",
+        "emergency delivery at home help",
+        "her water broke and the baby is coming fast",
+        "the placenta has not come out yet after delivery"
+      ],
+      "visual_findings": [
+        "pregnant_person",
+        "person_lying_distress"
+      ],
+      "entry": "prepare_birth",
+      "nodes": {
+        "prepare_birth": {
+          "type": "step",
+          "text": "Stay calm — birth usually manages itself; you are there to catch and warm the baby. Wash your hands. Gather clean towels, a blanket, and something soft for under her.",
+          "next": "position_birth"
+        },
+        "position_birth": {
+          "type": "step",
+          "text": "Help her into the position she prefers — semi-sitting propped with pillows is common. Remove clothing below the waist and put clean towels under her.",
+          "donot": [
+            "Do not tell her to cross her legs or hold the baby in.",
+            "Do not let her sit on the toilet."
+          ],
+          "next": "delivery"
+        },
+        "delivery": {
+          "type": "step",
+          "text": "As the head appears, tell her to pant, not push hard. Support — never pull — the head and shoulders as they come. The baby will be slippery: catch with towel-covered hands.",
+          "donot": [
+            "Do not pull on the baby or the cord.",
+            "Do not press on her belly."
+          ],
+          "next": "cord_check"
+        },
+        "cord_check": {
+          "type": "step",
+          "text": "If the cord is looped around the baby's neck, gently ease it over the head. Note the time of birth.",
+          "next": "warm_baby"
+        },
+        "warm_baby": {
+          "type": "step",
+          "text": "Dry the baby immediately and rub the back gently with the towel — crying is good. Place the baby skin-to-skin on mum's chest and cover them both with dry blankets, baby's head covered with a little hat or cloth corner.",
+          "donot": [
+            "Do not cut or tie the cord — leave it; the medics will handle it.",
+            "Do not wash the white coating off the baby.",
+            "Do not hold the baby upside down or smack it."
+          ],
+          "next": "q_baby_breathing"
+        },
+        "q_baby_breathing": {
+          "type": "question",
+          "prompt": "Is the baby breathing or crying, with color coming to the face?",
+          "yes": "placenta",
+          "no": "baby_cpr",
+          "unsure": "baby_cpr"
+        },
+        "baby_cpr": {
+          "type": "escalate",
+          "protocol": "cpr_infant",
+          "text": "We help the baby breathe now — rub the back firmly first while I guide you."
+        },
+        "placenta": {
+          "type": "step",
+          "text": "The placenta will deliver on its own, usually within 30 minutes — keep it in a bag or bowl for the medics. Gentle massage of her lower belly after helps the womb firm up. Put a clean pad between her legs.",
+          "donot": [
+            "Do not pull on the cord to deliver the placenta."
+          ],
+          "next": "monitor_birth"
+        },
+        "monitor_birth": {
+          "type": "monitor",
+          "text": "Keep mum and baby warm and together, baby on her chest. Tell me immediately if she bleeds heavily — more than two cups — feels faint, or the baby becomes floppy, blue, or quiet."
+        }
+      }
+    },
+    {
+      "id": "dehydration_gastro",
+      "family": "dehydration",
+      "name": "Vomiting / diarrhea / dehydration",
+      "age_group": "any",
+      "severity": "moderate",
+      "ems": "conditional",
+      "sources": [
+        "WHO ORS guidance",
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "dehydrated",
+          7
+        ],
+        [
+          "dehydration",
+          7
+        ],
+        [
+          "vomiting a lot",
+          6
+        ],
+        [
+          "diarrhea",
+          6
+        ],
+        [
+          "throwing up all day",
+          6
+        ],
+        [
+          "stomach bug",
+          5
+        ],
+        [
+          "can't keep fluids down",
+          7
+        ],
+        [
+          "food poisoning",
+          6
+        ],
+        [
+          "puking",
+          5
+        ],
+        [
+          "keep anything down",
+          7
+        ],
+        [
+          "keep water down",
+          7
+        ],
+        [
+          "been sick",
+          4
+        ],
+        [
+          "watery stools",
+          6
+        ],
+        [
+          "wet nappies",
+          5
+        ],
+        [
+          "throwing up",
+          6
+        ],
+        [
+          "cannot stop throwing up",
+          8
+        ]
+      ],
+      "exemplars": [
+        "my son has been vomiting all day",
+        "bad diarrhea and feeling weak and dry",
+        "she cannot keep any fluids down",
+        "food poisoning vomiting and diarrhea",
+        "baby has diarrhea how do i keep her hydrated",
+        "signs of dehydration in a toddler",
+        "cannot keep water down been sick six times"
+      ],
+      "visual_findings": [
+        "person_lying_distress",
+        "pale_skin"
+      ],
+      "entry": "q_danger_dehydration",
+      "nodes": {
+        "q_danger_dehydration": {
+          "type": "question",
+          "prompt": "Danger check: are they drowsy or confused, breathing fast, no tears or no urine for 8 or more hours, sunken eyes, blood in vomit or stool, severe belly pain, or is it a baby under 6 months?",
+          "yes": "ems_dehydration",
+          "no": "small_sips",
+          "unsure": "ems_dehydration"
+        },
+        "ems_dehydration": {
+          "type": "step",
+          "text": "Those are danger signs — call emergency services or get them to emergency care now. Keep offering small sips of fluid if fully awake, nothing if drowsy.",
+          "flags": [
+            "ems"
+          ],
+          "next": "monitor_dehyd_sev"
+        },
+        "monitor_dehyd_sev": {
+          "type": "monitor",
+          "text": "Watch them closely. Tell me if they become drowsier or stop responding."
+        },
+        "small_sips": {
+          "type": "step",
+          "text": "Give small, frequent sips — a spoonful every few minutes: oral rehydration solution is best; otherwise water, or diluted juice. Small and often stays down better than big gulps.",
+          "donot": [
+            "Do not give anti-vomiting or anti-diarrhea medicine to children unless a doctor prescribed it.",
+            "Do not give sugary sodas or undiluted juice as the main fluid."
+          ],
+          "next": "ors_recipe"
+        },
+        "ors_recipe": {
+          "type": "step",
+          "text": "No pharmacy sachets? Make oral rehydration solution: 1 liter of clean water, 6 level teaspoons of sugar, half a level teaspoon of salt. Stir until dissolved. Keep breastfed babies breastfeeding.",
+          "next": "food_dehyd"
+        },
+        "food_dehyd": {
+          "type": "step",
+          "text": "Once vomiting settles, offer plain foods — rice, toast, banana, crackers. Rest, and strict hand-washing so it does not spread.",
+          "next": "monitor_dehyd"
+        },
+        "monitor_dehyd": {
+          "type": "monitor",
+          "text": "See a doctor if it lasts beyond 24 to 48 hours, fever is high, or dryness signs appear: little urine, dark urine, dry mouth, dizziness. For babies and the elderly, act on these early — tell me if drowsiness or fast breathing develops."
+        }
+      }
+    }
+  ]
+}

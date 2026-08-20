@@ -1,0 +1,1752 @@
+{
+  "protocols": [
+    {
+      "id": "cpr_adult",
+      "family": "cardiac_arrest",
+      "name": "CPR — Adult",
+      "age_group": "adult",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "AHA 2020 CPR & ECC Guidelines",
+        "ILCOR CoSTR 2020",
+        "AHA 2025 Guidelines for CPR & ECC (verified, unchanged)"
+      ],
+      "keywords": [
+        [
+          "cardiac arrest",
+          5
+        ],
+        [
+          "not breathing",
+          5
+        ],
+        [
+          "stopped breathing",
+          5
+        ],
+        [
+          "no pulse",
+          5
+        ],
+        [
+          "cpr",
+          5
+        ],
+        [
+          "heart stopped",
+          5
+        ],
+        [
+          "collapsed",
+          3
+        ],
+        [
+          "lifeless",
+          4
+        ],
+        [
+          "gasping",
+          4
+        ],
+        [
+          "turning blue",
+          4
+        ],
+        [
+          "resuscitation",
+          4
+        ],
+        [
+          "chest compressions",
+          4
+        ],
+        [
+          "agonal",
+          4
+        ],
+        [
+          "won't wake up",
+          3
+        ],
+        [
+          "lips blue",
+          6
+        ],
+        [
+          "lips went blue",
+          7
+        ],
+        [
+          "heart is not beating",
+          7
+        ],
+        [
+          "not beating",
+          5
+        ]
+      ],
+      "exemplars": [
+        "he collapsed and is not breathing",
+        "my dad stopped breathing what do i do",
+        "no pulse help",
+        "i think his heart stopped",
+        "she is lifeless on the floor not breathing",
+        "how do i do cpr",
+        "man collapsed not moving not breathing",
+        "he is just gasping weird not really breathing",
+        "start cpr instructions now",
+        "person unconscious and no breathing"
+      ],
+      "visual_findings": [
+        "person_collapsed",
+        "person_motionless",
+        "cyanosis"
+      ],
+      "entry": "d_conscious",
+      "nodes": {
+        "d_conscious": {
+          "type": "decision",
+          "fact": "consciousness",
+          "cases": {
+            "unresponsive": "d_breathing",
+            "responsive": "responsive_handoff"
+          },
+          "default": "q_conscious"
+        },
+        "q_conscious": {
+          "type": "question",
+          "prompt": "Shout their name and gently shake their shoulders. Do they respond at all?",
+          "yes": "responsive_handoff",
+          "no": "d_breathing",
+          "unsure": "d_breathing"
+        },
+        "responsive_handoff": {
+          "type": "handoff",
+          "text": "Good — they respond, so we do not need CPR. Tell me what happened or what symptoms they have, and I will guide you."
+        },
+        "d_breathing": {
+          "type": "decision",
+          "fact": "breathing",
+          "cases": {
+            "not_breathing": "send_help",
+            "abnormal": "send_help",
+            "breathing": "recovery_escalate"
+          },
+          "default": "q_breathing"
+        },
+        "q_breathing": {
+          "type": "question",
+          "prompt": "Tilt their head back gently and watch their chest for up to 10 seconds. Are they breathing normally? Occasional gasps do NOT count as breathing.",
+          "yes": "recovery_escalate",
+          "no": "send_help",
+          "unsure": "send_help",
+          "figure": "head_tilt"
+        },
+        "recovery_escalate": {
+          "type": "escalate",
+          "protocol": "unresponsive_breathing",
+          "text": "They are breathing, so we will protect their airway instead of CPR."
+        },
+        "send_help": {
+          "type": "step",
+          "text": "If anyone is nearby, send them to find an AED (defibrillator). Do not leave to search for one yourself. We start CPR right now.",
+          "next": "position"
+        },
+        "position": {
+          "type": "step",
+          "text": "Lay them flat on their back on a firm surface. Kneel beside their chest.",
+          "next": "hands"
+        },
+        "hands": {
+          "type": "step",
+          "text": "Put the heel of one hand on the center of the chest, on the lower half of the breastbone. Put your other hand on top and interlock your fingers.",
+          "donot": [
+            "Do not press on the ribs or the very bottom tip of the breastbone.",
+            "Do not waste time checking for a pulse."
+          ],
+          "next": "compress",
+          "figure": "cpr_hands"
+        },
+        "compress": {
+          "type": "step",
+          "text": "Push hard and fast: at least 5 centimeters, or 2 inches, deep, 100 to 120 pushes per minute — the beat of the song Stayin' Alive. Let the chest rise fully between pushes.",
+          "next": "q_trained"
+        },
+        "q_trained": {
+          "type": "question",
+          "prompt": "Are you trained to give rescue breaths?",
+          "yes": "cycles",
+          "no": "hands_only",
+          "unsure": "hands_only"
+        },
+        "hands_only": {
+          "type": "step",
+          "text": "Then do continuous chest compressions only — that is excellent CPR. Count out loud and do not stop. Swap with someone every 2 minutes if you can.",
+          "next": "aed_use"
+        },
+        "cycles": {
+          "type": "step",
+          "text": "Do sets of 30 compressions, then 2 breaths: tilt the head back, lift the chin, pinch the nose, seal your mouth over theirs, and give 2 one-second breaths. Repeat 30 to 2.",
+          "next": "aed_use",
+          "figure": "head_tilt"
+        },
+        "aed_use": {
+          "type": "step",
+          "text": "The moment an AED arrives, turn it on and follow its voice prompts. Bare the chest, stick the pads on as pictured, and let it check the rhythm. Keep doing CPR between its instructions.",
+          "next": "monitor_cpr"
+        },
+        "monitor_cpr": {
+          "type": "monitor",
+          "text": "Do not stop CPR until they clearly wake up and breathe normally, a professional takes over, or the AED tells you to stand clear. You are keeping them alive."
+        }
+      }
+    },
+    {
+      "id": "cpr_child",
+      "family": "cardiac_arrest",
+      "name": "CPR — Child (1 year to puberty)",
+      "age_group": "child",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "AHA 2020 Pediatric BLS",
+        "ERC 2021 Paediatric Life Support",
+        "AHA 2025 Guidelines for CPR & ECC (verified, unchanged)"
+      ],
+      "keywords": [
+        [
+          "child not breathing",
+          6
+        ],
+        [
+          "kid stopped breathing",
+          6
+        ],
+        [
+          "child cpr",
+          5
+        ],
+        [
+          "my son is not breathing",
+          6
+        ],
+        [
+          "my daughter is not breathing",
+          6
+        ]
+      ],
+      "exemplars": [
+        "my child is not breathing",
+        "kid collapsed not breathing help",
+        "my 6 year old stopped breathing",
+        "cpr for a child",
+        "my daughter has no pulse"
+      ],
+      "visual_findings": [
+        "child_collapsed",
+        "person_motionless",
+        "cyanosis"
+      ],
+      "entry": "d_conscious",
+      "nodes": {
+        "d_conscious": {
+          "type": "decision",
+          "fact": "consciousness",
+          "cases": {
+            "unresponsive": "d_breathing",
+            "responsive": "responsive_handoff"
+          },
+          "default": "q_conscious"
+        },
+        "q_conscious": {
+          "type": "question",
+          "prompt": "Call their name loudly and gently squeeze their shoulder. Any response at all?",
+          "yes": "responsive_handoff",
+          "no": "d_breathing",
+          "unsure": "d_breathing"
+        },
+        "responsive_handoff": {
+          "type": "handoff",
+          "text": "Good — they respond, so we do not need CPR. Tell me what happened and I will guide you."
+        },
+        "d_breathing": {
+          "type": "decision",
+          "fact": "breathing",
+          "cases": {
+            "not_breathing": "position",
+            "abnormal": "position",
+            "breathing": "recovery_escalate"
+          },
+          "default": "q_breathing"
+        },
+        "q_breathing": {
+          "type": "question",
+          "prompt": "Tilt the head back gently and watch the chest for up to 10 seconds. Normal breathing? Gasps do not count.",
+          "yes": "recovery_escalate",
+          "no": "position",
+          "unsure": "position",
+          "figure": "head_tilt"
+        },
+        "recovery_escalate": {
+          "type": "escalate",
+          "protocol": "unresponsive_breathing",
+          "text": "They are breathing, so we will protect the airway instead of CPR."
+        },
+        "position": {
+          "type": "step",
+          "text": "Put your phone on speaker so your hands are free. Lay the child on their back on a firm surface.",
+          "next": "hands_child"
+        },
+        "hands_child": {
+          "type": "step",
+          "text": "Place the heel of one hand on the center of the chest, on the lower half of the breastbone. Use two hands if you need more strength.",
+          "next": "compress_child",
+          "figure": "cpr_hands"
+        },
+        "compress_child": {
+          "type": "step",
+          "text": "Push hard and fast: about 5 centimeters, one third of the chest depth, 100 to 120 pushes per minute. Let the chest rise fully between pushes.",
+          "next": "breaths_child"
+        },
+        "breaths_child": {
+          "type": "step",
+          "text": "Rescue breaths really matter for children. After 30 compressions: tilt the head, lift the chin, pinch the nose, seal your mouth over theirs, give 2 gentle one-second breaths. Repeat 30 to 2. If you cannot give breaths, keep doing compressions without stopping.",
+          "next": "aed_child",
+          "figure": "head_tilt"
+        },
+        "aed_child": {
+          "type": "step",
+          "text": "If an AED arrives, turn it on and follow its prompts. Use child pads if available; adult pads are fine if not — place one on the chest and one on the back if they might touch.",
+          "next": "monitor_cpr"
+        },
+        "monitor_cpr": {
+          "type": "monitor",
+          "text": "Keep going with 30 compressions and 2 breaths. Do not stop until the child wakes and breathes normally, or a professional takes over. You are doing exactly the right thing."
+        }
+      }
+    },
+    {
+      "id": "cpr_infant",
+      "family": "cardiac_arrest",
+      "name": "CPR — Infant (under 1 year)",
+      "age_group": "infant",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "AHA 2020 Pediatric BLS",
+        "ERC 2021 Paediatric Life Support",
+        "AHA 2025 Guidelines for CPR & ECC (verified, unchanged)"
+      ],
+      "keywords": [
+        [
+          "baby not breathing",
+          6
+        ],
+        [
+          "infant not breathing",
+          6
+        ],
+        [
+          "newborn not breathing",
+          6
+        ],
+        [
+          "baby cpr",
+          5
+        ],
+        [
+          "baby stopped breathing",
+          6
+        ],
+        [
+          "baby is blue",
+          5
+        ],
+        [
+          "baby lifeless",
+          6
+        ]
+      ],
+      "exemplars": [
+        "my baby is not breathing",
+        "infant stopped breathing help me",
+        "baby is blue and floppy",
+        "newborn not breathing what do i do",
+        "cpr on a baby",
+        "my 3 month old is not breathing"
+      ],
+      "visual_findings": [
+        "infant_motionless",
+        "cyanosis"
+      ],
+      "entry": "d_conscious",
+      "nodes": {
+        "d_conscious": {
+          "type": "decision",
+          "fact": "consciousness",
+          "cases": {
+            "unresponsive": "d_breathing",
+            "responsive": "responsive_handoff"
+          },
+          "default": "q_conscious"
+        },
+        "q_conscious": {
+          "type": "question",
+          "prompt": "Tap the sole of the baby's foot and call their name. Any response — movement, crying, opening eyes?",
+          "yes": "responsive_handoff",
+          "no": "d_breathing",
+          "unsure": "d_breathing"
+        },
+        "responsive_handoff": {
+          "type": "handoff",
+          "text": "Good — the baby responds, so we do not need CPR. Tell me what happened and I will guide you."
+        },
+        "d_breathing": {
+          "type": "decision",
+          "fact": "breathing",
+          "cases": {
+            "not_breathing": "position_infant",
+            "abnormal": "position_infant",
+            "breathing": "recovery_infant"
+          },
+          "default": "q_breathing"
+        },
+        "q_breathing": {
+          "type": "question",
+          "prompt": "Look at the baby's chest and tummy for up to 10 seconds. Normal breathing? Gasps do not count.",
+          "yes": "recovery_infant",
+          "no": "position_infant",
+          "unsure": "position_infant"
+        },
+        "recovery_infant": {
+          "type": "step",
+          "text": "Hold the baby on their side in your arms, head slightly tilted down, and watch their breathing constantly until help arrives.",
+          "next": "monitor_breathing_infant"
+        },
+        "monitor_breathing_infant": {
+          "type": "monitor",
+          "text": "Keep watching the chest. If breathing stops or the baby gasps, tell me immediately and we start CPR."
+        },
+        "position_infant": {
+          "type": "step",
+          "text": "Put your phone on speaker. Lay the baby on their back on a firm surface, like a table or the floor. Keep the head in a neutral position — do not tilt it far back.",
+          "next": "compress_infant"
+        },
+        "compress_infant": {
+          "type": "step",
+          "text": "Place two fingers on the center of the chest, just below the nipple line. Push down about 4 centimeters, one third of the chest depth, 100 to 120 pushes per minute. Let the chest rise fully between pushes.",
+          "next": "breaths_infant",
+          "figure": "cpr_infant"
+        },
+        "breaths_infant": {
+          "type": "step",
+          "text": "After 30 compressions, cover the baby's mouth AND nose with your mouth and give 2 gentle puffs, just enough to make the chest rise. Repeat: 30 compressions, 2 puffs.",
+          "donot": [
+            "Do not tilt an infant's head far back — keep it neutral.",
+            "Do not blow hard — small gentle puffs only."
+          ],
+          "next": "monitor_cpr",
+          "figure": "cpr_infant"
+        },
+        "monitor_cpr": {
+          "type": "monitor",
+          "text": "Keep going: 30 pushes, 2 puffs. Do not stop until the baby responds and breathes normally, or a professional takes over. You are keeping your baby alive."
+        }
+      }
+    },
+    {
+      "id": "unresponsive_breathing",
+      "family": "unconscious",
+      "name": "Unresponsive but breathing (recovery position)",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "IFRC First Aid Guidelines 2020",
+        "ERC 2021 BLS"
+      ],
+      "keywords": [
+        [
+          "unconscious",
+          5
+        ],
+        [
+          "unresponsive",
+          5
+        ],
+        [
+          "passed out",
+          5
+        ],
+        [
+          "won't wake up",
+          5
+        ],
+        [
+          "not waking up",
+          5
+        ],
+        [
+          "knocked out",
+          4
+        ],
+        [
+          "recovery position",
+          5
+        ],
+        [
+          "blacked out",
+          4
+        ],
+        [
+          "out cold",
+          4
+        ],
+        [
+          "collapsed",
+          4
+        ],
+        [
+          "collapsed but breathing",
+          9
+        ],
+        [
+          "not moving",
+          5
+        ],
+        [
+          "fainted and not waking",
+          7
+        ],
+        [
+          "went limp",
+          6
+        ],
+        [
+          "wont come around",
+          6
+        ]
+      ],
+      "exemplars": [
+        "she passed out but is breathing",
+        "he is unconscious what do i do",
+        "my friend won't wake up but he is breathing",
+        "person unresponsive breathing normally",
+        "how do i put someone in the recovery position",
+        "he fainted and is not waking up",
+        "she collapsed but she is breathing",
+        "he went limp and is not moving but breathes"
+      ],
+      "visual_findings": [
+        "person_collapsed",
+        "person_motionless"
+      ],
+      "entry": "d_breathing_check",
+      "nodes": {
+        "d_breathing_check": {
+          "type": "decision",
+          "fact": "breathing",
+          "cases": {
+            "not_breathing": "to_cpr",
+            "abnormal": "to_cpr"
+          },
+          "default": "q_breathing_check"
+        },
+        "q_breathing_check": {
+          "type": "question",
+          "prompt": "First, check: tilt their head back gently and watch the chest for up to 10 seconds. Are they breathing normally?",
+          "yes": "q_spine",
+          "no": "to_cpr",
+          "unsure": "to_cpr",
+          "figure": "head_tilt"
+        },
+        "to_cpr": {
+          "type": "escalate",
+          "protocol": "cardiac_arrest",
+          "text": "They are not breathing normally — we start CPR now."
+        },
+        "q_spine": {
+          "type": "question",
+          "prompt": "Did they fall from a height, get hit hard, or could they have a neck or back injury?",
+          "yes": "spinal_hold",
+          "no": "recovery_arm",
+          "unsure": "recovery_arm"
+        },
+        "spinal_hold": {
+          "type": "step",
+          "text": "Keep them exactly as they are. Kneel behind their head and hold it steady with both hands so the head, neck and back stay in line. Only roll them as one unit if they vomit or stop breathing normally.",
+          "donot": [
+            "Do not move them unless they are in danger or their airway is blocked."
+          ],
+          "next": "monitor_spinal"
+        },
+        "monitor_spinal": {
+          "type": "monitor",
+          "text": "Hold their head still and keep watching their breathing until help arrives. If they vomit or stop breathing normally, tell me immediately."
+        },
+        "recovery_arm": {
+          "type": "step",
+          "text": "Kneel beside them. Place the arm nearest you at a right angle to their body, palm facing up.",
+          "next": "recovery_hand"
+        },
+        "recovery_hand": {
+          "type": "step",
+          "text": "Bring their far arm across the chest and hold the back of that hand against their nearest cheek.",
+          "next": "recovery_roll"
+        },
+        "recovery_roll": {
+          "type": "step",
+          "text": "With your other hand, pull the far knee up so the foot is flat on the ground. Now pull that knee toward you to roll them onto their side.",
+          "next": "recovery_airway"
+        },
+        "recovery_airway": {
+          "type": "step",
+          "text": "Tilt their head back gently to keep the airway open. Adjust the top leg so hip and knee are at right angles, keeping them stable.",
+          "donot": [
+            "Do not give them anything to eat or drink.",
+            "Do not put a pillow under their head.",
+            "Do not leave them alone."
+          ],
+          "next": "monitor_recovery",
+          "figure": "recovery_position"
+        },
+        "monitor_recovery": {
+          "type": "monitor",
+          "text": "Watch their breathing constantly until help arrives. If it stops or becomes gasping, roll them onto their back and tell me — we will start CPR."
+        }
+      }
+    },
+    {
+      "id": "choking_adult",
+      "family": "choking",
+      "name": "Choking — Adult / Child over 1 year",
+      "age_group": "adult",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "IFRC First Aid Guidelines 2020",
+        "ERC 2021 BLS",
+        "AHA 2025 Guidelines for CPR & ECC (verified, unchanged)"
+      ],
+      "keywords": [
+        [
+          "choking",
+          6
+        ],
+        [
+          "choke",
+          5
+        ],
+        [
+          "food stuck",
+          5
+        ],
+        [
+          "something stuck in throat",
+          6
+        ],
+        [
+          "can't breathe food",
+          5
+        ],
+        [
+          "heimlich",
+          5
+        ],
+        [
+          "airway blocked",
+          5
+        ],
+        [
+          "swallowed wrong",
+          4
+        ],
+        [
+          "clutching throat",
+          5
+        ],
+        [
+          "wrong pipe",
+          6
+        ],
+        [
+          "gagging",
+          5
+        ],
+        [
+          "cannot cough",
+          6
+        ],
+        [
+          "abdominal thrusts",
+          6
+        ],
+        [
+          "cannot talk",
+          5
+        ],
+        [
+          "cannot speak",
+          5
+        ],
+        [
+          "choked",
+          5
+        ],
+        [
+          "grabbing her throat",
+          6
+        ],
+        [
+          "grabbing his throat",
+          6
+        ],
+        [
+          "clutching her neck",
+          7
+        ],
+        [
+          "clutching his neck",
+          7
+        ],
+        [
+          "turning red",
+          4
+        ],
+        [
+          "cannot make a sound",
+          8
+        ],
+        [
+          "not making any sound",
+          7
+        ],
+        [
+          "went down",
+          4
+        ],
+        [
+          "no sound",
+          5
+        ]
+      ],
+      "exemplars": [
+        "he is choking on food",
+        "my wife is choking help",
+        "something is stuck in his throat he cannot breathe",
+        "choking on a piece of steak",
+        "how do i do the heimlich maneuver",
+        "she is grabbing her throat and cannot talk",
+        "person choking at dinner",
+        "it went down the wrong pipe he cannot talk",
+        "shes gagging and grabbing her neck",
+        "how do i do abdominal thrusts",
+        "he cannot cough it out at all"
+      ],
+      "visual_findings": [
+        "hands_at_throat",
+        "distress_face"
+      ],
+      "entry": "q_effective",
+      "nodes": {
+        "q_effective": {
+          "type": "question",
+          "prompt": "Can they cough loudly, speak, or breathe?",
+          "yes": "encourage_cough",
+          "no": "back_blows",
+          "unsure": "back_blows"
+        },
+        "encourage_cough": {
+          "type": "step",
+          "text": "Tell them to keep coughing as hard as they can — a strong cough is the best way to clear it. Stay right beside them.",
+          "donot": [
+            "Do not slap their back while they can still cough effectively.",
+            "Do not give them water to wash it down."
+          ],
+          "next": "q_cleared"
+        },
+        "q_cleared": {
+          "type": "question",
+          "prompt": "Did the object come out? Are they breathing normally now?",
+          "yes": "monitor_ok",
+          "no": "q_still_effective",
+          "unsure": "q_still_effective"
+        },
+        "q_still_effective": {
+          "type": "question",
+          "prompt": "Can they still cough loudly or speak?",
+          "yes": "encourage_cough",
+          "no": "back_blows",
+          "unsure": "back_blows"
+        },
+        "monitor_ok": {
+          "type": "monitor",
+          "text": "Good. Let them rest and sip water. If anything was removed by thrusts, or any pain or coughing continues, they must be checked by a doctor."
+        },
+        "back_blows": {
+          "type": "step",
+          "text": "Stand behind them and lean them well forward, supporting their chest with one hand. Give 5 sharp blows between the shoulder blades with the heel of your other hand. Look in the mouth after each blow.",
+          "next": "q_relief1",
+          "figure": "back_blows"
+        },
+        "q_relief1": {
+          "type": "question",
+          "prompt": "Is the object out? Can they breathe now?",
+          "yes": "monitor_after_severe",
+          "no": "abdominal_thrusts",
+          "unsure": "abdominal_thrusts"
+        },
+        "abdominal_thrusts": {
+          "type": "step",
+          "text": "Stand behind them. Make a fist and place it just above their belly button, thumb side against the belly. Grip it with your other hand and pull sharply inward and upward. Up to 5 times. If they are pregnant or you cannot reach around them, press on the center of the chest instead.",
+          "donot": [
+            "Never do abdominal thrusts on a baby under 1 year.",
+            "Do not do a blind finger sweep — only remove an object you can clearly see."
+          ],
+          "next": "q_relief2",
+          "figure": "abdominal_thrusts"
+        },
+        "q_relief2": {
+          "type": "question",
+          "prompt": "Is it out? Can they breathe?",
+          "yes": "monitor_after_severe",
+          "no": "alternate",
+          "unsure": "alternate"
+        },
+        "alternate": {
+          "type": "step",
+          "text": "Keep alternating: 5 back blows, then 5 thrusts. Check the mouth between rounds and remove anything you can clearly see.",
+          "next": "q_conscious_choke"
+        },
+        "q_conscious_choke": {
+          "type": "question",
+          "prompt": "Are they still awake and responding?",
+          "yes": "alternate",
+          "no": "to_cpr_choke",
+          "unsure": "to_cpr_choke"
+        },
+        "to_cpr_choke": {
+          "type": "escalate",
+          "protocol": "cardiac_arrest",
+          "text": "They have collapsed. We start CPR — the compressions can also push the object out. Look in the mouth after every set of 30 pushes."
+        },
+        "monitor_after_severe": {
+          "type": "monitor",
+          "text": "Well done. They still need to be checked by a doctor today — back blows and thrusts can cause hidden injuries, and a piece may remain in the airway."
+        }
+      }
+    },
+    {
+      "id": "choking_infant",
+      "family": "choking",
+      "name": "Choking — Infant (under 1 year)",
+      "age_group": "infant",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "IFRC First Aid Guidelines 2020",
+        "AHA 2020 Pediatric BLS",
+        "AHA 2025 Guidelines for CPR & ECC (verified, unchanged)"
+      ],
+      "keywords": [
+        [
+          "baby choking",
+          7
+        ],
+        [
+          "infant choking",
+          7
+        ],
+        [
+          "baby can't breathe",
+          6
+        ],
+        [
+          "baby swallowed",
+          5
+        ],
+        [
+          "choking on milk",
+          5
+        ]
+      ],
+      "exemplars": [
+        "my baby is choking",
+        "infant choking on a grape",
+        "baby swallowed a toy and is choking",
+        "my 6 month old cannot breathe something stuck",
+        "newborn choking on milk"
+      ],
+      "visual_findings": [
+        "infant_distress",
+        "cyanosis"
+      ],
+      "entry": "q_effective_i",
+      "nodes": {
+        "q_effective_i": {
+          "type": "question",
+          "prompt": "Is the baby coughing or crying loudly?",
+          "yes": "watch_cough_i",
+          "no": "position_i",
+          "unsure": "position_i"
+        },
+        "watch_cough_i": {
+          "type": "step",
+          "text": "Let the baby keep coughing — do not interfere while the cough is strong. Hold them upright and stay ready.",
+          "donot": [
+            "Do not shake the baby.",
+            "Do not hold the baby upside down by the legs.",
+            "Do not put your fingers in the mouth unless you clearly see the object."
+          ],
+          "next": "q_cleared_i"
+        },
+        "q_cleared_i": {
+          "type": "question",
+          "prompt": "Is the baby breathing and crying normally now?",
+          "yes": "monitor_ok_i",
+          "no": "position_i",
+          "unsure": "position_i"
+        },
+        "monitor_ok_i": {
+          "type": "monitor",
+          "text": "Good. Watch the baby closely. If any coughing, wheezing or feeding trouble continues, have them checked by a doctor today."
+        },
+        "position_i": {
+          "type": "step",
+          "text": "Sit down. Lay the baby face-down along your forearm, resting on your thigh, head lower than the bottom. Support the head and jaw with your hand — never squeeze the throat.",
+          "next": "backblows_i",
+          "figure": "infant_back_blows"
+        },
+        "backblows_i": {
+          "type": "step",
+          "text": "Give 5 firm back blows between the shoulder blades with the heel of your hand. Check the mouth after and remove anything you can clearly see.",
+          "next": "q_relief_i",
+          "figure": "infant_back_blows"
+        },
+        "q_relief_i": {
+          "type": "question",
+          "prompt": "Is the baby breathing or crying now?",
+          "yes": "monitor_after_i",
+          "no": "chest_thrusts_i",
+          "unsure": "chest_thrusts_i"
+        },
+        "chest_thrusts_i": {
+          "type": "step",
+          "text": "Turn the baby face-up along your other forearm, head still lower than the body. Put two fingers on the center of the chest just below the nipple line. Give 5 quick downward chest thrusts.",
+          "donot": [
+            "Never do abdominal thrusts on a baby.",
+            "Do not do a blind finger sweep."
+          ],
+          "next": "q_relief_i2"
+        },
+        "q_relief_i2": {
+          "type": "question",
+          "prompt": "Breathing or crying now?",
+          "yes": "monitor_after_i",
+          "no": "alternate_i",
+          "unsure": "alternate_i"
+        },
+        "alternate_i": {
+          "type": "step",
+          "text": "Keep alternating: 5 back blows face-down, then 5 chest thrusts face-up. Check the mouth between rounds.",
+          "next": "q_conscious_i"
+        },
+        "q_conscious_i": {
+          "type": "question",
+          "prompt": "Is the baby still awake and responding?",
+          "yes": "alternate_i",
+          "no": "to_cpr_i",
+          "unsure": "to_cpr_i"
+        },
+        "to_cpr_i": {
+          "type": "escalate",
+          "protocol": "cpr_infant",
+          "text": "The baby has gone limp. We start infant CPR now. Look in the mouth after every set of 30 pushes."
+        },
+        "monitor_after_i": {
+          "type": "monitor",
+          "text": "Well done. The baby must still be checked by a doctor today, even if they seem fine — thrusts can cause hidden injuries."
+        }
+      }
+    },
+    {
+      "id": "drowning",
+      "family": "drowning",
+      "name": "Drowning",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "ILCOR 2020",
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "drowning",
+          6
+        ],
+        [
+          "drowned",
+          6
+        ],
+        [
+          "pulled from water",
+          5
+        ],
+        [
+          "fell in the pool",
+          5
+        ],
+        [
+          "under water",
+          4
+        ],
+        [
+          "nearly drowned",
+          6
+        ],
+        [
+          "water rescue",
+          4
+        ],
+        [
+          "fell in the lake",
+          5
+        ],
+        [
+          "cannot swim",
+          6
+        ],
+        [
+          "swallowed water",
+          6
+        ],
+        [
+          "lake water",
+          6
+        ],
+        [
+          "pool water",
+          6
+        ],
+        [
+          "went under",
+          6
+        ],
+        [
+          "overboard",
+          7
+        ],
+        [
+          "fell in the water",
+          6
+        ],
+        [
+          "struggling in the water",
+          7
+        ]
+      ],
+      "exemplars": [
+        "my son fell in the pool and was under water",
+        "we pulled him from the water he is not moving",
+        "someone is drowning in the lake",
+        "drowning what do i do",
+        "she nearly drowned and is coughing a lot",
+        "baby was face down in the bathtub",
+        "he fell off the boat and cannot swim",
+        "she swallowed a lot of pool water and keeps coughing"
+      ],
+      "visual_findings": [
+        "person_in_water",
+        "wet_person_collapsed"
+      ],
+      "entry": "q_out_of_water",
+      "nodes": {
+        "q_out_of_water": {
+          "type": "question",
+          "prompt": "Are they out of the water now?",
+          "yes": "d_conscious_dr",
+          "no": "safe_rescue",
+          "unsure": "safe_rescue"
+        },
+        "safe_rescue": {
+          "type": "step",
+          "text": "Do not swim to them unless you are trained — drowning people pull rescuers under. Reach with a pole, branch or towel, or throw something that floats. Shout for a lifeguard.",
+          "donot": [
+            "Do not enter deep or moving water yourself."
+          ],
+          "next": "q_out_now"
+        },
+        "q_out_now": {
+          "type": "question",
+          "prompt": "Are they out of the water now?",
+          "yes": "d_conscious_dr",
+          "no": "safe_rescue",
+          "unsure": "safe_rescue"
+        },
+        "d_conscious_dr": {
+          "type": "decision",
+          "fact": "consciousness",
+          "cases": {
+            "unresponsive": "d_breathing_dr",
+            "responsive": "awake_wet"
+          },
+          "default": "q_conscious_dr"
+        },
+        "q_conscious_dr": {
+          "type": "question",
+          "prompt": "Are they awake and responding to you?",
+          "yes": "awake_wet",
+          "no": "d_breathing_dr",
+          "unsure": "d_breathing_dr"
+        },
+        "d_breathing_dr": {
+          "type": "decision",
+          "fact": "breathing",
+          "cases": {
+            "not_breathing": "to_cpr_dr",
+            "abnormal": "to_cpr_dr",
+            "breathing": "recovery_dr"
+          },
+          "default": "q_breathing_dr"
+        },
+        "q_breathing_dr": {
+          "type": "question",
+          "prompt": "Tilt the head back and watch the chest for up to 10 seconds. Breathing normally?",
+          "yes": "recovery_dr",
+          "no": "to_cpr_dr",
+          "unsure": "to_cpr_dr"
+        },
+        "to_cpr_dr": {
+          "type": "escalate",
+          "protocol": "cardiac_arrest",
+          "text": "We start CPR now. For drowning, rescue breaths matter even more than usual — if you possibly can, give the breaths."
+        },
+        "recovery_dr": {
+          "type": "step",
+          "text": "Roll them onto their side so water can drain and the airway stays clear. Remove wet clothes and cover them with anything dry and warm.",
+          "next": "monitor_dr",
+          "figure": "recovery_position"
+        },
+        "awake_wet": {
+          "type": "step",
+          "text": "Help them rest sitting or lying on their side. Take off wet clothes and keep them warm and still.",
+          "next": "monitor_dr"
+        },
+        "monitor_dr": {
+          "type": "monitor",
+          "text": "Everyone who has been under water needs medical assessment, even if they seem fine — lungs can worsen hours later. Watch for coughing, breathlessness or unusual tiredness, and tell me if breathing changes."
+        }
+      }
+    },
+    {
+      "id": "asthma_attack",
+      "family": "asthma",
+      "name": "Asthma attack",
+      "age_group": "any",
+      "severity": "urgent",
+      "ems": "conditional",
+      "sources": [
+        "IFRC First Aid Guidelines 2020",
+        "Asthma 4x4x4 first aid protocol"
+      ],
+      "keywords": [
+        [
+          "asthma",
+          6
+        ],
+        [
+          "asthma attack",
+          7
+        ],
+        [
+          "inhaler",
+          5
+        ],
+        [
+          "wheezing",
+          5
+        ],
+        [
+          "puffer",
+          5
+        ],
+        [
+          "ventolin",
+          5
+        ],
+        [
+          "tight chest wheeze",
+          4
+        ],
+        [
+          "wheezing hard",
+          6
+        ],
+        [
+          "flaring",
+          4
+        ],
+        [
+          "puffs",
+          5
+        ],
+        [
+          "barely talk",
+          4
+        ]
+      ],
+      "exemplars": [
+        "she is having an asthma attack",
+        "my asthma is really bad i can barely breathe",
+        "asthma attack no inhaler",
+        "he is wheezing badly and has asthma",
+        "where is his puffer he cannot breathe",
+        "kid having asthma attack at school"
+      ],
+      "visual_findings": [
+        "distress_face",
+        "labored_breathing"
+      ],
+      "entry": "q_severe_a",
+      "nodes": {
+        "q_severe_a": {
+          "type": "question",
+          "prompt": "Are their lips or face turning blue, or are they too breathless to speak more than a word or two?",
+          "yes": "ems_severe_a",
+          "no": "sit_upright",
+          "unsure": "sit_upright"
+        },
+        "ems_severe_a": {
+          "type": "step",
+          "text": "Call emergency services now — this is a severe attack. Keep them sitting upright and stay calm with them.",
+          "flags": [
+            "ems"
+          ],
+          "next": "reliever_severe"
+        },
+        "reliever_severe": {
+          "type": "step",
+          "text": "Give 4 puffs of their blue reliever inhaler, one puff at a time, 4 breaths after each puff. Use a spacer if there is one. Repeat 4 puffs every 4 minutes until help arrives.",
+          "next": "monitor_severe_a"
+        },
+        "monitor_severe_a": {
+          "type": "monitor",
+          "text": "Keep them upright and keep giving 4 puffs every 4 minutes. If they stop responding or stop breathing, tell me immediately."
+        },
+        "sit_upright": {
+          "type": "step",
+          "text": "Sit them upright, slightly leaning forward. Stay calm and encourage slow steady breaths.",
+          "donot": [
+            "Do not lie them down.",
+            "Do not leave them alone."
+          ],
+          "next": "q_has_inhaler"
+        },
+        "q_has_inhaler": {
+          "type": "question",
+          "prompt": "Do they have their reliever inhaler — the blue one — with them?",
+          "yes": "reliever_4x4",
+          "no": "ems_no_inhaler",
+          "unsure": "ems_no_inhaler"
+        },
+        "reliever_4x4": {
+          "type": "step",
+          "text": "Give 4 puffs, one at a time, with 4 slow breaths after each puff. Use a spacer if available. Then wait 4 minutes.",
+          "next": "q_improved_a"
+        },
+        "q_improved_a": {
+          "type": "question",
+          "prompt": "Is their breathing improving?",
+          "yes": "monitor_improving_a",
+          "no": "ems_not_improving",
+          "unsure": "ems_not_improving"
+        },
+        "ems_not_improving": {
+          "type": "step",
+          "text": "Call emergency services now — an attack that does not respond to the inhaler is an emergency. Keep giving 4 puffs every 4 minutes until help arrives.",
+          "flags": [
+            "ems"
+          ],
+          "next": "monitor_severe_a"
+        },
+        "ems_no_inhaler": {
+          "type": "step",
+          "text": "No inhaler means call emergency services now. Keep them sitting upright, calm, and breathing slowly with you.",
+          "flags": [
+            "ems"
+          ],
+          "next": "monitor_severe_a"
+        },
+        "monitor_improving_a": {
+          "type": "monitor",
+          "text": "Good. Let them rest sitting up and keep the inhaler at hand. If symptoms return or worsen, give 4 more puffs and tell me. They should see a doctor about this attack."
+        }
+      }
+    },
+    {
+      "id": "hyperventilation_panic",
+      "family": "panic",
+      "name": "Panic attack / hyperventilation",
+      "age_group": "any",
+      "severity": "moderate",
+      "ems": "conditional",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "panic attack",
+          6
+        ],
+        [
+          "hyperventilating",
+          6
+        ],
+        [
+          "breathing too fast",
+          5
+        ],
+        [
+          "tingling fingers anxiety",
+          4
+        ],
+        [
+          "anxiety attack",
+          6
+        ],
+        [
+          "freaking out can't breathe",
+          4
+        ],
+        [
+          "heart racing",
+          5
+        ],
+        [
+          "tingling",
+          4
+        ],
+        [
+          "feel like i am dying",
+          6
+        ],
+        [
+          "breathing fast",
+          5
+        ],
+        [
+          "cannot calm",
+          6
+        ],
+        [
+          "freaking out",
+          5
+        ],
+        [
+          "heart is pounding",
+          6
+        ],
+        [
+          "this always happens",
+          6
+        ],
+        [
+          "always happens",
+          5
+        ]
+      ],
+      "exemplars": [
+        "i think i am having a panic attack",
+        "she is hyperventilating",
+        "my friend is breathing too fast and panicking",
+        "anxiety attack cannot calm down",
+        "i cant breathe i am panicking my hands are tingling",
+        "my heart is pounding and my hands are tingling i think i am dying",
+        "she is breathing way too fast and freaking out"
+      ],
+      "visual_findings": [
+        "distress_face",
+        "rapid_breathing"
+      ],
+      "entry": "q_cardiac_rule",
+      "nodes": {
+        "q_cardiac_rule": {
+          "type": "question",
+          "prompt": "First, safety check: do they have chest pain or pressure, or any heart condition, or is this the first time something like this has happened?",
+          "yes": "to_heart",
+          "no": "calm_position",
+          "unsure": "to_heart"
+        },
+        "to_heart": {
+          "type": "escalate",
+          "protocol": "heart_attack",
+          "text": "Chest symptoms must be treated as a heart problem first — better safe."
+        },
+        "calm_position": {
+          "type": "step",
+          "text": "Sit them somewhere quiet. Speak slowly and calmly: this feeling is frightening but not dangerous, and it will pass.",
+          "next": "breathing_coach"
+        },
+        "breathing_coach": {
+          "type": "step",
+          "text": "Breathe with them: in slowly through the nose for 4 counts, then out gently through the mouth for 6 counts. Repeat together. Tingling or dizziness fades as breathing slows.",
+          "donot": [
+            "Do not use a paper bag to rebreathe.",
+            "Do not dismiss them or tell them to just calm down."
+          ],
+          "next": "q_settling"
+        },
+        "q_settling": {
+          "type": "question",
+          "prompt": "After a few minutes of slow breathing, are they starting to settle?",
+          "yes": "monitor_panic",
+          "no": "ems_panic",
+          "unsure": "breathing_coach"
+        },
+        "ems_panic": {
+          "type": "step",
+          "text": "If this does not settle within 20 to 30 minutes, or you are unsure it is only panic, call emergency services or a doctor now — some medical problems look like panic.",
+          "flags": [
+            "ems"
+          ],
+          "next": "monitor_panic"
+        },
+        "monitor_panic": {
+          "type": "monitor",
+          "text": "Stay with them and keep the slow breathing going. Afterwards, suggest they talk to a doctor — panic attacks are treatable."
+        }
+      }
+    },
+    {
+      "id": "croup",
+      "family": "croup",
+      "name": "Croup (barking cough in a child)",
+      "age_group": "any",
+      "severity": "urgent",
+      "ems": "conditional",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "croup",
+          7
+        ],
+        [
+          "barking cough",
+          7
+        ],
+        [
+          "seal cough",
+          6
+        ],
+        [
+          "stridor",
+          6
+        ],
+        [
+          "noisy breathing child",
+          4
+        ],
+        [
+          "harsh cough child night",
+          4
+        ],
+        [
+          "barky",
+          7
+        ],
+        [
+          "barky cough",
+          8
+        ],
+        [
+          "drooling",
+          4
+        ],
+        [
+          "cannot swallow",
+          4
+        ]
+      ],
+      "exemplars": [
+        "my toddler has a barking cough like a seal",
+        "child woke up with croup cannot breathe well",
+        "harsh barking cough and noisy breathing",
+        "my kid has croup what do i do",
+        "baby making squeaking noise when breathing in with barky cough",
+        "his cough is barky and he is drooling a bit"
+      ],
+      "visual_findings": [
+        "child_distress",
+        "labored_breathing"
+      ],
+      "entry": "q_croup_severe",
+      "nodes": {
+        "q_croup_severe": {
+          "type": "question",
+          "prompt": "Is the child struggling to breathe while sitting still, turning blue or gray around the lips, drooling and unable to swallow, or unusually sleepy?",
+          "yes": "ems_croup",
+          "no": "calm_croup",
+          "unsure": "ems_croup"
+        },
+        "ems_croup": {
+          "type": "step",
+          "text": "Call emergency services now. Keep the child sitting upright on your lap and as calm as possible — crying makes the swelling worse.",
+          "flags": [
+            "ems"
+          ],
+          "donot": [
+            "Do not look in the throat with a stick or spoon.",
+            "Do not force them to lie down."
+          ],
+          "next": "monitor_croup_sev"
+        },
+        "monitor_croup_sev": {
+          "type": "monitor",
+          "text": "Keep them upright, calm and close to you until help arrives. Tell me immediately if they get sleepier or their breathing gets noisier or quieter."
+        },
+        "calm_croup": {
+          "type": "step",
+          "text": "Sit the child upright on your lap and keep them calm — comfort is real treatment here. Offer sips of a cool drink.",
+          "donot": [
+            "Do not use steam from hot water — it does not help and can scald.",
+            "Do not give cough medicines to young children."
+          ],
+          "next": "cool_air"
+        },
+        "cool_air": {
+          "type": "step",
+          "text": "Cool moist air can ease it: sit with them by an open window or step outside in the cool air for a few minutes, keeping them wrapped warm.",
+          "next": "q_croup_better"
+        },
+        "q_croup_better": {
+          "type": "question",
+          "prompt": "Is their breathing settling while they are calm?",
+          "yes": "monitor_croup",
+          "no": "ems_croup",
+          "unsure": "ems_croup"
+        },
+        "monitor_croup": {
+          "type": "monitor",
+          "text": "Stay with them tonight; croup often worsens at night. See a doctor today. If breathing gets harder, noisy at rest, or they turn pale or blue, call emergency services."
+        }
+      }
+    },
+    {
+      "id": "opioid_overdose",
+      "family": "overdose",
+      "name": "Opioid overdose",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "AHA 2020 Opioid-Associated Emergency",
+        "SAMHSA Opioid Overdose Toolkit",
+        "AHA 2025 Guidelines for CPR & ECC (verified, unchanged)"
+      ],
+      "keywords": [
+        [
+          "overdose",
+          6
+        ],
+        [
+          "overdosed",
+          6
+        ],
+        [
+          "heroin",
+          5
+        ],
+        [
+          "fentanyl",
+          6
+        ],
+        [
+          "opioid",
+          6
+        ],
+        [
+          "naloxone",
+          6
+        ],
+        [
+          "narcan",
+          6
+        ],
+        [
+          "took too many pills",
+          5
+        ],
+        [
+          "pinpoint pupils",
+          5
+        ],
+        [
+          "od",
+          4
+        ],
+        [
+          "needles",
+          4
+        ],
+        [
+          "nodding off",
+          6
+        ],
+        [
+          "oxys",
+          6
+        ],
+        [
+          "oxycodone",
+          6
+        ],
+        [
+          "barely breathing",
+          5
+        ],
+        [
+          "tiny pupils",
+          6
+        ],
+        [
+          "vaping",
+          3
+        ],
+        [
+          "hallucinating",
+          3
+        ],
+        [
+          "syringe",
+          7
+        ],
+        [
+          "pupils like pinheads",
+          8
+        ],
+        [
+          "pinheads",
+          7
+        ],
+        [
+          "needle marks",
+          6
+        ]
+      ],
+      "exemplars": [
+        "i think he overdosed on heroin",
+        "my friend took fentanyl and won't wake up",
+        "overdose barely breathing tiny pupils",
+        "she took too many oxycodone pills",
+        "how do i use narcan",
+        "opioid overdose help",
+        "found him with needles barely breathing",
+        "he is nodding off after taking pills"
+      ],
+      "visual_findings": [
+        "person_collapsed",
+        "cyanosis",
+        "drug_paraphernalia"
+      ],
+      "entry": "q_responsive_od",
+      "nodes": {
+        "q_responsive_od": {
+          "type": "question",
+          "prompt": "Shout their name and rub your knuckles hard on their breastbone. Do they respond?",
+          "yes": "awake_od",
+          "no": "d_breathing_od",
+          "unsure": "d_breathing_od"
+        },
+        "awake_od": {
+          "type": "step",
+          "text": "Keep them awake and talking. Do not let them use anything more. If you have naloxone — Narcan — keep it right beside you.",
+          "next": "monitor_od_awake"
+        },
+        "monitor_od_awake": {
+          "type": "monitor",
+          "text": "Watch them constantly — overdose can deepen suddenly. If they get sleepy, breathe slowly, or their lips turn blue, tell me immediately."
+        },
+        "d_breathing_od": {
+          "type": "decision",
+          "fact": "breathing",
+          "cases": {
+            "not_breathing": "to_cpr_od",
+            "abnormal": "naloxone_q"
+          },
+          "default": "q_breathing_od"
+        },
+        "q_breathing_od": {
+          "type": "question",
+          "prompt": "Watch their chest for up to 10 seconds. Are they breathing normally — not slow, shallow or snoring?",
+          "yes": "naloxone_q",
+          "no": "q_any_breathing_od",
+          "unsure": "q_any_breathing_od"
+        },
+        "to_cpr_od": {
+          "type": "escalate",
+          "protocol": "cardiac_arrest",
+          "text": "Not breathing means CPR now. If naloxone is within reach, give it as soon as possible without stopping compressions for long."
+        },
+        "naloxone_q": {
+          "type": "question",
+          "prompt": "Do you have naloxone — Narcan nasal spray or an injector — available?",
+          "yes": "give_naloxone",
+          "no": "q_breath_adequate",
+          "unsure": "q_breath_adequate"
+        },
+        "give_naloxone": {
+          "type": "step",
+          "text": "Give it now: for nasal spray, insert the nozzle in one nostril and press the plunger firmly. If there is no response after 2 to 3 minutes, give a second dose in the other nostril.",
+          "next": "q_breath_adequate"
+        },
+        "recovery_od": {
+          "type": "step",
+          "text": "Roll them onto their side in the recovery position so they cannot choke. Stay with them — naloxone wears off before the drug does, and the overdose can return.",
+          "donot": [
+            "Do not put them in a bath or shower.",
+            "Do not try to make them vomit.",
+            "Do not leave them alone."
+          ],
+          "next": "monitor_od",
+          "figure": "recovery_position"
+        },
+        "monitor_od": {
+          "type": "monitor",
+          "text": "Watch their breathing constantly until help arrives. If it stops or becomes gasping, tell me immediately and we start CPR."
+        },
+        "q_any_breathing_od": {
+          "type": "question",
+          "prompt": "Is there ANY breathing at all, even slow or shallow?",
+          "yes": "naloxone_q",
+          "no": "to_cpr_od",
+          "unsure": "to_cpr_od"
+        },
+        "q_breath_adequate": {
+          "type": "question",
+          "prompt": "Is their breathing adequate now — a regular breath at least every 5 seconds?",
+          "yes": "recovery_od",
+          "no": "rescue_breaths_od",
+          "unsure": "rescue_breaths_od"
+        },
+        "rescue_breaths_od": {
+          "type": "step",
+          "text": "Their breathing is too slow — help them breathe: lay them on their back, tilt the head back, lift the chin, pinch the nose, and give one gentle breath every 5 seconds. Keep going until they breathe normally, more naloxone is due, or help takes over.",
+          "donot": [
+            "Do not leave them alone.",
+            "Do not put them in the recovery position while giving breaths."
+          ],
+          "next": "monitor_od_breaths",
+          "figure": "head_tilt"
+        },
+        "monitor_od_breaths": {
+          "type": "monitor",
+          "text": "Keep the rescue breaths going and give the second naloxone dose after 2 to 3 minutes if there is no response. Tell me immediately if they stop breathing entirely — we start CPR."
+        }
+      }
+    }
+  ]
+}

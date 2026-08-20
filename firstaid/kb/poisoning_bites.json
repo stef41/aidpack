@@ -1,0 +1,1197 @@
+{
+  "protocols": [
+    {
+      "id": "poisoning_swallowed",
+      "family": "poisoning",
+      "name": "Swallowed poison or chemicals",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "WHO poisoning guidance",
+        "AAPCC recommendations",
+        "IFRC 2020",
+        "NCPC Button Battery Triage Guideline"
+      ],
+      "keywords": [
+        [
+          "swallowed poison",
+          9
+        ],
+        [
+          "drank bleach",
+          9
+        ],
+        [
+          "swallowed pills",
+          8
+        ],
+        [
+          "ate a battery",
+          9
+        ],
+        [
+          "swallowed detergent",
+          9
+        ],
+        [
+          "poisoned",
+          7
+        ],
+        [
+          "drank chemicals",
+          9
+        ],
+        [
+          "ate medicine",
+          7
+        ],
+        [
+          "swallowed a coin",
+          6
+        ],
+        [
+          "overdose pills",
+          7
+        ],
+        [
+          "swallowed a battery",
+          9
+        ],
+        [
+          "button battery",
+          9
+        ],
+        [
+          "watch battery",
+          8
+        ],
+        [
+          "battery",
+          5
+        ],
+        [
+          "sniffed",
+          5
+        ],
+        [
+          "glue",
+          3
+        ],
+        [
+          "paint thinner",
+          6
+        ],
+        [
+          "sleeping pills",
+          6
+        ],
+        [
+          "medicine cabinet",
+          6
+        ],
+        [
+          "weed killer",
+          7
+        ],
+        [
+          "antifreeze",
+          7
+        ],
+        [
+          "dishwasher",
+          6
+        ],
+        [
+          "dishwasher tablets",
+          8
+        ],
+        [
+          "swallowed",
+          4
+        ],
+        [
+          "detergent pod",
+          9
+        ],
+        [
+          "licked",
+          5
+        ],
+        [
+          "pod",
+          5
+        ],
+        [
+          "detergent",
+          6
+        ],
+        [
+          "vitamin",
+          5
+        ],
+        [
+          "gummies",
+          6
+        ],
+        [
+          "ate the whole",
+          6
+        ],
+        [
+          "whole jar",
+          6
+        ]
+      ],
+      "exemplars": [
+        "my toddler drank some bleach",
+        "kid swallowed grandma's pills",
+        "he drank antifreeze by accident",
+        "child ate laundry detergent pod",
+        "she swallowed a button battery",
+        "someone swallowed rat poison what do i do",
+        "he got paint thinner in his mouth",
+        "she took a whole bottle of sleeping pills"
+      ],
+      "visual_findings": [
+        "chemical_container",
+        "pill_bottle",
+        "child_distress"
+      ],
+      "entry": "identify_poison",
+      "nodes": {
+        "identify_poison": {
+          "type": "step",
+          "text": "Take the container, packet or plant with you and keep it — knowing WHAT and HOW MUCH decides the treatment. Note the time it happened.",
+          "next": "clear_mouth"
+        },
+        "clear_mouth": {
+          "type": "step",
+          "text": "If anything is still in their mouth, have them spit it out. Wipe the mouth gently with a cloth.",
+          "donot": [
+            "Do NOT make them vomit — it burns twice on the way back up and can choke them.",
+            "Do not give salt water, milk, or charcoal unless poison control tells you to.",
+            "Do not give anything to drink unless poison control says so."
+          ],
+          "next": "q_conscious_poison"
+        },
+        "q_conscious_poison": {
+          "type": "question",
+          "prompt": "Are they awake and breathing normally?",
+          "yes": "q_battery",
+          "no": "recovery_poison",
+          "unsure": "recovery_poison"
+        },
+        "recovery_poison": {
+          "type": "step",
+          "text": "Roll them into the recovery position on their side so they cannot choke, and watch their breathing constantly.",
+          "next": "monitor_poison"
+        },
+        "poison_center": {
+          "type": "step",
+          "text": "While waiting for help, call your poison center if you have the number — in the US, 1-800-222-1222 — and follow their instructions exactly. A button battery swallowed is always an immediate emergency, even with no symptoms.",
+          "next": "monitor_poison"
+        },
+        "monitor_poison": {
+          "type": "monitor",
+          "text": "Keep the container ready to hand over. Tell me immediately if they vomit, become drowsy, have a seizure, or their breathing changes."
+        },
+        "q_battery": {
+          "type": "question",
+          "prompt": "Did they swallow a button battery — a small flat disc battery, like from a watch, remote, or toy?",
+          "yes": "battery_honey",
+          "no": "poison_center",
+          "unsure": "poison_center"
+        },
+        "battery_honey": {
+          "type": "step",
+          "text": "A swallowed button battery burns through the food pipe within hours — get to an emergency department NOW, even with no symptoms. On the way: if the child is over 1 year old, swallowed it within the last 12 hours, and can swallow, give 2 teaspoons of ordinary honey every 10 minutes, up to 6 doses.",
+          "donot": [
+            "Do not delay leaving for the hospital to find honey.",
+            "Do not give honey to a baby under 1 year.",
+            "Do not give any other food or drink."
+          ],
+          "flags": [
+            "ems"
+          ],
+          "next": "monitor_battery"
+        },
+        "monitor_battery": {
+          "type": "monitor",
+          "text": "Head for emergency care now and bring the battery packaging if you have it. Tell me immediately if they vomit, cough blood, or become drowsy."
+        }
+      }
+    },
+    {
+      "id": "carbon_monoxide",
+      "family": "carbon_monoxide",
+      "name": "Carbon monoxide / toxic fumes",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "IFRC First Aid Guidelines 2020",
+        "CDC CO guidance"
+      ],
+      "keywords": [
+        [
+          "carbon monoxide",
+          10
+        ],
+        [
+          "co alarm",
+          9
+        ],
+        [
+          "gas leak",
+          8
+        ],
+        [
+          "fumes",
+          6
+        ],
+        [
+          "generator inside",
+          8
+        ],
+        [
+          "headache everyone at home",
+          7
+        ],
+        [
+          "exhaust in garage",
+          8
+        ],
+        [
+          "smoke inhalation",
+          8
+        ],
+        [
+          "generator",
+          6
+        ],
+        [
+          "exhaust",
+          5
+        ],
+        [
+          "boiler",
+          4
+        ],
+        [
+          "bbq in the tent",
+          7
+        ]
+      ],
+      "exemplars": [
+        "our carbon monoxide alarm is going off and we feel dizzy",
+        "everyone in the house has a headache and feels sick",
+        "he was running the generator in the garage and passed out",
+        "gas leak my roommate is nauseous",
+        "she breathed a lot of smoke in the fire"
+      ],
+      "visual_findings": [
+        "smoke_scene",
+        "person_collapsed"
+      ],
+      "entry": "get_out_co",
+      "nodes": {
+        "get_out_co": {
+          "type": "step",
+          "text": "Get everyone — including yourself — into fresh air NOW. Open doors on your way out if quick and safe. Do not stay to find the source.",
+          "donot": [
+            "Do not go back inside for belongings or pets.",
+            "Do not light anything or flip switches if you smell gas."
+          ],
+          "next": "count_heads"
+        },
+        "count_heads": {
+          "type": "step",
+          "text": "Outside, count that everyone is out. If someone is still inside, tell the emergency operator — do NOT go back in yourself; rescuers have air tanks.",
+          "next": "q_conscious_co"
+        },
+        "q_conscious_co": {
+          "type": "question",
+          "prompt": "Is everyone awake and breathing normally?",
+          "yes": "rest_co",
+          "no": "d_breathing_co",
+          "unsure": "d_breathing_co"
+        },
+        "d_breathing_co": {
+          "type": "decision",
+          "fact": "breathing",
+          "cases": {
+            "not_breathing": "to_cpr_co",
+            "abnormal": "to_cpr_co",
+            "breathing": "recovery_co"
+          },
+          "default": "q_breathing_co"
+        },
+        "q_breathing_co": {
+          "type": "question",
+          "prompt": "For the person who is not awake — are they breathing normally?",
+          "yes": "recovery_co",
+          "no": "to_cpr_co",
+          "unsure": "to_cpr_co"
+        },
+        "to_cpr_co": {
+          "type": "escalate",
+          "protocol": "cardiac_arrest",
+          "text": "We start CPR now, in the fresh air."
+        },
+        "recovery_co": {
+          "type": "step",
+          "text": "Recovery position on their side, in fresh air, and watch their breathing constantly.",
+          "next": "monitor_co"
+        },
+        "rest_co": {
+          "type": "step",
+          "text": "Keep everyone resting quietly in fresh air — exertion worsens the poisoning. Everyone exposed should be checked by the medics, even if feeling better: CO effects can linger and rebound.",
+          "next": "monitor_co"
+        },
+        "monitor_co": {
+          "type": "monitor",
+          "text": "Nobody goes back inside until professionals declare it safe. Tell me if anyone develops headache, confusion, chest pain or drowsiness."
+        }
+      }
+    },
+    {
+      "id": "alcohol_poisoning",
+      "family": "alcohol_poisoning",
+      "name": "Alcohol poisoning",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "alcohol poisoning",
+          9
+        ],
+        [
+          "drank too much",
+          7
+        ],
+        [
+          "passed out drunk",
+          8
+        ],
+        [
+          "blackout drunk",
+          7
+        ],
+        [
+          "unresponsive after drinking",
+          8
+        ],
+        [
+          "drunk won't wake up",
+          9
+        ],
+        [
+          "binge drinking collapsed",
+          8
+        ],
+        [
+          "shots",
+          4
+        ],
+        [
+          "blackout",
+          5
+        ],
+        [
+          "drank way too much",
+          8
+        ],
+        [
+          "barely conscious",
+          5
+        ],
+        [
+          "vomiting in her sleep",
+          8
+        ],
+        [
+          "vomiting in his sleep",
+          8
+        ],
+        [
+          "after the party",
+          6
+        ],
+        [
+          "cannot really wake",
+          6
+        ],
+        [
+          "vodka",
+          7
+        ],
+        [
+          "whiskey",
+          7
+        ],
+        [
+          "bottle of vodka",
+          8
+        ],
+        [
+          "barely rousable",
+          7
+        ],
+        [
+          "rousable",
+          5
+        ]
+      ],
+      "exemplars": [
+        "my friend drank way too much and won't wake up",
+        "he passed out drunk and is breathing weird",
+        "alcohol poisoning at a party what do i do",
+        "she is blackout drunk and vomiting while lying down",
+        "college kid unresponsive after shots"
+      ],
+      "visual_findings": [
+        "person_collapsed",
+        "bottles_scene",
+        "vomit"
+      ],
+      "entry": "q_responsive_alc",
+      "nodes": {
+        "q_responsive_alc": {
+          "type": "question",
+          "prompt": "Do they respond when you shout their name and shake their shoulder — even just groaning?",
+          "yes": "recovery_alc_awake",
+          "no": "d_breathing_alc",
+          "unsure": "d_breathing_alc"
+        },
+        "d_breathing_alc": {
+          "type": "decision",
+          "fact": "breathing",
+          "cases": {
+            "not_breathing": "to_cpr_alc",
+            "abnormal": "to_cpr_alc",
+            "breathing": "recovery_alc"
+          },
+          "default": "q_breathing_alc"
+        },
+        "q_breathing_alc": {
+          "type": "question",
+          "prompt": "Watch their chest for up to 10 seconds — breathing normally, at least 8 breaths a minute, no long gaps?",
+          "yes": "recovery_alc",
+          "no": "to_cpr_alc",
+          "unsure": "to_cpr_alc"
+        },
+        "to_cpr_alc": {
+          "type": "escalate",
+          "protocol": "cardiac_arrest",
+          "text": "We start CPR now."
+        },
+        "recovery_alc": {
+          "type": "step",
+          "text": "Roll them into the recovery position on their side so vomit cannot choke them. Cover them with a blanket — alcohol drains body heat.",
+          "donot": [
+            "Do not leave them alone or let them sleep it off on their back.",
+            "Do not give coffee, food, or a cold shower — none of it sobers anyone and it can harm them.",
+            "Do not try to make them vomit."
+          ],
+          "next": "monitor_alc",
+          "figure": "recovery_position"
+        },
+        "recovery_alc_awake": {
+          "type": "step",
+          "text": "Keep them on their side, warm, and watched. Give small sips of water only if they are properly awake and can swallow.",
+          "donot": [
+            "Do not leave them alone.",
+            "Do not give coffee or a cold shower.",
+            "Do not let them drink more alcohol."
+          ],
+          "next": "monitor_alc",
+          "figure": "recovery_position"
+        },
+        "monitor_alc": {
+          "type": "monitor",
+          "text": "Check their breathing every few minutes until help arrives. Tell me immediately if breathing slows, they gasp, they cannot be woken at all, or they have a seizure."
+        }
+      }
+    },
+    {
+      "id": "snake_bite",
+      "family": "snake_bite",
+      "name": "Snake bite",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "WHO snakebite guidance",
+        "Wilderness Medical Society"
+      ],
+      "keywords": [
+        [
+          "snake bite",
+          10
+        ],
+        [
+          "bitten by a snake",
+          10
+        ],
+        [
+          "snakebite",
+          10
+        ],
+        [
+          "rattlesnake",
+          9
+        ],
+        [
+          "viper",
+          8
+        ],
+        [
+          "cobra",
+          9
+        ],
+        [
+          "snake bit him",
+          10
+        ],
+        [
+          "fang marks",
+          7
+        ],
+        [
+          "puncture marks",
+          6
+        ],
+        [
+          "copperhead",
+          9
+        ],
+        [
+          "fang",
+          7
+        ],
+        [
+          "slithered",
+          6
+        ],
+        [
+          "punctures",
+          5
+        ]
+      ],
+      "exemplars": [
+        "a snake just bit my leg",
+        "rattlesnake bite on his ankle",
+        "my dog scared up a snake and it bit my son",
+        "bitten by a snake while hiking what do i do",
+        "snake bite is swelling fast"
+      ],
+      "visual_findings": [
+        "bite_marks",
+        "swollen_limb",
+        "snake_visible"
+      ],
+      "entry": "away_snake",
+      "nodes": {
+        "away_snake": {
+          "type": "step",
+          "text": "Move away from the snake — do not try to catch or kill it. A photo from a safe distance helps identification, but only if easy.",
+          "next": "still_calm_sb"
+        },
+        "still_calm_sb": {
+          "type": "step",
+          "text": "Keep them STILL and calm — movement pumps venom through the body. Sit or lie them down and keep the bitten limb still, below heart level, supported like a broken bone.",
+          "donot": [
+            "Do not cut the wound or try to suck out venom.",
+            "Do not apply ice or a tourniquet.",
+            "Do not give alcohol, caffeine, or painkillers like ibuprofen or aspirin."
+          ],
+          "next": "remove_tight_sb"
+        },
+        "remove_tight_sb": {
+          "type": "step",
+          "text": "Remove rings, watches and tight clothing near the bite now — before swelling. Mark the edge of the swelling on the skin with a pen and the time, if you can.",
+          "next": "clean_cover_sb"
+        },
+        "clean_cover_sb": {
+          "type": "step",
+          "text": "Cover the bite with a clean, loose dressing. Keep the person warm and completely at rest. If they must be moved to reach help, carry them — walking spreads venom.",
+          "next": "monitor_sb"
+        },
+        "monitor_sb": {
+          "type": "monitor",
+          "text": "Keep them still until help arrives. Tell me immediately if they have trouble breathing, drooping eyelids, vomiting, severe swelling, or become drowsy — and if you are in Australia, tell the operator: a firm pressure bandage over the whole limb is used there for some snakes."
+        }
+      }
+    },
+    {
+      "id": "bee_sting",
+      "family": "sting",
+      "name": "Bee / wasp / insect sting",
+      "age_group": "any",
+      "severity": "minor",
+      "ems": "self_care",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "bee sting",
+          9
+        ],
+        [
+          "wasp sting",
+          9
+        ],
+        [
+          "stung by a bee",
+          9
+        ],
+        [
+          "hornet",
+          8
+        ],
+        [
+          "insect sting",
+          8
+        ],
+        [
+          "stinger stuck",
+          8
+        ],
+        [
+          "got stung",
+          7
+        ],
+        [
+          "stung",
+          6
+        ],
+        [
+          "stinger",
+          7
+        ],
+        [
+          "wasp",
+          6
+        ],
+        [
+          "wasp got me",
+          8
+        ],
+        [
+          "bee",
+          5
+        ],
+        [
+          "hornet sting",
+          8
+        ],
+        [
+          "swarmed",
+          6
+        ],
+        [
+          "dozens of stings",
+          8
+        ]
+      ],
+      "exemplars": [
+        "i got stung by a bee on my hand",
+        "wasp stung my kid on the neck",
+        "bee sting the stinger is still in",
+        "stung by a hornet it is swelling",
+        "multiple wasp stings while gardening"
+      ],
+      "visual_findings": [
+        "sting_site",
+        "red_skin",
+        "swollen_area"
+      ],
+      "entry": "q_allergy_sting",
+      "nodes": {
+        "q_allergy_sting": {
+          "type": "question",
+          "prompt": "Critical check: do they have a known severe allergy, or any trouble breathing, tongue or throat swelling, widespread hives, dizziness or vomiting?",
+          "yes": "to_ana_sting",
+          "no": "remove_stinger",
+          "unsure": "remove_stinger"
+        },
+        "to_ana_sting": {
+          "type": "escalate",
+          "protocol": "anaphylaxis",
+          "text": "That is a severe reaction — we treat it as anaphylaxis now."
+        },
+        "remove_stinger": {
+          "type": "step",
+          "text": "If the stinger is still in the skin, scrape it out sideways NOW with a fingernail or a card edge — speed matters more than method.",
+          "donot": [
+            "Do not squeeze the venom sac with tweezers or fingers."
+          ],
+          "next": "cold_sting"
+        },
+        "cold_sting": {
+          "type": "step",
+          "text": "Wash with soap and water, then hold a wrapped cold pack on it for 10 to 20 minutes. Remove rings if the hand was stung.",
+          "next": "soothe_sting"
+        },
+        "soothe_sting": {
+          "type": "step",
+          "text": "For itch and swelling: an oral antihistamine at packet dose, or hydrocortisone cream on the spot. Swelling can grow for a day or two — that alone is not an allergy.",
+          "next": "monitor_sting"
+        },
+        "monitor_sting": {
+          "type": "monitor",
+          "text": "Watch them for the next hour. Tell me immediately if breathing trouble, throat or tongue swelling, spreading hives, or faintness appear. Stings in the mouth or throat, or more than a few stings at once, need urgent medical care — suck ice and seek help for mouth stings."
+        }
+      }
+    },
+    {
+      "id": "spider_bite",
+      "family": "spider_bite",
+      "name": "Spider bite",
+      "age_group": "any",
+      "severity": "moderate",
+      "ems": "conditional",
+      "sources": [
+        "IFRC First Aid Guidelines 2020",
+        "AAPCC guidance"
+      ],
+      "keywords": [
+        [
+          "spider bite",
+          9
+        ],
+        [
+          "bitten by a spider",
+          9
+        ],
+        [
+          "black widow",
+          10
+        ],
+        [
+          "brown recluse",
+          10
+        ],
+        [
+          "redback",
+          9
+        ],
+        [
+          "funnel web",
+          10
+        ],
+        [
+          "violin marked",
+          8
+        ]
+      ],
+      "exemplars": [
+        "a spider bit me and it really hurts",
+        "black widow bite what do i do",
+        "bitten by a brown spider in the shed",
+        "spider bite is getting red and painful",
+        "funnel web spider bit him"
+      ],
+      "visual_findings": [
+        "bite_marks",
+        "red_skin"
+      ],
+      "entry": "q_dangerous_spider",
+      "nodes": {
+        "q_dangerous_spider": {
+          "type": "question",
+          "prompt": "Could it be a highly venomous spider — black widow, redback, brown recluse, or an Australian funnel-web — or are there severe symptoms: intense pain, cramping, sweating, vomiting, trouble breathing?",
+          "yes": "ems_spider",
+          "no": "wash_spider",
+          "unsure": "wash_spider"
+        },
+        "ems_spider": {
+          "type": "step",
+          "text": "Call emergency services or poison control now. Keep them still and calm. For a suspected Australian funnel-web, apply a firm pressure bandage over the bite and up the limb, and keep it completely still; for other spiders, no pressure bandage — just a cold pack.",
+          "flags": [
+            "ems"
+          ],
+          "next": "monitor_spider_sev"
+        },
+        "monitor_spider_sev": {
+          "type": "monitor",
+          "text": "Keep them at rest. Tell me if pain spreads, muscles cramp, or breathing changes."
+        },
+        "wash_spider": {
+          "type": "step",
+          "text": "Wash the bite with soap and water. Apply a wrapped cold pack for 10 to 15 minutes to ease pain and swelling.",
+          "donot": [
+            "Do not cut the bite or try to suck anything out.",
+            "Do not apply heat."
+          ],
+          "next": "monitor_spider"
+        },
+        "monitor_spider": {
+          "type": "monitor",
+          "text": "Most spider bites settle like a bad sting. See a doctor if pain grows over hours, cramps or sweating start, a blister or dark center forms, or redness keeps spreading over days. Bring the spider or a photo if it is safely possible."
+        }
+      }
+    },
+    {
+      "id": "tick_bite",
+      "family": "tick",
+      "name": "Tick bite / removal",
+      "age_group": "any",
+      "severity": "minor",
+      "ems": "self_care",
+      "sources": [
+        "CDC tick guidance",
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "tick",
+          8
+        ],
+        [
+          "tick bite",
+          9
+        ],
+        [
+          "tick stuck in skin",
+          9
+        ],
+        [
+          "remove a tick",
+          9
+        ],
+        [
+          "tick on my",
+          8
+        ],
+        [
+          "burrowed",
+          8
+        ],
+        [
+          "bug burrowed",
+          8
+        ],
+        [
+          "bug in my skin",
+          7
+        ]
+      ],
+      "exemplars": [
+        "there is a tick attached to my leg",
+        "how do i remove a tick from my kid",
+        "found a tick on the dog and on me",
+        "tick bite after hiking what should i do",
+        "tick buried in the skin"
+      ],
+      "visual_findings": [
+        "tick_attached",
+        "bite_marks"
+      ],
+      "entry": "remove_tick",
+      "nodes": {
+        "remove_tick": {
+          "type": "step",
+          "text": "Use fine-tipped tweezers. Grip the tick as close to the skin as possible — by the head, not the body — and pull straight upward with slow, steady pressure. No twisting or jerking.",
+          "donot": [
+            "Do not burn the tick with a match.",
+            "Do not smother it with vaseline, nail polish or alcohol while attached.",
+            "Do not squeeze its body."
+          ],
+          "next": "after_tick"
+        },
+        "after_tick": {
+          "type": "step",
+          "text": "Clean the bite and your hands with soap and water or alcohol. If mouth parts remain in the skin and will not lift out easily with tweezers, leave them — the skin will expel them.",
+          "next": "save_tick"
+        },
+        "save_tick": {
+          "type": "step",
+          "text": "Note today's date. If you want, keep the tick in a sealed bag in case a doctor wants to identify it. Flush or bag it — do not crush it with fingers.",
+          "next": "monitor_tick"
+        },
+        "monitor_tick": {
+          "type": "monitor",
+          "text": "Watch the area for the next month. See a doctor promptly for: a spreading or bulls-eye rash, fever, aches, unusual tiredness, or if the tick was attached over 24 hours — early antibiotics prevent Lyme disease. In Australia, allergic reactions to ticks matter: for known tick allergy, freeze-spray kits and medical removal are preferred."
+        }
+      }
+    },
+    {
+      "id": "animal_bite",
+      "family": "animal_bite",
+      "name": "Animal or human bite",
+      "age_group": "any",
+      "severity": "moderate",
+      "ems": "conditional",
+      "sources": [
+        "WHO rabies guidance",
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "dog bite",
+          9
+        ],
+        [
+          "cat bite",
+          9
+        ],
+        [
+          "bitten by a dog",
+          9
+        ],
+        [
+          "animal bite",
+          9
+        ],
+        [
+          "human bite",
+          8
+        ],
+        [
+          "bat bite",
+          9
+        ],
+        [
+          "raccoon bit",
+          9
+        ],
+        [
+          "monkey bite",
+          9
+        ],
+        [
+          "dog bit",
+          8
+        ],
+        [
+          "cat bit",
+          8
+        ],
+        [
+          "bit me",
+          6
+        ],
+        [
+          "bit through",
+          6
+        ],
+        [
+          "bat",
+          6
+        ],
+        [
+          "might have been bitten",
+          8
+        ],
+        [
+          "been bitten",
+          6
+        ],
+        [
+          "bitten",
+          5
+        ],
+        [
+          "nipped",
+          7
+        ],
+        [
+          "dog nipped",
+          8
+        ],
+        [
+          "broke the skin",
+          5
+        ]
+      ],
+      "exemplars": [
+        "a dog bit my hand it broke the skin",
+        "stray cat bit my daughter",
+        "bitten by a bat while camping",
+        "neighbor's dog attacked and bit his leg",
+        "someone bit me in a fight and it broke skin"
+      ],
+      "visual_findings": [
+        "bite_marks",
+        "puncture_wound"
+      ],
+      "entry": "q_severe_bite",
+      "nodes": {
+        "q_severe_bite": {
+          "type": "question",
+          "prompt": "Is it bleeding heavily, gaping open, on the face, neck, hands or genitals, or was the animal wild, stray, or acting strangely?",
+          "yes": "severe_bite_path",
+          "no": "wash_bite",
+          "unsure": "severe_bite_path"
+        },
+        "severe_bite_path": {
+          "type": "step",
+          "text": "Control heavy bleeding first: press hard with a clean cloth. This bite needs professional care today — call emergency services for heavy bleeding, otherwise go straight to urgent care.",
+          "flags": [
+            "ems"
+          ],
+          "next": "wash_bite"
+        },
+        "wash_bite": {
+          "type": "step",
+          "text": "Wash the wound thoroughly under running water with soap for a full 15 minutes — this is the single best protection against rabies and infection. Pat dry and cover with a clean dressing.",
+          "donot": [
+            "Do not close the wound with tape or glue.",
+            "Do not ignore a cat bite or deep puncture — they infect deeply."
+          ],
+          "next": "rabies_check"
+        },
+        "rabies_check": {
+          "type": "step",
+          "text": "Rabies check: if the animal was wild, stray, unvaccinated, or a bat — even a tiny bat scratch — medical care TODAY for possible rabies shots is essential. Rabies is fatal once symptoms start, and the shots work only before that.",
+          "next": "tetanus_bite"
+        },
+        "tetanus_bite": {
+          "type": "step",
+          "text": "Any bite that breaks skin deserves a medical review within 24 hours — many need antibiotics, and a tetanus booster if theirs is over 5 years old.",
+          "next": "monitor_bite"
+        },
+        "monitor_bite": {
+          "type": "monitor",
+          "text": "Watch for infection over the next days: spreading redness, warmth, swelling, pus, or fever means see a doctor immediately. If the animal can be safely observed or reported, tell animal control."
+        }
+      }
+    },
+    {
+      "id": "jellyfish_sting",
+      "family": "jellyfish",
+      "name": "Jellyfish sting",
+      "age_group": "any",
+      "severity": "moderate",
+      "ems": "conditional",
+      "sources": [
+        "ILCOR 2020",
+        "Australian Resuscitation Council jellyfish guidance"
+      ],
+      "keywords": [
+        [
+          "jellyfish",
+          10
+        ],
+        [
+          "jellyfish sting",
+          10
+        ],
+        [
+          "stung in the ocean",
+          8
+        ],
+        [
+          "man of war",
+          9
+        ],
+        [
+          "box jellyfish",
+          10
+        ],
+        [
+          "sea sting",
+          8
+        ],
+        [
+          "stinger tentacles",
+          9
+        ],
+        [
+          "bluebottle",
+          9
+        ],
+        [
+          "welts across",
+          6
+        ],
+        [
+          "stung in the surf",
+          8
+        ],
+        [
+          "in the waves",
+          7
+        ],
+        [
+          "waves",
+          4
+        ],
+        [
+          "welts",
+          5
+        ]
+      ],
+      "exemplars": [
+        "i got stung by a jellyfish at the beach",
+        "jellyfish tentacles wrapped around her leg",
+        "box jellyfish sting emergency",
+        "man of war stung him badly",
+        "stung by something in the sea it burns"
+      ],
+      "visual_findings": [
+        "sting_marks_linear",
+        "red_skin",
+        "beach_scene"
+      ],
+      "entry": "out_of_water_jf",
+      "nodes": {
+        "out_of_water_jf": {
+          "type": "step",
+          "text": "Get them out of the water and keep them still. Rinse the area with SEAWATER — not fresh water, which fires more stingers.",
+          "donot": [
+            "Do not rinse with fresh water.",
+            "Do not rub the area with sand or a towel.",
+            "Do not urinate on it — that is a myth and can make it worse."
+          ],
+          "next": "q_dangerous_jf"
+        },
+        "q_dangerous_jf": {
+          "type": "question",
+          "prompt": "Are you in tropical waters — northern Australia, Indo-Pacific — or is the person having chest pain, trouble breathing, or collapsing?",
+          "yes": "ems_jf",
+          "no": "remove_tentacles",
+          "unsure": "remove_tentacles"
+        },
+        "ems_jf": {
+          "type": "step",
+          "text": "Call emergency services now. In tropical Australia, flood the sting with VINEGAR for at least 30 seconds if available. Be ready to start CPR if they collapse.",
+          "flags": [
+            "ems"
+          ],
+          "next": "remove_tentacles_sev"
+        },
+        "remove_tentacles_sev": {
+          "type": "step",
+          "text": "Remove any tentacles with tweezers or a gloved hand — not bare fingers. Keep them still and monitor closely.",
+          "next": "monitor_jf_sev"
+        },
+        "monitor_jf_sev": {
+          "type": "monitor",
+          "text": "Watch them constantly. Tell me immediately if breathing changes or they stop responding — we start CPR straight away."
+        },
+        "remove_tentacles": {
+          "type": "step",
+          "text": "Pluck off any visible tentacles with tweezers or a stick — not bare hands. Rinse again with seawater.",
+          "next": "hot_water_jf"
+        },
+        "hot_water_jf": {
+          "type": "step",
+          "text": "Immerse the sting in hot water — as hot as comfortable, about 42 to 45 degrees Celsius — for 20 to 45 minutes. No hot water? A cold pack helps the pain instead.",
+          "next": "monitor_jf"
+        },
+        "monitor_jf": {
+          "type": "monitor",
+          "text": "Pain should ease over the next hour. See a doctor if it covers a large area, involves the face or genitals, blisters badly, or any dizziness, nausea or breathing trouble appears — tell me right away if those start."
+        }
+      }
+    }
+  ]
+}

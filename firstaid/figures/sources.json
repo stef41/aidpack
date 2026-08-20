@@ -1,0 +1,106 @@
+{
+ "cpr_hands": {
+  "source": "wikimedia-commons",
+  "title": "CPR Adult Chest Compression 2",
+  "page": "https://commons.wikimedia.org/wiki/File:CPR_Adult_Chest_Compression_2.png",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/CPR_Adult_Chest_Compression_2.png",
+  "source_sha256_prefix": "618bcfdae6db0647",
+  "author": "BruceBlaus (Blausen Medical)",
+  "license": "CC BY-SA 4.0",
+  "figure_license": "CC BY-SA 4.0"
+ },
+ "cpr_infant": {
+  "source": "wikimedia-commons",
+  "title": "CPR Infant Chest Compression",
+  "page": "https://commons.wikimedia.org/wiki/File:CPR_Infant_Chest_Compression.png",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/CPR_Infant_Chest_Compression.png",
+  "source_sha256_prefix": "30ddccd692547429",
+  "author": "BruceBlaus (Blausen Medical)",
+  "license": "CC BY-SA 4.0",
+  "figure_license": "CC BY-SA 4.0"
+ },
+ "head_tilt": {
+  "source": "wikimedia-commons",
+  "title": "CPR Adult Airway",
+  "page": "https://commons.wikimedia.org/wiki/File:CPR_Adult_Airway.png",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/CPR_Adult_Airway.png",
+  "source_sha256_prefix": "e253979c0ab6d3c0",
+  "author": "BruceBlaus (Blausen Medical)",
+  "license": "CC BY-SA 4.0",
+  "figure_license": "CC BY-SA 4.0"
+ },
+ "abdominal_thrusts": {
+  "source": "wikimedia-commons",
+  "title": "Heimlich Adult & Child",
+  "page": "https://commons.wikimedia.org/wiki/File:Heimlich_Adult_%26_Child.png",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Heimlich_Adult_%26_Child.png",
+  "source_sha256_prefix": "c0a7c2d2f048add4",
+  "author": "BruceBlaus (Blausen Medical)",
+  "license": "CC BY-SA 4.0",
+  "figure_license": "CC BY-SA 4.0"
+ },
+ "infant_back_blows": {
+  "source": "wikimedia-commons",
+  "title": "Heimlich Infant",
+  "page": "https://commons.wikimedia.org/wiki/File:Heimlich_Infant.png",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Heimlich_Infant.png",
+  "source_sha256_prefix": "dc1524d325533967",
+  "author": "BruceBlaus (Blausen Medical)",
+  "license": "CC BY-SA 4.0",
+  "figure_license": "CC BY-SA 4.0"
+ },
+ "back_blows": {
+  "source": "wikimedia-commons",
+  "title": "Back blows (back slaps) against choking for adult people",
+  "page": "https://commons.wikimedia.org/wiki/File:Back_blows_(back_slaps)_against_choking_for_adult_people.jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Back_blows_%28back_slaps%29_against_choking_for_adult_people.jpg",
+  "source_sha256_prefix": "dee36969ba61dc2f",
+  "author": "Trakotako",
+  "license": "CC BY-SA 4.0",
+  "figure_license": "CC BY-SA 4.0"
+ },
+ "recovery_position": {
+  "source": "wikimedia-commons",
+  "title": "Recovery position 02",
+  "page": "https://commons.wikimedia.org/wiki/File:Recovery_position_02.svg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Recovery_position_02.svg",
+  "source_sha256_prefix": "9eded4b3fb812d25",
+  "author": "Mrmw",
+  "license": "CC0",
+  "figure_license": "CC0"
+ },
+ "tourniquet": {
+  "source": "wikimedia-commons",
+  "title": "Tourniquet",
+  "page": "https://commons.wikimedia.org/wiki/File:Tourniquet.png",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Tourniquet.png",
+  "source_sha256_prefix": "c1e56fcb077e687b",
+  "author": "Baedr-9439",
+  "license": "CC0",
+  "figure_license": "CC0"
+ },
+ "epipen_thigh": {
+  "source": "generated",
+  "note": "generated pictogram (tools/gen_figures.py)",
+  "author": "AidPack",
+  "license": "repository license"
+ },
+ "burn_cooling": {
+  "source": "generated",
+  "note": "generated pictogram (tools/gen_figures.py)",
+  "author": "AidPack",
+  "license": "repository license"
+ },
+ "nosebleed": {
+  "source": "generated",
+  "note": "generated pictogram (tools/gen_figures.py)",
+  "author": "AidPack",
+  "license": "repository license"
+ },
+ "fast_stroke": {
+  "source": "generated",
+  "note": "generated pictogram (tools/gen_figures.py)",
+  "author": "AidPack",
+  "license": "repository license"
+ }
+}

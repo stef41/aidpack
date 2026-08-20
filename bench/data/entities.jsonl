@@ -1,0 +1,36 @@
+{"text": "my baby is not breathing", "expect": {"age_group": "infant", "breathing": "not_breathing", "consciousness": "unresponsive"}}
+{"text": "my 6 month old is choking", "expect": {"age_group": "infant"}}
+{"text": "my 3 year old drank bleach", "expect": {"age_group": "child"}}
+{"text": "my 8 year old broke his arm", "expect": {"age_group": "child"}}
+{"text": "my 15 year old fainted", "expect": {"age_group": "adult"}}
+{"text": "my husband collapsed", "expect": {"age_group": "adult", "consciousness": "unresponsive"}}
+{"text": "grandma is unconscious but breathing", "expect": {"age_group": "adult", "consciousness": "unresponsive", "breathing": "breathing"}}
+{"text": "the toddler is convulsing", "expect": {"age_group": "child"}}
+{"text": "a newborn with a fever", "expect": {"age_group": "infant"}}
+{"text": "he stopped breathing", "expect": {"breathing": "not_breathing", "consciousness": "unresponsive"}}
+{"text": "she is gasping strangely", "expect": {"breathing": "abnormal", "consciousness": "unresponsive"}}
+{"text": "he is breathing normally now", "expect": {"breathing": "breathing"}}
+{"text": "she passed out", "expect": {"consciousness": "unresponsive"}}
+{"text": "he won't wake up", "expect": {"consciousness": "unresponsive"}}
+{"text": "she is awake and talking now", "expect": {"consciousness": "responsive"}}
+{"text": "he woke up and responds", "expect": {"consciousness": "responsive"}}
+{"text": "my wife is in labor", "expect": {"age_group": "adult"}}
+{"text": "my 10 week old baby is vomiting", "expect": {"age_group": "infant"}}
+{"text": "a 45 year old man with chest pain", "expect": {"age_group": "adult"}}
+{"text": "my kid twisted her ankle", "expect": {"age_group": "child"}}
+{"text": "the old man is not responding", "expect": {"age_group": "adult", "consciousness": "unresponsive"}}
+{"text": "my daughter is 2 and swallowed a battery", "expect": {"age_group": "child"}}
+{"text": "an 18 month old with croup", "expect": {"age_group": "child"}}
+{"text": "he is still breathing on his own", "expect": {"breathing": "breathing"}}
+{"text": "no pulse and not moving", "expect": {"breathing": "not_breathing", "consciousness": "unresponsive"}}
+{"text": "she is limp and floppy", "expect": {"consciousness": "unresponsive"}}
+{"text": "my son is 7 years old and wheezing", "expect": {"age_group": "child"}}
+{"text": "barely breathing after the overdose", "expect": {"breathing": "not_breathing", "consciousness": "unresponsive"}}
+{"text": "the infant is crying loudly", "expect": {"age_group": "infant"}}
+{"text": "my mother in law fainted she is coming around", "expect": {"age_group": "adult"}}
+{"text": "he is out cold", "expect": {"consciousness": "unresponsive"}}
+{"text": "my 11 month old grabbed the iron", "expect": {"age_group": "infant"}}
+{"text": "13 year old hit his head skateboarding", "expect": {"age_group": "adult"}}
+{"text": "she is conscious and alert", "expect": {"consciousness": "responsive"}}
+{"text": "man about 30 collapsed and is gasping", "expect": {"age_group": "adult", "breathing": "abnormal", "consciousness": "unresponsive"}}
+{"text": "the woman is breathing fine but knocked out", "expect": {"age_group": "adult", "breathing": "breathing", "consciousness": "unresponsive"}}

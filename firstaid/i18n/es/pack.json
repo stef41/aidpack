@@ -1,0 +1,476 @@
+{
+  "strings": {
+    "ems_banner": "LLAME AL {ems} AHORA — o señale a alguien y dígale que llame. Ponga el teléfono en altavoz y quédese conmigo.",
+    "step_word": "Paso",
+    "step_suffix": "Diga \"listo\" cuando termine — o avíseme de inmediato si algo cambia.",
+    "monitor_suffix": "Me quedo aquí con usted.",
+    "reprompt_yn": "Solo necesito una respuesta rápida — sí, no, o no sé: ",
+    "age_question": "Verificación rápida para darle la técnica correcta: ¿es un adulto, un niño, o un bebé menor de un año?",
+    "not_understood": "Dígame qué pasa en pocas palabras — como \"corte profundo en el brazo\", \"se desmayó\" o \"dolor de pecho\". Si alguien está en peligro inmediato, llame ya a su número de emergencias.",
+    "idle_greeting": "Soy su asistente de primeros auxilios. Funciono completamente sin conexión. Dígame qué está pasando y le guiaré paso a paso. En cualquier emergencia que ponga en riesgo la vida, llamar a su número local de emergencias es siempre lo primero.",
+    "idle_thanks": "Lo hizo muy bien. Aquí estoy cuando me necesite — solo dígame qué pasa.",
+    "standby": "De acuerdo, quedo en espera. Si algo cambia o hay una nueva emergencia, dígame qué está pasando.",
+    "help_arrived": "Muy bien — deje que los profesionales se encarguen ahora. Cuénteles qué pasó, qué hizo usted y las horas que anotó. Lo hizo muy bien.",
+    "clarify_template": "Quiero asegurarme. Parece que se trata de: {guess} — ¿es correcto? Diga sí, o descríbalo de otra forma.",
+    "distress_ack": "Está haciendo todo lo que importa ahora mismo. Respire hondo — estoy aquí con usted.",
+    "distress_safe_branch": "Está bien — vamos a asumir lo peor para ir a lo seguro y seguir adelante.",
+    "fallback_notice": "Los pasos detallados de este tema aún no están traducidos — siguen en inglés. Las instrucciones de emergencia sí están en español.",
+    "camera_looks_like": "Por la cámara, esto parece: {name}.",
+    "camera_could_be": "Por la cámara, esto podría ser: {name}. Dígame si me equivoco.",
+    "priority_notice": "Esto tiene prioridad.",
+    "keep_going": "Sí — siga exactamente así.",
+    "step_ok_piece": "Está bien — vamos paso a paso. ",
+    "ems_number": "911 o 112"
+  },
+  "scope": {
+    "prescription": "No puedo aconsejar sobre medicamentos ni dosis más allá de los primeros auxilios — eso debe indicarlo un médico, farmacéutico o centro de toxicología. Si es urgente, llame a emergencias. ¿Alguien tiene síntomas ahora mismo en los que pueda ayudar?",
+    "diagnosis": "No puedo diagnosticar enfermedades — soy una guía de primeros auxilios. Puedo ayudarle a manejar los síntomas ahora y decirle cuándo se necesita atención profesional. Descríbame qué está pasando.",
+    "self_harm": "Me alegra que me lo diga. Usted merece apoyo ahora mismo. Si está en peligro inmediato, llame a su número de emergencias. También puede llamar a una línea de crisis — en EE. UU., llame o envíe un mensaje al 988. Si alguien está herido, dígame y le guío paso a paso. No está solo.",
+    "veterinary": "Estoy entrenado para primeros auxilios en personas — para animales, contacte a un veterinario. Si también hay una persona herida, dígame y le ayudo."
+  },
+  "counters": {
+    "butter_burn": "Importante: nunca ponga mantequilla, aceite ni pasta de dientes en una quemadura — solo agua corriente fresca.",
+    "ice_burn": "Importante: nada de hielo en las quemaduras — profundiza el daño. Solo agua corriente fresca.",
+    "induce_vomit": "Importante: NO lo haga vomitar — puede quemar la garganta otra vez o ahogarlo. Solo un experto en toxicología puede indicarlo.",
+    "head_back": "Importante: en un sangrado de nariz mantenga la cabeza inclinada hacia ADELANTE — nunca hacia atrás.",
+    "suck_venom": "Importante: NO chupe ni corte una mordedura de serpiente — no saca el veneno y empeora todo.",
+    "mouth_seizure": "Importante: nunca meta nada en la boca de alguien que convulsiona — no puede tragarse la lengua.",
+    "shake_baby": "Importante: nunca sacuda a una persona — y JAMÁS sacuda a un bebé; puede causar daño cerebral. Toque la planta del pie o el hombro y llámelo por su nombre."
+  },
+  "protocols": {
+    "cpr_adult": {
+      "nodes": {
+        "d_conscious": {},
+        "q_conscious": {
+          "prompt": "Grite su nombre y sacúdale suavemente los hombros. ¿Responde de alguna forma?"
+        },
+        "responsive_handoff": {
+          "text": "Bien — responde, así que no necesitamos RCP. Cuénteme qué pasó o qué síntomas tiene, y le guío."
+        },
+        "q_breathing": {
+          "prompt": "Incline su cabeza hacia atrás con cuidado y mire su pecho hasta 10 segundos. ¿Respira normalmente? Los jadeos ocasionales NO cuentan como respirar."
+        },
+        "recovery_escalate": {
+          "text": "Está respirando, así que protegeremos la vía aérea en lugar de RCP."
+        },
+        "send_help": {
+          "text": "Si hay alguien cerca, mándelo a buscar un DEA (desfibrilador). No vaya usted a buscarlo. Empezamos RCP ahora mismo."
+        },
+        "position": {
+          "text": "Acuéstelo boca arriba sobre una superficie firme. Arrodíllese junto a su pecho."
+        },
+        "hands": {
+          "text": "Ponga el talón de una mano en el centro del pecho, en la mitad inferior del esternón. Ponga la otra mano encima y entrelace los dedos.",
+          "donot": [
+            "No presione sobre las costillas ni sobre la punta del esternón.",
+            "No pierda tiempo buscando el pulso."
+          ]
+        },
+        "compress": {
+          "text": "Presione fuerte y rápido: al menos 5 centímetros de profundidad, de 100 a 120 compresiones por minuto — al ritmo de la canción La Macarena. Deje que el pecho suba por completo entre compresiones."
+        },
+        "q_trained": {
+          "prompt": "¿Sabe dar respiraciones de rescate?"
+        },
+        "hands_only": {
+          "text": "Entonces haga solo compresiones continuas — eso es una RCP excelente. Cuente en voz alta y no pare. Túrnese con alguien cada 2 minutos si puede."
+        },
+        "cycles": {
+          "text": "Haga series de 30 compresiones y luego 2 respiraciones: incline la cabeza, levante el mentón, tape la nariz, selle su boca sobre la suya y dé 2 respiraciones de un segundo. Repita 30 y 2."
+        },
+        "aed_use": {
+          "text": "En cuanto llegue el DEA, enciéndalo y siga sus instrucciones de voz. Descubra el pecho, pegue los parches como muestran los dibujos y deje que analice el ritmo. Siga con la RCP entre instrucciones."
+        },
+        "monitor_cpr": {
+          "text": "No pare la RCP hasta que despierte claramente y respire normal, un profesional lo releve, o el DEA se lo indique. Lo está manteniendo con vida."
+        }
+      },
+      "name": "paro cardíaco — RCP (adulto)"
+    },
+    "cpr_child": {
+      "nodes": {
+        "q_conscious": {
+          "prompt": "Llámelo fuerte por su nombre y apriétele el hombro con suavidad. ¿Responde algo?"
+        },
+        "responsive_handoff": {
+          "text": "Bien — responde, así que no necesitamos RCP. Cuénteme qué pasó y le guío."
+        },
+        "q_breathing": {
+          "prompt": "Incline la cabeza hacia atrás con cuidado y mire el pecho hasta 10 segundos. ¿Respira normal? Los jadeos no cuentan."
+        },
+        "recovery_escalate": {
+          "text": "Está respirando, así que protegeremos la vía aérea en lugar de RCP."
+        },
+        "position": {
+          "text": "Ponga el teléfono en altavoz para tener las manos libres. Acueste al niño boca arriba sobre una superficie firme."
+        },
+        "hands_child": {
+          "text": "Coloque el talón de una mano en el centro del pecho, en la mitad inferior del esternón. Use las dos manos si necesita más fuerza."
+        },
+        "compress_child": {
+          "text": "Presione fuerte y rápido: unos 5 centímetros, un tercio del pecho, de 100 a 120 compresiones por minuto. Deje que el pecho suba del todo entre compresiones."
+        },
+        "breaths_child": {
+          "text": "Las respiraciones importan mucho en los niños. Tras 30 compresiones: incline la cabeza, levante el mentón, tape la nariz, selle su boca sobre la suya y dé 2 respiraciones suaves de un segundo. Repita 30 y 2. Si no puede dar respiraciones, siga con compresiones sin parar."
+        },
+        "aed_child": {
+          "text": "Si llega un DEA, enciéndalo y siga sus indicaciones. Use parches pediátricos si hay; los de adulto sirven si no — uno en el pecho y otro en la espalda si se tocan."
+        },
+        "monitor_cpr": {
+          "text": "Siga con 30 compresiones y 2 respiraciones. No pare hasta que el niño despierte y respire normal, o un profesional lo releve. Está haciendo exactamente lo correcto."
+        }
+      },
+      "name": "paro cardíaco — RCP (niño)"
+    },
+    "cpr_infant": {
+      "nodes": {
+        "q_conscious": {
+          "prompt": "Dé golpecitos en la planta del pie del bebé y llámelo. ¿Responde algo — se mueve, llora, abre los ojos?"
+        },
+        "responsive_handoff": {
+          "text": "Bien — el bebé responde, así que no necesitamos RCP. Cuénteme qué pasó y le guío."
+        },
+        "q_breathing": {
+          "prompt": "Mire el pecho y la barriga del bebé hasta 10 segundos. ¿Respira normal? Los jadeos no cuentan."
+        },
+        "recovery_infant": {
+          "text": "Sostenga al bebé de lado en sus brazos, con la cabeza ligeramente hacia abajo, y vigile su respiración sin parar hasta que llegue la ayuda."
+        },
+        "monitor_breathing_infant": {
+          "text": "Siga mirando el pecho. Si deja de respirar o jadea, dígamelo de inmediato y empezamos RCP."
+        },
+        "position_infant": {
+          "text": "Ponga el teléfono en altavoz. Acueste al bebé boca arriba en una superficie firme, como una mesa o el suelo. Mantenga la cabeza en posición neutra — no la incline mucho hacia atrás."
+        },
+        "compress_infant": {
+          "text": "Ponga dos dedos en el centro del pecho, justo debajo de la línea de las tetillas. Presione unos 4 centímetros, un tercio del pecho, de 100 a 120 veces por minuto. Deje que el pecho suba del todo entre compresiones."
+        },
+        "breaths_infant": {
+          "text": "Tras 30 compresiones, cubra la boca Y la nariz del bebé con su boca y dé 2 soplos suaves, solo lo justo para que el pecho suba. Repita: 30 compresiones, 2 soplos.",
+          "donot": [
+            "No incline mucho la cabeza de un bebé — manténgala neutra.",
+            "No sople fuerte — solo soplos pequeños y suaves."
+          ]
+        },
+        "monitor_cpr": {
+          "text": "Siga: 30 compresiones, 2 soplos. No pare hasta que el bebé responda y respire normal, o un profesional lo releve. Está manteniendo vivo a su bebé."
+        }
+      },
+      "name": "paro cardíaco — RCP (bebé)"
+    },
+    "unresponsive_breathing": {
+      "nodes": {
+        "q_breathing_check": {
+          "prompt": "Primero, compruebe: incline su cabeza hacia atrás con cuidado y mire el pecho hasta 10 segundos. ¿Respira normalmente?"
+        },
+        "to_cpr": {
+          "text": "No respira normalmente — empezamos RCP ahora."
+        },
+        "q_spine": {
+          "prompt": "¿Se cayó desde altura, recibió un golpe fuerte, o podría tener una lesión de cuello o espalda?"
+        },
+        "spinal_hold": {
+          "text": "Manténgalo exactamente como está. Arrodíllese detrás de su cabeza y sujétela firme con ambas manos para que cabeza, cuello y espalda queden alineados. Solo gírelo en bloque si vomita o deja de respirar normal.",
+          "donot": [
+            "No lo mueva salvo que esté en peligro o su vía aérea se bloquee."
+          ]
+        },
+        "monitor_spinal": {
+          "text": "Sujete la cabeza quieta y vigile la respiración hasta que llegue ayuda. Si vomita o deja de respirar normal, dígamelo de inmediato."
+        },
+        "recovery_arm": {
+          "text": "Arrodíllese a su lado. Ponga el brazo más cercano a usted en ángulo recto con su cuerpo, con la palma hacia arriba."
+        },
+        "recovery_hand": {
+          "text": "Cruce el otro brazo sobre el pecho y ponga el dorso de esa mano contra la mejilla más cercana a usted."
+        },
+        "recovery_roll": {
+          "text": "Con la otra mano, doble la rodilla lejana hasta que el pie quede plano en el suelo. Ahora tire de esa rodilla hacia usted para girarlo de lado."
+        },
+        "recovery_airway": {
+          "text": "Incline su cabeza hacia atrás con suavidad para mantener la vía aérea abierta. Acomode la pierna de arriba con cadera y rodilla en ángulo recto, para que quede estable.",
+          "donot": [
+            "No le dé nada de comer ni beber.",
+            "No le ponga una almohada bajo la cabeza.",
+            "No lo deje solo."
+          ]
+        },
+        "monitor_recovery": {
+          "text": "Vigile su respiración sin parar hasta que llegue ayuda. Si se detiene o se vuelve jadeante, gírelo boca arriba y avíseme — empezamos RCP."
+        }
+      },
+      "name": "inconsciente pero respira"
+    },
+    "choking_adult": {
+      "nodes": {
+        "q_effective": {
+          "prompt": "¿Puede toser con fuerza, hablar o respirar?"
+        },
+        "encourage_cough": {
+          "text": "Dígale que siga tosiendo tan fuerte como pueda — una tos fuerte es la mejor forma de sacarlo. Quédese a su lado.",
+          "donot": [
+            "No le golpee la espalda mientras aún pueda toser con fuerza.",
+            "No le dé agua para bajarlo."
+          ]
+        },
+        "q_cleared": {
+          "prompt": "¿Salió el objeto? ¿Respira normal ahora?"
+        },
+        "q_still_effective": {
+          "prompt": "¿Todavía puede toser fuerte o hablar?"
+        },
+        "monitor_ok": {
+          "text": "Bien. Que descanse y beba agua a sorbos. Si se usaron compresiones, o si sigue con dolor o tos, debe revisarlo un médico."
+        },
+        "back_blows": {
+          "text": "Párese detrás e inclínelo bien hacia adelante, sosteniendo su pecho con una mano. Dé 5 golpes secos entre los omóplatos con el talón de la otra mano. Mire la boca después de cada golpe."
+        },
+        "q_relief1": {
+          "prompt": "¿Salió el objeto? ¿Ya puede respirar?"
+        },
+        "abdominal_thrusts": {
+          "text": "Párese detrás. Ponga un puño justo arriba del ombligo, con el pulgar hacia adentro. Agárrelo con la otra mano y jale con fuerza hacia adentro y hacia arriba. Hasta 5 veces. Si está embarazada o no puede abrazarla, presione en el centro del pecho.",
+          "donot": [
+            "Nunca haga compresiones abdominales a un bebé menor de 1 año.",
+            "No barra la boca a ciegas con el dedo — solo saque un objeto que vea claramente."
+          ]
+        },
+        "q_relief2": {
+          "prompt": "¿Salió? ¿Puede respirar?"
+        },
+        "alternate": {
+          "text": "Siga alternando: 5 golpes en la espalda y 5 compresiones. Revise la boca entre rondas y saque solo lo que vea claramente."
+        },
+        "q_conscious_choke": {
+          "prompt": "¿Sigue despierto y responde?"
+        },
+        "to_cpr_choke": {
+          "text": "Se desplomó. Empezamos RCP — las compresiones también pueden expulsar el objeto. Mire la boca después de cada serie de 30."
+        },
+        "monitor_after_severe": {
+          "text": "Muy bien hecho. Aun así debe revisarlo un médico hoy — los golpes y compresiones pueden causar lesiones internas, y puede quedar algo en la vía aérea."
+        }
+      },
+      "name": "atragantamiento (adulto/niño)"
+    },
+    "choking_infant": {
+      "nodes": {
+        "q_effective_i": {
+          "prompt": "¿El bebé tose o llora con fuerza?"
+        },
+        "watch_cough_i": {
+          "text": "Deje que siga tosiendo — no intervenga mientras la tos sea fuerte. Sosténgalo erguido y esté listo.",
+          "donot": [
+            "No sacuda al bebé.",
+            "No lo cuelgue boca abajo por las piernas.",
+            "No meta los dedos en la boca salvo que vea claramente el objeto."
+          ]
+        },
+        "q_cleared_i": {
+          "prompt": "¿El bebé respira y llora normal ahora?"
+        },
+        "monitor_ok_i": {
+          "text": "Bien. Vigílelo de cerca. Si sigue con tos, silbidos o problemas para comer, que lo revise un médico hoy."
+        },
+        "position_i": {
+          "text": "Siéntese. Acueste al bebé boca abajo a lo largo de su antebrazo, apoyado en su muslo, con la cabeza más baja que el cuerpo. Sujete la cabeza y la mandíbula con la mano — nunca apriete la garganta."
+        },
+        "backblows_i": {
+          "text": "Dé 5 golpes firmes entre los omóplatos con el talón de la mano. Después revise la boca y saque solo lo que vea claramente."
+        },
+        "q_relief_i": {
+          "prompt": "¿El bebé ya respira o llora?"
+        },
+        "chest_thrusts_i": {
+          "text": "Gire al bebé boca arriba sobre su otro antebrazo, con la cabeza aún más baja que el cuerpo. Ponga dos dedos en el centro del pecho justo bajo la línea de las tetillas. Dé 5 compresiones rápidas hacia abajo.",
+          "donot": [
+            "Nunca haga compresiones abdominales a un bebé.",
+            "No barra la boca a ciegas con el dedo."
+          ]
+        },
+        "q_relief_i2": {
+          "prompt": "¿Respira o llora ya?"
+        },
+        "alternate_i": {
+          "text": "Siga alternando: 5 golpes en la espalda boca abajo y 5 compresiones en el pecho boca arriba. Revise la boca entre rondas."
+        },
+        "q_conscious_i": {
+          "prompt": "¿El bebé sigue despierto y responde?"
+        },
+        "to_cpr_i": {
+          "text": "El bebé quedó sin fuerzas. Empezamos RCP de bebé ahora. Mire la boca después de cada serie de 30 compresiones."
+        },
+        "monitor_after_i": {
+          "text": "Muy bien. Aun así un médico debe revisar al bebé hoy, aunque parezca estar bien — las compresiones pueden causar lesiones que no se ven."
+        }
+      },
+      "name": "atragantamiento (bebé)"
+    },
+    "severe_bleeding": {
+      "nodes": {
+        "pressure": {
+          "text": "Presione fuerte sobre la herida AHORA con un paño limpio, una toalla o sus manos — la presión directa y fuerte es lo que detiene el sangrado. Si tiene guantes o una bolsa de plástico, póngasela en las manos primero.",
+          "donot": [
+            "No retire ningún objeto clavado en la herida — presione alrededor."
+          ]
+        },
+        "lie_down": {
+          "text": "Acuéstelo. Siga presionando fuerte sin soltar. Si la sangre empapa la tela, ponga más tela encima — nunca quite la capa empapada."
+        },
+        "q_stopping": {
+          "prompt": "Después de 10 minutos de presión firme, ¿el sangrado está disminuyendo?"
+        },
+        "bandage": {
+          "text": "Mantenga la presión. Si tiene una venda, envuélvala firme sobre el apósito para mantener la presión — ajustada, pero los dedos deben seguir rosados y tibios."
+        },
+        "q_limb": {
+          "prompt": "¿La herida está en un brazo o una pierna?"
+        },
+        "tourniquet": {
+          "text": "Si tiene un torniquete, colóquelo de 5 a 8 centímetros por encima de la herida — no sobre una articulación — y apriete hasta que pare el sangrado. ¿No tiene? Use una bufanda o corbata doblada con un palo para torcerla fuerte. Anote o recuerde la hora exacta.",
+          "donot": [
+            "No afloje ni retire un torniquete una vez puesto.",
+            "No cubra el torniquete — los paramédicos deben verlo."
+          ]
+        },
+        "pack_wound": {
+          "text": "Rellene la herida: empuje tela o gasa limpia directamente dentro, llenando el espacio, y presione fuerte encima con las dos manos. No suelte."
+        },
+        "shock_watch": {
+          "text": "Manténgalo acostado y abrigado — cúbralo con un abrigo o manta. Tranquilícelo y siga hablándole.",
+          "donot": [
+            "No le dé nada de comer ni beber.",
+            "No levante la extremidad en lugar de presionar — la presión es lo primero."
+          ]
+        },
+        "monitor_bleed": {
+          "text": "Mantenga la presión hasta que llegue ayuda. Avíseme de inmediato si se pone pálido, frío, confundido o somnoliento — y nunca suelte la presión."
+        }
+      },
+      "name": "sangrado severo / potencialmente mortal"
+    },
+    "anaphylaxis": {
+      "nodes": {
+        "epi_q": {
+          "prompt": "¿Tiene un autoinyector de epinefrina — un EpiPen — con él o cerca?"
+        },
+        "give_epi": {
+          "text": "Úselo AHORA — no espere a ver si empeora. Quite la tapa de seguridad, presione la punta naranja con fuerza contra la parte externa del muslo — sobre la ropa está bien — y sostenga 3 segundos. Anote la hora.",
+          "donot": [
+            "No retrase la epinefrina por probar antihistamínicos primero — los antihistamínicos no pueden detener la anafilaxia."
+          ]
+        },
+        "position_ana": {
+          "text": "Acuéstelo boca arriba y levántele las piernas. Si le cuesta respirar, déjelo sentado con apoyo. Una embarazada debe recostarse sobre su lado izquierdo.",
+          "donot": [
+            "No lo ponga de pie ni lo haga caminar — puede colapsar.",
+            "No lo deje solo."
+          ]
+        },
+        "q_second_dose": {
+          "prompt": "¿Han pasado 5 minutos sin mejoría — o está empeorando?"
+        },
+        "second_epi": {
+          "text": "Si hay un segundo autoinyector, aplíquelo ahora en el otro muslo, de la misma forma."
+        },
+        "watch_ana": {
+          "text": "Manténgalo acostado con las piernas elevadas. Guarde los inyectores usados para entregarlos a los paramédicos."
+        },
+        "monitor_ana": {
+          "text": "Vigílelo sin parar — la reacción puede volver incluso tras mejorar, así que el hospital es obligatorio. Avíseme de inmediato si respira peor o deja de responder."
+        }
+      },
+      "name": "reacción alérgica grave (anafilaxia)"
+    },
+    "stroke": {
+      "nodes": {
+        "fast_test": {
+          "text": "Haga conmigo la prueba FAST. Cara: pídale que sonría — ¿se le cae un lado? Brazos: pídale que levante los dos brazos — ¿uno se cae? Habla: pídale repetir una frase simple — ¿suena rara o arrastrada? UNA sola señal ya significa derrame."
+        },
+        "time_note": {
+          "text": "El tiempo importa más que nada: anote la hora exacta en que empezaron los síntomas, o la última vez que estuvo normal. Diga esa hora a los paramédicos — decide su tratamiento."
+        },
+        "position_stroke": {
+          "text": "Ayúdelo a recostarse con la cabeza y los hombros un poco elevados y apoyados. Afloje la ropa ajustada. Tranquilícelo — muchas veces entiende todo aunque no pueda hablar.",
+          "donot": [
+            "No le dé nada de comer, beber ni medicinas — ni siquiera aspirina: algunos derrames son hemorragias.",
+            "No espere a que se le pase."
+          ]
+        },
+        "q_conscious_st": {
+          "prompt": "¿Está despierto y respira normal?"
+        },
+        "recovery_stroke": {
+          "text": "Gírelo a la posición de recuperación de lado — con el lado débil abajo y acolchado — y vigile su respiración sin parar."
+        },
+        "monitor_stroke": {
+          "text": "Quédese con él y manténgalo quieto hasta que llegue la ayuda. Avíseme de inmediato si vomita, convulsiona, deja de responder o cambia su respiración."
+        }
+      },
+      "name": "derrame cerebral (ACV)"
+    },
+    "general_help": {
+      "nodes": {
+        "q_responsive_g": {
+          "prompt": "Estoy aquí para ayudar. Primero: ¿la persona está despierta y responde?"
+        },
+        "to_unresponsive_g": {
+          "text": "Que no responda es lo primero."
+        },
+        "q_breathing_g": {
+          "prompt": "¿Tiene algún problema para respirar?"
+        },
+        "to_breathing_g": {
+          "text": "La respiración es lo primero."
+        },
+        "q_bleeding_g": {
+          "prompt": "¿Hay un sangrado abundante?"
+        },
+        "to_bleeding_g": {
+          "text": "Controlamos el sangrado ahora."
+        },
+        "describe_g": {
+          "text": "De acuerdo. Dígame en pocas palabras qué pasó o qué duele — por ejemplo: mano quemada, dolor de pecho, caída fuerte, tragó algo."
+        }
+      },
+      "name": "ayuda general de primeros auxilios"
+    },
+    "breathing_difficulty": {
+      "nodes": {
+        "q_choke_bd": {
+          "prompt": "¿Estaba comiendo o llevándose algo a la boca — podría tener algo atorado en la garganta?"
+        },
+        "to_choking_bd": {
+          "text": "Lo tratamos como atragantamiento."
+        },
+        "q_allergy_bd": {
+          "prompt": "¿Podría ser una reacción alérgica — labios o lengua hinchados, ronchas, o una alergia grave conocida?"
+        },
+        "to_ana_bd": {
+          "text": "Lo tratamos como una reacción alérgica grave."
+        },
+        "q_asthma_bd": {
+          "prompt": "¿Tiene asma?"
+        },
+        "to_asthma_bd": {
+          "text": "Seguimos los pasos del asma."
+        },
+        "sit_upright_bd": {
+          "text": "Ayúdelo a ponerse en la posición donde respire más fácil — normalmente sentado, inclinado un poco hacia adelante. Afloje la ropa apretada. Abra una ventana.",
+          "donot": [
+            "No lo acueste mientras le cueste respirar.",
+            "No le dé comida ni bebida.",
+            "No lo deje solo."
+          ]
+        },
+        "calm_bd": {
+          "text": "Mantenga la calma con él y anímelo a respirar lento y parejo. Si tiene un inhalador recetado u oxígeno, ayúdelo a usarlo."
+        },
+        "monitor_bd": {
+          "text": "Vigílelo sin parar hasta que llegue ayuda. Avíseme de inmediato si los labios se ponen azules o grises, solo puede decir palabras sueltas, o se pone somnoliento o deja de responder."
+        }
+      },
+      "name": "dificultad para respirar"
+    }
+  }
+}

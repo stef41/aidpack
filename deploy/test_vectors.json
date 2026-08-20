@@ -1,0 +1,545 @@
+{
+ "version": 1,
+ "normalize": [
+  {
+   "in": "He's NOT breathing!!!",
+   "out": "he is not breathing"
+  },
+  {
+   "in": "my babby can't breeth",
+   "out": "my baby cannot breathe"
+  },
+  {
+   "in": "OMG she OD'd on pills",
+   "out": "she overdosed on pills"
+  },
+  {
+   "in": "héllo wörld",
+   "out": "hello world"
+  },
+  {
+   "in": "heeeelp meeee",
+   "out": "heelp mee"
+  },
+  {
+   "in": "i think he's choking rn",
+   "out": "i think he is choking right now"
+  }
+ ],
+ "ngram_counts": [
+  {
+   "in": "He's NOT breathing!!!",
+   "n_grams": 54
+  },
+  {
+   "in": "my babby can't breeth",
+   "n_grams": 63
+  },
+  {
+   "in": "OMG she OD'd on pills",
+   "n_grams": 63
+  },
+  {
+   "in": "héllo wörld",
+   "n_grams": 30
+  },
+  {
+   "in": "heeeelp meeee",
+   "n_grams": 24
+  },
+  {
+   "in": "i think he's choking rn",
+   "n_grams": 90
+  }
+ ],
+ "edit_distance": [
+  {
+   "a": "choking",
+   "b": "choaking",
+   "d": 1
+  },
+  {
+   "a": "bleeding",
+   "b": "bleding",
+   "d": 1
+  },
+  {
+   "a": "seizure",
+   "b": "seizur",
+   "d": 1
+  },
+  {
+   "a": "breathe",
+   "b": "breth",
+   "d": 2
+  },
+  {
+   "a": "tourniquet",
+   "b": "torniquet",
+   "d": 1
+  }
+ ],
+ "intents": [
+  {
+   "in": "my dad collapsed and hes not breathing",
+   "kind": "intent",
+   "family": "cardiac_arrest",
+   "score": 0.7411
+  },
+  {
+   "in": "baby is choking on a grape",
+   "kind": "intent",
+   "family": "choking",
+   "score": 0.8131
+  },
+  {
+   "in": "deep cut bleeding everywhere",
+   "kind": "intent",
+   "family": "severe_bleeding",
+   "score": 0.6028
+  },
+  {
+   "in": "she is having a seizure",
+   "kind": "intent",
+   "family": "seizure",
+   "score": 0.7868
+  },
+  {
+   "in": "burned my hand on the stove",
+   "kind": "intent",
+   "family": "burn",
+   "score": 0.7915
+  },
+  {
+   "in": "wasp stung me and my throat is closing",
+   "kind": "intent",
+   "family": "sting",
+   "score": 0.7223
+  },
+  {
+   "in": "grandma slurring one side droopy",
+   "kind": "intent",
+   "family": "stroke",
+   "score": 0.6108
+  },
+  {
+   "in": "help",
+   "kind": "intent",
+   "family": "general_help",
+   "score": 0.3354
+  },
+  {
+   "in": "i cant breathe",
+   "kind": "intent",
+   "family": "breathing_difficulty",
+   "score": 0.8446
+  },
+  {
+   "in": "swallowed bleach",
+   "kind": "intent",
+   "family": "poisoning",
+   "score": 0.4285
+  }
+ ],
+ "entities": [
+  {
+   "in": "my baby is not breathing",
+   "out": {
+    "age_group": "infant",
+    "breathing": "not_breathing",
+    "consciousness": "unresponsive"
+   }
+  },
+  {
+   "in": "my 8 year old broke his arm",
+   "out": {
+    "age_group": "child"
+   }
+  },
+  {
+   "in": "grandma is unconscious but breathing",
+   "out": {
+    "age_group": "adult",
+    "consciousness": "unresponsive",
+    "breathing": "breathing"
+   }
+  },
+  {
+   "in": "he is gasping strangely",
+   "out": {
+    "breathing": "abnormal",
+    "consciousness": "unresponsive"
+   }
+  },
+  {
+   "in": "she woke up and is talking",
+   "out": {
+    "consciousness": "responsive"
+   }
+  }
+ ],
+ "dialog_acts": [
+  {
+   "in": "yes",
+   "awaiting": true,
+   "act": "yes"
+  },
+  {
+   "in": "no not really",
+   "awaiting": true,
+   "act": "no"
+  },
+  {
+   "in": "not sure",
+   "awaiting": true,
+   "act": "unsure"
+  },
+  {
+   "in": "done",
+   "awaiting": false,
+   "act": "done"
+  },
+  {
+   "in": "say that again",
+   "awaiting": false,
+   "act": "repeat"
+  },
+  {
+   "in": "the paramedics are here",
+   "awaiting": false,
+   "act": "help_arrived"
+  },
+  {
+   "in": "ok",
+   "awaiting": true,
+   "act": "ack"
+  },
+  {
+   "in": "ok",
+   "awaiting": false,
+   "act": "done"
+  }
+ ],
+ "language_detection": [
+  {
+   "in": "mi esposo se desplomó y no respira",
+   "current": "en",
+   "out": "es"
+  },
+  {
+   "in": "mon bébé s'étouffe",
+   "current": "en",
+   "out": "fr"
+  },
+  {
+   "in": "my dad collapsed",
+   "current": "en",
+   "out": "en"
+  },
+  {
+   "in": "ayuda por favor",
+   "current": "en",
+   "out": "es"
+  },
+  {
+   "in": "aidez-moi il ne respire plus",
+   "current": "en",
+   "out": "fr"
+  },
+  {
+   "in": "me torcí el tobillo corriendo",
+   "current": "en",
+   "out": "es"
+  },
+  {
+   "in": "no",
+   "current": "en",
+   "out": "en"
+  },
+  {
+   "in": "help me please",
+   "current": "en",
+   "out": "en"
+  }
+ ],
+ "conversations": [
+  [
+   {
+    "user": "my husband collapsed and hes not breathing",
+    "lang": "en",
+    "protocol": "cpr_adult",
+    "node": "send_help",
+    "kind": "guidance",
+    "text": "CALL 911, or 112 NOW — or point at someone and tell them to call. Put the phone on speaker and keep me with you.\nStep 1: If anyone is nearby, send them to find an AED (defibrillator). Do not leave to search for one yourself. We start CPR right now.\nSay \"next\" when done — or tell me at once if anything changes."
+   },
+   {
+    "user": "called",
+    "lang": "en",
+    "protocol": "cpr_adult",
+    "node": "position",
+    "kind": "guidance",
+    "text": "Step 2: Lay them flat on their back on a firm surface. Kneel beside their chest.\nSay \"next\" when done — or tell me at once if anything changes."
+   },
+   {
+    "user": "done",
+    "lang": "en",
+    "protocol": "cpr_adult",
+    "node": "hands",
+    "kind": "guidance",
+    "text": "Step 3: Put the heel of one hand on the center of the chest, on the lower half of the breastbone. Put your other hand on top and interlock your fingers.\nDo not press on the ribs or the very bottom tip of the breastbone.\nDo not waste time checking for a pulse.\nSay \"next\" when done — or tell me at once if anything changes."
+   },
+   {
+    "user": "done",
+    "lang": "en",
+    "protocol": "cpr_adult",
+    "node": "compress",
+    "kind": "guidance",
+    "text": "Step 4: Push hard and fast: at least 5 centimeters, or 2 inches, deep, 100 to 120 pushes per minute — the beat of the song Stayin' Alive. Let the chest rise fully between pushes.\nSay \"next\" when done — or tell me at once if anything changes."
+   },
+   {
+    "user": "done",
+    "lang": "en",
+    "protocol": "cpr_adult",
+    "node": "q_trained",
+    "kind": "question",
+    "text": "Are you trained to give rescue breaths?"
+   },
+   {
+    "user": "no",
+    "lang": "en",
+    "protocol": "cpr_adult",
+    "node": "hands_only",
+    "kind": "guidance",
+    "text": "Step 5: Then do continuous chest compressions only — that is excellent CPR. Count out loud and do not stop. Swap with someone every 2 minutes if you can.\nSay \"next\" when done — or tell me at once if anything changes."
+   },
+   {
+    "user": "done",
+    "lang": "en",
+    "protocol": "cpr_adult",
+    "node": "aed_use",
+    "kind": "guidance",
+    "text": "Step 6: The moment an AED arrives, turn it on and follow its voice prompts. Bare the chest, stick the pads on as pictured, and let it check the rhythm. Keep doing CPR between its instructions.\nSay \"next\" when done — or tell me at once if anything changes."
+   },
+   {
+    "user": "done",
+    "lang": "en",
+    "protocol": "cpr_adult",
+    "node": "monitor_cpr",
+    "kind": "monitor",
+    "text": "Do not stop CPR until they clearly wake up and breathe normally, a professional takes over, or the AED tells you to stand clear. You are keeping them alive.\nI'm staying right here with you."
+   }
+  ],
+  [
+   {
+    "user": "my baby is choking",
+    "lang": "en",
+    "protocol": "choking_infant",
+    "node": "q_effective_i",
+    "kind": "question",
+    "text": "CALL 911, or 112 NOW — or point at someone and tell them to call. Put the phone on speaker and keep me with you.\nIs the baby coughing or crying loudly?"
+   },
+   {
+    "user": "no",
+    "lang": "en",
+    "protocol": "choking_infant",
+    "node": "position_i",
+    "kind": "guidance",
+    "text": "Step 1: Sit down. Lay the baby face-down along your forearm, resting on your thigh, head lower than the bottom. Support the head and jaw with your hand — never squeeze the throat.\nSay \"next\" when done — or tell me at once if anything changes."
+   },
+   {
+    "user": "done",
+    "lang": "en",
+    "protocol": "choking_infant",
+    "node": "backblows_i",
+    "kind": "guidance",
+    "text": "Step 2: Give 5 firm back blows between the shoulder blades with the heel of your hand. Check the mouth after and remove anything you can clearly see.\nSay \"next\" when done — or tell me at once if anything changes."
+   },
+   {
+    "user": "done",
+    "lang": "en",
+    "protocol": "choking_infant",
+    "node": "q_relief_i",
+    "kind": "question",
+    "text": "Is the baby breathing or crying now?"
+   },
+   {
+    "user": "no",
+    "lang": "en",
+    "protocol": "choking_infant",
+    "node": "chest_thrusts_i",
+    "kind": "guidance",
+    "text": "Step 3: Turn the baby face-up along your other forearm, head still lower than the body. Put two fingers on the center of the chest just below the nipple line. Give 5 quick downward chest thrusts.\nNever do abdominal thrusts on a baby.\nDo not do a blind finger sweep.\nSay \"next\" when done — or tell me at once if anything changes."
+   },
+   {
+    "user": "done",
+    "lang": "en",
+    "protocol": "choking_infant",
+    "node": "q_relief_i2",
+    "kind": "question",
+    "text": "Breathing or crying now?"
+   },
+   {
+    "user": "yes shes crying",
+    "lang": "en",
+    "protocol": "choking_infant",
+    "node": "monitor_after_i",
+    "kind": "monitor",
+    "text": "Well done. The baby must still be checked by a doctor today, even if they seem fine — thrusts can cause hidden injuries.\nI'm staying right here with you."
+   }
+  ],
+  [
+   {
+    "user": "i burned my finger on a pan",
+    "lang": "en",
+    "protocol": "burn_thermal",
+    "node": "stop_burning",
+    "kind": "guidance",
+    "text": "Step 1: Stop the burning: move away from the heat. If clothing is on fire — stop, drop and roll. Remove clothing and jewelry near the burn now, unless stuck to the skin.\nDo not pull off clothing that is stuck to the burn.\nSay \"next\" when done — or tell me at once if anything changes."
+   },
+   {
+    "user": "done",
+    "lang": "en",
+    "protocol": "burn_thermal",
+    "node": "cool_water",
+    "kind": "guidance",
+    "text": "Step 2: Cool the burn under cool running water for a full 20 minutes. This is the single most important step and helps even if you start late. Keep the rest of the body warm.\nDo not use ice or ice water.\nDo not put butter, oil, toothpaste, egg or any cream on the burn.\nSay \"next\" when done — or tell me at once if anything changes."
+   },
+   {
+    "user": "done",
+    "lang": "en",
+    "protocol": "burn_thermal",
+    "node": "q_burn_severity",
+    "kind": "question",
+    "text": "Check: is the burn larger than the person's palm, on the face, hands, feet, groin or a joint, deep, white, brown or charred, caused by electricity or chemicals, or is the person a baby or elderly?"
+   },
+   {
+    "user": "no",
+    "lang": "en",
+    "protocol": "burn_thermal",
+    "node": "cover_burn",
+    "kind": "guidance",
+    "text": "Step 3: After the full 20 minutes of cooling, cover the burn loosely with cling film, a clean plastic bag, or a sterile non-stick dressing.\nDo not burst blisters.\nDo not apply cotton wool or fluffy fabric directly.\nSay \"next\" when done — or tell me at once if anything changes."
+   },
+   {
+    "user": "done",
+    "lang": "en",
+    "protocol": "burn_thermal",
+    "node": "pain_burn",
+    "kind": "guidance",
+    "text": "Step 4: An over-the-counter pain reliever like paracetamol or ibuprofen, at the dose on the packet, can help. Keep the burn clean and covered.\nSay \"next\" when done — or tell me at once if anything changes."
+   },
+   {
+    "user": "done",
+    "lang": "en",
+    "protocol": "burn_thermal",
+    "node": "monitor_burn",
+    "kind": "monitor",
+    "text": "See a doctor if the burn blisters widely, looks deeper than red, gets more painful or smelly, shows spreading redness, or has not healed in 2 weeks. Any burn on a young child deserves a medical check.\nI'm staying right here with you."
+   }
+  ],
+  [
+   {
+    "user": "should i put butter on his burn",
+    "lang": "en",
+    "protocol": "burn_thermal",
+    "node": "stop_burning",
+    "kind": "guidance",
+    "text": "Important: never put butter, oil or toothpaste on a burn — cool running water only.\nStep 1: Stop the burning: move away from the heat. If clothing is on fire — stop, drop and roll. Remove clothing and jewelry near the burn now, unless stuck to the skin.\nDo not pull off clothing that is stuck to the burn.\nSay \"next\" when done — or tell me at once if anything changes."
+   },
+   {
+    "user": "done",
+    "lang": "en",
+    "protocol": "burn_thermal",
+    "node": "cool_water",
+    "kind": "guidance",
+    "text": "Step 2: Cool the burn under cool running water for a full 20 minutes. This is the single most important step and helps even if you start late. Keep the rest of the body warm.\nDo not use ice or ice water.\nDo not put butter, oil, toothpaste, egg or any cream on the burn.\nSay \"next\" when done — or tell me at once if anything changes."
+   }
+  ],
+  [
+   {
+    "user": "help",
+    "lang": "en",
+    "protocol": "general_help",
+    "node": "q_responsive_g",
+    "kind": "question",
+    "text": "I'm here to help. First: is the person awake and responding?"
+   },
+   {
+    "user": "no hes not responding",
+    "lang": "en",
+    "protocol": "unresponsive_breathing",
+    "node": "q_breathing_check",
+    "kind": "question",
+    "text": "This takes priority.\nCALL 911, or 112 NOW — or point at someone and tell them to call. Put the phone on speaker and keep me with you.\nFirst, check: tilt their head back gently and watch the chest for up to 10 seconds. Are they breathing normally?"
+   },
+   {
+    "user": "i cant tell if hes breathing",
+    "lang": "en",
+    "protocol": "cpr_adult",
+    "node": "send_help",
+    "kind": "guidance",
+    "text": "They are not breathing normally — we start CPR now.\nStep 1: If anyone is nearby, send them to find an AED (defibrillator). Do not leave to search for one yourself. We start CPR right now.\nSay \"next\" when done — or tell me at once if anything changes."
+   }
+  ],
+  [
+   {
+    "user": "mi esposo se desplomó y no respira",
+    "lang": "es",
+    "protocol": "cpr_adult",
+    "node": "send_help",
+    "kind": "guidance",
+    "text": "LLAME AL 911 o 112 AHORA — o señale a alguien y dígale que llame. Ponga el teléfono en altavoz y quédese conmigo.\nPaso 1: Si hay alguien cerca, mándelo a buscar un DEA (desfibrilador). No vaya usted a buscarlo. Empezamos RCP ahora mismo.\nDiga \"listo\" cuando termine — o avíseme de inmediato si algo cambia."
+   },
+   {
+    "user": "ya llamé",
+    "lang": "es",
+    "protocol": "cpr_adult",
+    "node": "position",
+    "kind": "guidance",
+    "text": "Paso 2: Acuéstelo boca arriba sobre una superficie firme. Arrodíllese junto a su pecho.\nDiga \"listo\" cuando termine — o avíseme de inmediato si algo cambia."
+   },
+   {
+    "user": "listo",
+    "lang": "es",
+    "protocol": "cpr_adult",
+    "node": "hands",
+    "kind": "guidance",
+    "text": "Paso 3: Ponga el talón de una mano en el centro del pecho, en la mitad inferior del esternón. Ponga la otra mano encima y entrelace los dedos.\nNo presione sobre las costillas ni sobre la punta del esternón.\nNo pierda tiempo buscando el pulso.\nDiga \"listo\" cuando termine — o avíseme de inmediato si algo cambia."
+   },
+   {
+    "user": "listo",
+    "lang": "es",
+    "protocol": "cpr_adult",
+    "node": "compress",
+    "kind": "guidance",
+    "text": "Paso 4: Presione fuerte y rápido: al menos 5 centímetros de profundidad, de 100 a 120 compresiones por minuto — al ritmo de la canción La Macarena. Deje que el pecho suba por completo entre compresiones.\nDiga \"listo\" cuando termine — o avíseme de inmediato si algo cambia."
+   }
+  ],
+  [
+   {
+    "user": "mon bébé s'étouffe",
+    "lang": "fr",
+    "protocol": "choking_infant",
+    "node": "q_effective_i",
+    "kind": "question",
+    "text": "APPELEZ LE 112 MAINTENANT — ou désignez quelqu'un et dites-lui d'appeler. Mettez le haut-parleur et restez avec moi.\nLe bébé tousse-t-il ou pleure-t-il fort ?"
+   },
+   {
+    "user": "non elle ne tousse pas",
+    "lang": "fr",
+    "protocol": "choking_infant",
+    "node": "position_i",
+    "kind": "guidance",
+    "text": "Étape 1: Asseyez-vous. Placez le bébé à plat ventre le long de votre avant-bras, posé sur votre cuisse, la tête plus basse que les fesses. Soutenez la tête et la mâchoire avec la main — sans jamais serrer la gorge.\nDites \"fait\" quand c'est terminé — ou prévenez-moi immédiatement si quelque chose change."
+   },
+   {
+    "user": "fait",
+    "lang": "fr",
+    "protocol": "choking_infant",
+    "node": "backblows_i",
+    "kind": "guidance",
+    "text": "Étape 2: Donnez 5 claques fermes entre les omoplates avec le talon de la main. Vérifiez ensuite la bouche et ne retirez que ce qui est clairement visible.\nDites \"fait\" quand c'est terminé — ou prévenez-moi immédiatement si quelque chose change."
+   }
+  ]
+ ]
+}

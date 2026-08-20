@@ -1,0 +1,10 @@
+# Large fetched assets — rebuild with tools/get_vision_assets.sh
+models/
+third_party/
+testmedia/
+
+# Local caches and build artifacts
+.cache/
+__pycache__/
+*.pyc
+figs_preview.html

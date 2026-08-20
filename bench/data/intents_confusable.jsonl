@@ -1,0 +1,60 @@
+{"text": "the kettle steam scalded her wrist", "expect": "burn"}
+{"text": "drain cleaner splashed on his wrist and its stinging", "expect": "chemical_burn"}
+{"text": "her shoulders are red and sore after the beach all day", "expect": "sunburn"}
+{"text": "he grabbed the live wire and now his palm is burned", "expect": "electric_shock"}
+{"text": "hes sweaty dizzy and cramping after mowing in the heat but talking normally", "expect": "heat_illness"}
+{"text": "hes hot as fire confused and stumbling after working in the sun", "expect": "heat_stroke"}
+{"text": "shes been in the freezing lake shes shivering violently and slurring", "expect": "hypothermia"}
+{"text": "just his toes are white waxy and numb from the cold boots", "expect": "frostbite"}
+{"text": "i rolled my ankle its swollen but i can hobble on it", "expect": "sprain"}
+{"text": "his forearm has a new bend in the middle where there is no joint", "expect": "fracture"}
+{"text": "her shoulder popped out at the joint it looks square", "expect": "dislocation"}
+{"text": "a bee got me and left its stinger in my arm", "expect": "sting"}
+{"text": "i found two tiny fang punctures and the leg is swelling fast after something slithered away", "expect": "snake_bite"}
+{"text": "a black widow was on my hand when i felt the pinch", "expect": "spider_bite"}
+{"text": "theres a small brown bug burrowed into my skin from hiking", "expect": "tick"}
+{"text": "next doors terrier bit clean through her glove", "expect": "animal_bite"}
+{"text": "something stung me in the waves long welts across my thigh", "expect": "jellyfish"}
+{"text": "she went pale and dropped in church but came round in seconds", "expect": "fainting"}
+{"text": "he has been out cold for five minutes but breathing", "expect": "unconscious"}
+{"text": "her mouth droops on one side and her words are jumbled", "expect": "stroke"}
+{"text": "he suddenly dropped and his whole body is jerking rhythmically", "expect": "seizure"}
+{"text": "shes diabetic skipped lunch and now shes confused and drenched in sweat", "expect": "diabetic"}
+{"text": "a chunk of hotdog went down and he cant make a sound", "expect": "choking"}
+{"text": "her chest whistles when she breathes out and her puffer is empty", "expect": "asthma"}
+{"text": "his face ballooned and hives spread everywhere right after the prawns", "expect": "anaphylaxis"}
+{"text": "the toddlers cough sounds like a seal bark and its worse tonight", "expect": "croup"}
+{"text": "shes gulping air fast with tingly fingers after the panic started", "expect": "panic"}
+{"text": "the toddler got into the vitamin gummies and ate the whole jar", "expect": "poisoning"}
+{"text": "he finished a whole bottle of vodka and now hes barely rousable", "expect": "alcohol_poisoning"}
+{"text": "we found him with a syringe pupils like pinheads breathing slow", "expect": "overdose"}
+{"text": "everyone got headaches and nausea since the heater ran all night", "expect": "carbon_monoxide"}
+{"text": "a shallow slice on his thumb from the peeler its oozing a little", "expect": "minor_wound"}
+{"text": "the glass went deep into his thigh and blood is pumping out fast", "expect": "severe_bleeding"}
+{"text": "blood keeps dripping from her nostril after she blew her nose", "expect": "nosebleed"}
+{"text": "the bandsaw took the top of his finger clean off", "expect": "amputation"}
+{"text": "the screwdriver is still sticking out of his calf", "expect": "embedded_object"}
+{"text": "crushing pressure in his chest spreading to his jaw and hes clammy", "expect": "heart_attack"}
+{"text": "my heart is pounding and i feel doom but this always happens before exams", "expect": "panic"}
+{"text": "he headed the ball hard and now hes dazed and repeating himself", "expect": "head_injury"}
+{"text": "she fell off the horse and screams if anyone touches her neck", "expect": "spinal_injury"}
+{"text": "the baby is burning with fever and suddenly started twitching all over", "expect": "febrile_seizure"}
+{"text": "grandpa has epilepsy and this fit looks like his usual ones", "expect": "seizure"}
+{"text": "boiling soup went all over the toddlers legs", "expect": "burn"}
+{"text": "the pool acid tub splashed his shin and the skin is going white", "expect": "chemical_burn"}
+{"text": "shes wobbly and pale after standing in the hot parade but answers fine", "expect": "heat_illness"}
+{"text": "he cant get his wedding ring off his finger is twice the size after the fall onto it", "expect": "sprain"}
+{"text": "a wasp flew into his mouth and stung his tongue and now his throat feels tight", "expect": "anaphylaxis"}
+{"text": "the dog nipped her calf and it broke the skin slightly", "expect": "animal_bite"}
+{"text": "he surfaced coughing hard after being under the water too long", "expect": "drowning"}
+{"text": "shes eight months pregnant and the contractions are ninety seconds apart", "expect": "childbirth"}
+{"text": "the little one swallowed a coin sized battery from the remote", "expect": "poisoning"}
+{"text": "hes been sick all night and his lips are cracked and dry", "expect": "dehydration"}
+{"text": "i sliced a flap of skin off my knuckle grating cheese", "expect": "minor_wound"}
+{"text": "his lower leg is bent sideways under him after the tackle", "expect": "fracture"}
+{"text": "the cast iron pan seared three of her fingertips", "expect": "burn"}
+{"text": "he was defrosting the car all morning and now two fingers are wooden and white", "expect": "frostbite"}
+{"text": "she took her insulin then never ate and now shes slurring", "expect": "diabetic"}
+{"text": "milk went down the wrong way and the baby is silent and going red", "expect": "choking"}
+{"text": "his ankle turned over on the curb and puffed up like a golf ball", "expect": "sprain"}
+{"text": "the old radiator pipe burst and sprayed his forearm with boiling water", "expect": "burn"}

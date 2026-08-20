@@ -1,0 +1,2054 @@
+{
+  "protocols": [
+    {
+      "id": "severe_bleeding",
+      "family": "severe_bleeding",
+      "name": "Severe / life-threatening bleeding",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "Stop the Bleed (ACS)",
+        "IFRC First Aid Guidelines 2020",
+        "AHA/ARC 2024 First Aid Focused Update"
+      ],
+      "keywords": [
+        [
+          "bleeding heavily",
+          6
+        ],
+        [
+          "blood everywhere",
+          6
+        ],
+        [
+          "bleeding won't stop",
+          6
+        ],
+        [
+          "spurting blood",
+          7
+        ],
+        [
+          "deep cut",
+          4
+        ],
+        [
+          "stabbed",
+          6
+        ],
+        [
+          "gunshot",
+          6
+        ],
+        [
+          "hemorrhage",
+          6
+        ],
+        [
+          "blood soaking through",
+          6
+        ],
+        [
+          "slit",
+          3
+        ],
+        [
+          "artery",
+          5
+        ],
+        [
+          "gushing blood",
+          7
+        ],
+        [
+          "blood is pumping",
+          7
+        ],
+        [
+          "pumping out",
+          5
+        ],
+        [
+          "tourniquet",
+          6
+        ],
+        [
+          "slashed",
+          5
+        ],
+        [
+          "chainsaw",
+          4
+        ],
+        [
+          "sliced",
+          4
+        ],
+        [
+          "bleeding",
+          3
+        ],
+        [
+          "blood",
+          2
+        ],
+        [
+          "bleeding through",
+          6
+        ],
+        [
+          "amounts of blood",
+          6
+        ]
+      ],
+      "exemplars": [
+        "he cut his leg and blood is everywhere",
+        "bleeding will not stop help",
+        "she got stabbed in the arm",
+        "blood is spurting out of the wound",
+        "deep cut bleeding heavily",
+        "gunshot wound to the leg",
+        "his hand is gushing blood",
+        "blood is pumping out of the cut",
+        "he slashed his arm on glass huge amounts of blood",
+        "when should i use a tourniquet"
+      ],
+      "visual_findings": [
+        "heavy_bleeding",
+        "blood_pool",
+        "open_wound_large"
+      ],
+      "entry": "pressure",
+      "nodes": {
+        "pressure": {
+          "type": "step",
+          "text": "Press hard on the wound right now with a clean cloth, towel, or your hands — hard, direct pressure is what stops bleeding. If you have gloves or a plastic bag, put them on your hands first.",
+          "donot": [
+            "Do not remove any object stuck in the wound — press around it instead."
+          ],
+          "next": "lie_down"
+        },
+        "lie_down": {
+          "type": "step",
+          "text": "Have them lie down. Keep pressing hard without letting go. If blood soaks through, add more cloth on top — never remove the soaked layer.",
+          "next": "q_stopping"
+        },
+        "q_stopping": {
+          "type": "question",
+          "prompt": "After 10 minutes of firm pressure, is the bleeding slowing down?",
+          "yes": "bandage",
+          "no": "q_limb",
+          "unsure": "q_limb"
+        },
+        "bandage": {
+          "type": "step",
+          "text": "Keep the pressure on. If you have a bandage, wrap it firmly over the padding to hold the pressure — snug, but fingers or toes should stay pink and warm.",
+          "next": "shock_watch"
+        },
+        "q_limb": {
+          "type": "question",
+          "prompt": "Is the wound on an arm or a leg?",
+          "yes": "tourniquet",
+          "no": "pack_wound",
+          "unsure": "pack_wound"
+        },
+        "tourniquet": {
+          "type": "step",
+          "text": "If you have a tourniquet, put it 5 to 8 centimeters above the wound — not on a joint — and tighten until the bleeding stops. No tourniquet? Use a folded scarf or tie with a stick to twist it tight. Write down or remember the exact time you applied it.",
+          "donot": [
+            "Do not loosen or remove a tourniquet once applied.",
+            "Do not cover the tourniquet — responders must see it."
+          ],
+          "next": "shock_watch",
+          "figure": "tourniquet"
+        },
+        "pack_wound": {
+          "type": "step",
+          "text": "Pack the wound: push clean cloth or gauze directly into it, filling the space, and keep pressing hard on top with both hands. Do not let go.",
+          "next": "shock_watch"
+        },
+        "shock_watch": {
+          "type": "step",
+          "text": "Keep them lying down and warm — cover them with a coat or blanket. Reassure them and keep talking.",
+          "donot": [
+            "Do not give them anything to eat or drink.",
+            "Do not raise the wounded limb instead of pressing — pressure comes first."
+          ],
+          "next": "monitor_bleed"
+        },
+        "monitor_bleed": {
+          "type": "monitor",
+          "text": "Keep pressure on until help arrives. Tell me immediately if they become pale, cold, confused or drowsy — and never let go of the pressure."
+        }
+      }
+    },
+    {
+      "id": "minor_wound",
+      "family": "minor_wound",
+      "name": "Cuts, scrapes and small wounds",
+      "age_group": "any",
+      "severity": "minor",
+      "ems": "self_care",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "small cut",
+          5
+        ],
+        [
+          "scrape",
+          5
+        ],
+        [
+          "graze",
+          5
+        ],
+        [
+          "cut my finger",
+          5
+        ],
+        [
+          "cut myself",
+          4
+        ],
+        [
+          "scraped knee",
+          5
+        ],
+        [
+          "paper cut",
+          5
+        ],
+        [
+          "scratch",
+          4
+        ],
+        [
+          "skinned",
+          4
+        ],
+        [
+          "little cut",
+          5
+        ],
+        [
+          "cut is bleeding",
+          4
+        ],
+        [
+          "shallow cut",
+          5
+        ],
+        [
+          "nicked",
+          5
+        ],
+        [
+          "shallow slice",
+          7
+        ],
+        [
+          "oozing a little",
+          6
+        ],
+        [
+          "oozing",
+          4
+        ],
+        [
+          "slice",
+          3
+        ],
+        [
+          "flap of skin",
+          7
+        ],
+        [
+          "grating",
+          5
+        ],
+        [
+          "sliced a flap",
+          7
+        ],
+        [
+          "knuckle",
+          4
+        ]
+      ],
+      "exemplars": [
+        "i cut my finger chopping vegetables",
+        "my kid scraped his knee",
+        "small cut how do i clean it",
+        "i have a scratch that is bleeding a little",
+        "grazed my elbow falling off the bike",
+        "paper cut bleeding"
+      ],
+      "visual_findings": [
+        "small_cut",
+        "abrasion"
+      ],
+      "entry": "q_severe_check",
+      "nodes": {
+        "q_severe_check": {
+          "type": "question",
+          "prompt": "Quick check: is it bleeding heavily, spurting, gaping open, or very deep?",
+          "yes": "to_severe",
+          "no": "wash_hands",
+          "unsure": "wash_hands"
+        },
+        "to_severe": {
+          "type": "escalate",
+          "protocol": "severe_bleeding",
+          "text": "That needs the serious-bleeding steps."
+        },
+        "wash_hands": {
+          "type": "step",
+          "text": "Wash your own hands first if you can. Press gently on the wound with a clean cloth until any bleeding stops — usually a few minutes.",
+          "next": "clean_wound"
+        },
+        "clean_wound": {
+          "type": "step",
+          "text": "Rinse the wound under clean running water for a few minutes. Wash around it with mild soap. Gently remove loose dirt with a clean, damp gauze.",
+          "donot": [
+            "Do not pour hydrogen peroxide, iodine or alcohol into the wound — they damage the tissue.",
+            "Do not scrub hard."
+          ],
+          "next": "dress_wound"
+        },
+        "dress_wound": {
+          "type": "step",
+          "text": "Pat it dry, apply a thin layer of antibiotic ointment or petroleum jelly if available, and cover with a plaster or sterile dressing. Change it daily and keep it clean and dry.",
+          "next": "q_tetanus"
+        },
+        "q_tetanus": {
+          "type": "question",
+          "prompt": "Was the cut from something dirty or rusty, or is their tetanus shot more than 5 years old or unknown?",
+          "yes": "tetanus_advice",
+          "no": "monitor_wound",
+          "unsure": "tetanus_advice"
+        },
+        "tetanus_advice": {
+          "type": "step",
+          "text": "See a doctor or pharmacist within 48 hours about a tetanus booster — dirty or rusty wounds carry tetanus risk.",
+          "next": "monitor_wound"
+        },
+        "monitor_wound": {
+          "type": "monitor",
+          "text": "See a doctor if it gapes open and might need closing, would not stop bleeding, or over the next days becomes more red, swollen, warm, oozing, or a fever starts — those are infection signs."
+        }
+      }
+    },
+    {
+      "id": "nosebleed",
+      "family": "nosebleed",
+      "name": "Nosebleed",
+      "age_group": "any",
+      "severity": "minor",
+      "ems": "self_care",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "nosebleed",
+          7
+        ],
+        [
+          "nose is bleeding",
+          7
+        ],
+        [
+          "bloody nose",
+          7
+        ],
+        [
+          "blood from nose",
+          6
+        ],
+        [
+          "nose bleed",
+          7
+        ],
+        [
+          "nose will not stop",
+          8
+        ],
+        [
+          "nose bleeding",
+          7
+        ],
+        [
+          "nose started gushing",
+          8
+        ],
+        [
+          "nose is gushing",
+          8
+        ],
+        [
+          "nose",
+          2
+        ]
+      ],
+      "exemplars": [
+        "my nose is bleeding a lot",
+        "how do i stop a nosebleed",
+        "kid has a bloody nose",
+        "nosebleed will not stop",
+        "blood pouring from my nose"
+      ],
+      "visual_findings": [
+        "nose_bleeding"
+      ],
+      "entry": "sit_forward",
+      "nodes": {
+        "sit_forward": {
+          "type": "step",
+          "text": "Sit them down and lean them FORWARD — head tilted slightly down, so blood does not run down the throat.",
+          "donot": [
+            "Do not tilt the head back.",
+            "Do not lie them down."
+          ],
+          "next": "pinch",
+          "figure": "nosebleed"
+        },
+        "pinch": {
+          "type": "step",
+          "text": "Pinch the soft part of the nose, just below the bony bridge, firmly closed. Hold for 10 to 15 minutes without peeking. Breathe through the mouth. Spit out any blood in the mouth.",
+          "next": "q_stopped_nb",
+          "figure": "nosebleed"
+        },
+        "q_stopped_nb": {
+          "type": "question",
+          "prompt": "After 10 to 15 minutes of steady pinching, has the bleeding stopped?",
+          "yes": "aftercare_nb",
+          "no": "pinch_again",
+          "unsure": "pinch_again"
+        },
+        "pinch_again": {
+          "type": "step",
+          "text": "Pinch again, a little lower and firmer, for another 15 minutes. A cold pack on the bridge of the nose can help.",
+          "next": "q_stopped_nb2"
+        },
+        "q_stopped_nb2": {
+          "type": "question",
+          "prompt": "Stopped now?",
+          "yes": "aftercare_nb",
+          "no": "ems_nb",
+          "unsure": "ems_nb"
+        },
+        "ems_nb": {
+          "type": "step",
+          "text": "Bleeding beyond 30 minutes of good pressure needs urgent medical care — go to an emergency department, or call emergency services if it is very heavy, they feel faint, or they take blood thinners.",
+          "flags": [
+            "ems"
+          ],
+          "next": "monitor_nb"
+        },
+        "aftercare_nb": {
+          "type": "step",
+          "text": "For the next day: no nose blowing, no picking, no heavy lifting, and sneeze with the mouth open. A thin smear of petroleum jelly inside the nostril keeps it from cracking again.",
+          "next": "monitor_nb"
+        },
+        "monitor_nb": {
+          "type": "monitor",
+          "text": "If it restarts, do the same: lean forward and pinch for 15 minutes. Frequent nosebleeds are worth mentioning to a doctor."
+        }
+      }
+    },
+    {
+      "id": "amputation",
+      "family": "amputation",
+      "name": "Amputation (severed body part)",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "Stop the Bleed (ACS)",
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "cut off finger",
+          7
+        ],
+        [
+          "severed",
+          7
+        ],
+        [
+          "amputated",
+          7
+        ],
+        [
+          "lost a finger",
+          6
+        ],
+        [
+          "cut off his hand",
+          7
+        ],
+        [
+          "chopped off",
+          6
+        ],
+        [
+          "finger came off",
+          7
+        ],
+        [
+          "took off two",
+          5
+        ],
+        [
+          "took off his",
+          5
+        ],
+        [
+          "cut clean off",
+          7
+        ]
+      ],
+      "exemplars": [
+        "he cut his finger off with the saw",
+        "her hand got severed in the machine",
+        "the lawnmower cut off his toes",
+        "amputated finger what do i do with it",
+        "his thumb was chopped off"
+      ],
+      "visual_findings": [
+        "amputation_wound",
+        "heavy_bleeding",
+        "severed_part"
+      ],
+      "entry": "control_bleed_amp",
+      "nodes": {
+        "control_bleed_amp": {
+          "type": "step",
+          "text": "Stop the bleeding first: press hard on the stump with clean cloth. If bleeding from an arm or leg will not stop with pressure, apply a tourniquet 5 to 8 centimeters above the wound and note the time.",
+          "next": "dress_stump",
+          "figure": "tourniquet"
+        },
+        "dress_stump": {
+          "type": "step",
+          "text": "Cover the stump with a moist sterile dressing or clean cloth and bandage firmly. Lay them down, keep them warm, and reassure them.",
+          "donot": [
+            "Do not give them anything to eat or drink."
+          ],
+          "next": "preserve_part"
+        },
+        "preserve_part": {
+          "type": "step",
+          "text": "Now the severed part: wrap it in clean, slightly damp gauze or cloth. Put it in a sealed plastic bag. Put that bag on top of ice or ice water in another container.",
+          "donot": [
+            "Do not put the part directly on ice.",
+            "Do not submerge the part in water.",
+            "Do not wash or scrub the part."
+          ],
+          "next": "label_part"
+        },
+        "label_part": {
+          "type": "step",
+          "text": "Keep the part with the person — hand it to the paramedics. Reattachment works best within hours, so make sure it travels with them.",
+          "next": "monitor_amp"
+        },
+        "monitor_amp": {
+          "type": "monitor",
+          "text": "Keep firm pressure on the stump and keep them warm and lying down. Tell me if they become pale, sweaty, confused or drowsy."
+        }
+      }
+    },
+    {
+      "id": "embedded_object",
+      "family": "embedded_object",
+      "name": "Object embedded in a wound",
+      "age_group": "any",
+      "severity": "urgent",
+      "ems": "conditional",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "impaled",
+          7
+        ],
+        [
+          "stuck in his leg",
+          5
+        ],
+        [
+          "knife stuck",
+          6
+        ],
+        [
+          "glass stuck in",
+          6
+        ],
+        [
+          "nail in his foot",
+          6
+        ],
+        [
+          "object in the wound",
+          6
+        ],
+        [
+          "rebar",
+          5
+        ],
+        [
+          "stick stuck in",
+          5
+        ],
+        [
+          "fish hook",
+          6
+        ],
+        [
+          "sticking out of",
+          6
+        ],
+        [
+          "still in his",
+          4
+        ],
+        [
+          "shard",
+          5
+        ]
+      ],
+      "exemplars": [
+        "a piece of glass is stuck in her arm",
+        "he fell on a spike and it is still in his leg",
+        "knife is still in the wound do i pull it out",
+        "nail went through his foot",
+        "metal rod impaled his thigh"
+      ],
+      "visual_findings": [
+        "embedded_object",
+        "open_wound_large"
+      ],
+      "entry": "leave_it",
+      "nodes": {
+        "leave_it": {
+          "type": "step",
+          "text": "Leave the object exactly where it is — it is plugging the wound and pulling it out can cause massive bleeding.",
+          "donot": [
+            "Do not pull the object out.",
+            "Do not press directly on the object."
+          ],
+          "next": "pad_around"
+        },
+        "pad_around": {
+          "type": "step",
+          "text": "Press on the wound edges around the object, then build padding around it — rolled bandages or cloth on each side — until the padding is as high as the object, and bandage over the padding without pressing the object.",
+          "next": "q_big_object"
+        },
+        "q_big_object": {
+          "type": "question",
+          "prompt": "Is it a large object, in the chest, belly, neck or eye, or is there heavy bleeding?",
+          "yes": "ems_embedded",
+          "no": "urgent_care_embedded",
+          "unsure": "ems_embedded"
+        },
+        "ems_embedded": {
+          "type": "step",
+          "text": "Call emergency services now. Keep them as still as possible and keep the object stabilized.",
+          "flags": [
+            "ems"
+          ],
+          "next": "monitor_embedded"
+        },
+        "urgent_care_embedded": {
+          "type": "step",
+          "text": "Even small embedded objects need a professional to remove them safely — go to urgent care or an emergency department now, keeping the object padded and still.",
+          "next": "monitor_embedded"
+        },
+        "monitor_embedded": {
+          "type": "monitor",
+          "text": "Keep the object still and the person calm. Tell me if bleeding increases or they feel faint, pale or sweaty."
+        }
+      }
+    },
+    {
+      "id": "head_injury",
+      "family": "head_injury",
+      "name": "Head injury / concussion",
+      "age_group": "any",
+      "severity": "urgent",
+      "ems": "conditional",
+      "sources": [
+        "IFRC First Aid Guidelines 2020",
+        "CDC HEADS UP concussion guidance"
+      ],
+      "keywords": [
+        [
+          "hit his head",
+          6
+        ],
+        [
+          "head injury",
+          6
+        ],
+        [
+          "concussion",
+          6
+        ],
+        [
+          "banged her head",
+          6
+        ],
+        [
+          "fell and hit head",
+          6
+        ],
+        [
+          "head trauma",
+          6
+        ],
+        [
+          "bump on the head",
+          5
+        ],
+        [
+          "knocked his head",
+          6
+        ],
+        [
+          "hit her head",
+          6
+        ],
+        [
+          "hit my head",
+          6
+        ],
+        [
+          "fell down the stairs",
+          5
+        ],
+        [
+          "bump head",
+          4
+        ],
+        [
+          "fell off the couch",
+          5
+        ],
+        [
+          "pupil",
+          5
+        ],
+        [
+          "faceplanted",
+          5
+        ],
+        [
+          "dazed",
+          5
+        ],
+        [
+          "helmet",
+          4
+        ],
+        [
+          "asking the same",
+          6
+        ],
+        [
+          "repeating himself",
+          6
+        ]
+      ],
+      "exemplars": [
+        "my son fell and hit his head hard",
+        "she banged her head on the cupboard",
+        "hit his head playing football possible concussion",
+        "toddler fell off the couch onto his head",
+        "i hit my head and feel dizzy",
+        "baby fell off the couch big bump on his head"
+      ],
+      "visual_findings": [
+        "head_wound",
+        "bruise_head"
+      ],
+      "entry": "q_red_flags_head",
+      "nodes": {
+        "q_red_flags_head": {
+          "type": "question",
+          "prompt": "Check these now: were they knocked out even briefly, have they vomited, are they confused or slurring, is one pupil bigger, are they having a seizure, or is there fluid or blood from an ear or the nose?",
+          "yes": "ems_head",
+          "no": "q_conscious_head",
+          "unsure": "ems_head"
+        },
+        "ems_head": {
+          "type": "step",
+          "text": "Call emergency services now — those are danger signs after a head injury. Keep them still and lying down with head and shoulders slightly raised. If they vomit, roll them to their side keeping head and neck in line.",
+          "flags": [
+            "ems"
+          ],
+          "donot": [
+            "Do not give them painkillers, food or drink.",
+            "Do not let them go to sleep unattended before help arrives."
+          ],
+          "next": "monitor_head_sev"
+        },
+        "monitor_head_sev": {
+          "type": "monitor",
+          "text": "Keep them still and watch closely. Tell me immediately if they become drowsy, vomit again, or stop responding."
+        },
+        "q_conscious_head": {
+          "type": "question",
+          "prompt": "Are they fully awake, talking normally, and acting like themselves?",
+          "yes": "cold_pack_head",
+          "no": "ems_head",
+          "unsure": "ems_head"
+        },
+        "cold_pack_head": {
+          "type": "step",
+          "text": "Have them stop all activity and rest sitting or lying down. Hold a cold pack wrapped in cloth on the bump for up to 20 minutes.",
+          "next": "watch_24"
+        },
+        "watch_24": {
+          "type": "step",
+          "text": "Someone should watch them closely for the next 24 hours, and it is fine for them to sleep — just check on them regularly. No sport, screens minimal, no alcohol.",
+          "next": "monitor_head"
+        },
+        "monitor_head": {
+          "type": "monitor",
+          "text": "Go straight to emergency care if any of these appear: repeated vomiting, worsening headache, unusual drowsiness or confusion, seizure, weakness or numbness, or clear fluid from the nose or ears. See a doctor before returning to sport."
+        }
+      }
+    },
+    {
+      "id": "spinal_injury",
+      "family": "spinal_injury",
+      "name": "Suspected spinal (neck / back) injury",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "neck injury",
+          6
+        ],
+        [
+          "back injury",
+          5
+        ],
+        [
+          "spinal",
+          6
+        ],
+        [
+          "broke his neck",
+          7
+        ],
+        [
+          "fell from a ladder",
+          5
+        ],
+        [
+          "diving accident",
+          6
+        ],
+        [
+          "can't feel his legs",
+          7
+        ],
+        [
+          "fell off a roof",
+          5
+        ],
+        [
+          "numb legs after fall",
+          6
+        ],
+        [
+          "cannot move his legs",
+          8
+        ],
+        [
+          "cannot feel",
+          6
+        ],
+        [
+          "dove into",
+          5
+        ],
+        [
+          "shallow end",
+          5
+        ],
+        [
+          "touches her neck",
+          7
+        ],
+        [
+          "touches his neck",
+          7
+        ],
+        [
+          "fell off the horse",
+          6
+        ],
+        [
+          "neck",
+          3
+        ]
+      ],
+      "exemplars": [
+        "he fell off the roof and his neck hurts",
+        "diving accident he cannot feel his legs",
+        "car crash she says her back hurts badly",
+        "possible spinal injury after falling from a ladder",
+        "he cannot move his legs after the fall"
+      ],
+      "visual_findings": [
+        "person_fallen_height",
+        "person_motionless"
+      ],
+      "entry": "keep_still",
+      "nodes": {
+        "keep_still": {
+          "type": "step",
+          "text": "Tell them not to move at all. Keep them exactly in the position you found them.",
+          "donot": [
+            "Do not move them unless they are in immediate danger like fire or traffic.",
+            "Do not remove a helmet unless you must open the airway.",
+            "Do not put anything under their head."
+          ],
+          "next": "hold_head"
+        },
+        "hold_head": {
+          "type": "step",
+          "text": "Kneel behind their head. Hold it steady with a hand on each side, keeping head, neck and back in one line. Stay like this until paramedics take over.",
+          "next": "q_responsive_sp"
+        },
+        "q_responsive_sp": {
+          "type": "question",
+          "prompt": "Are they awake and breathing normally?",
+          "yes": "reassure_sp",
+          "no": "d_breathing_sp",
+          "unsure": "d_breathing_sp"
+        },
+        "d_breathing_sp": {
+          "type": "decision",
+          "fact": "breathing",
+          "cases": {
+            "not_breathing": "to_cpr_sp",
+            "abnormal": "to_cpr_sp"
+          },
+          "default": "q_breathing_sp"
+        },
+        "q_breathing_sp": {
+          "type": "question",
+          "prompt": "Are they breathing normally?",
+          "yes": "reassure_sp",
+          "no": "to_cpr_sp",
+          "unsure": "to_cpr_sp"
+        },
+        "to_cpr_sp": {
+          "type": "escalate",
+          "protocol": "cardiac_arrest",
+          "text": "Breathing comes before the spine — we start CPR now, keeping the head as steady as you can."
+        },
+        "reassure_sp": {
+          "type": "step",
+          "text": "Keep them warm with a blanket laid over them and keep talking calmly. If they vomit, roll them to their side as one unit — ideally with helpers — keeping head, neck and back aligned.",
+          "next": "monitor_sp"
+        },
+        "monitor_sp": {
+          "type": "monitor",
+          "text": "Hold their head steady and keep them still until help arrives. Tell me if their breathing changes or they stop responding."
+        }
+      }
+    },
+    {
+      "id": "fracture",
+      "family": "fracture",
+      "name": "Broken bone (fracture)",
+      "age_group": "any",
+      "severity": "urgent",
+      "ems": "conditional",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "broken bone",
+          6
+        ],
+        [
+          "broke his arm",
+          6
+        ],
+        [
+          "broken leg",
+          6
+        ],
+        [
+          "fracture",
+          6
+        ],
+        [
+          "broke her wrist",
+          6
+        ],
+        [
+          "bone sticking out",
+          7
+        ],
+        [
+          "snapped his ankle",
+          6
+        ],
+        [
+          "broken collarbone",
+          6
+        ],
+        [
+          "heard a crack",
+          5
+        ],
+        [
+          "crooked",
+          4
+        ],
+        [
+          "bent the wrong way",
+          7
+        ],
+        [
+          "looks broken",
+          6
+        ],
+        [
+          "bone is poking",
+          8
+        ],
+        [
+          "poking through",
+          7
+        ],
+        [
+          "bone through the skin",
+          8
+        ],
+        [
+          "new bend",
+          7
+        ],
+        [
+          "bend in the middle",
+          7
+        ],
+        [
+          "bent in the middle",
+          7
+        ],
+        [
+          "bent sideways",
+          8
+        ],
+        [
+          "leg is bent",
+          7
+        ],
+        [
+          "bent under him",
+          7
+        ],
+        [
+          "bent under her",
+          7
+        ]
+      ],
+      "exemplars": [
+        "i think he broke his arm",
+        "her leg looks broken after the fall",
+        "bone is sticking out of his leg",
+        "broken wrist from falling off a bike",
+        "my ankle snapped i heard a crack",
+        "kid fell off the trampoline arm looks bent"
+      ],
+      "visual_findings": [
+        "deformed_limb",
+        "bone_exposed",
+        "swollen_limb"
+      ],
+      "entry": "q_open_or_major",
+      "nodes": {
+        "q_open_or_major": {
+          "type": "question",
+          "prompt": "Is the bone poking through the skin, is the leg, hip or thigh involved, is the limb bent at a wrong angle, or are they pale, cold or faint?",
+          "yes": "ems_fracture",
+          "no": "immobilize",
+          "unsure": "ems_fracture"
+        },
+        "ems_fracture": {
+          "type": "step",
+          "text": "Call emergency services now. Keep them still and support the limb exactly where it lies. If bone is exposed, cover the wound lightly with a clean dressing and press around it — not on the bone — to control bleeding.",
+          "flags": [
+            "ems"
+          ],
+          "donot": [
+            "Do not push the bone back in.",
+            "Do not straighten the limb.",
+            "Do not let them eat or drink — surgery may be needed."
+          ],
+          "next": "monitor_fracture_sev"
+        },
+        "monitor_fracture_sev": {
+          "type": "monitor",
+          "text": "Keep the limb supported and them warm and still until help arrives. Tell me if they become pale, sweaty or drowsy, or the limb goes numb or blue."
+        },
+        "immobilize": {
+          "type": "step",
+          "text": "Keep the injured part completely still, supported in the position found. For an arm, support it against the body with a cushion, folded towel or a sling. Remove rings or watches near the injury now, before swelling.",
+          "donot": [
+            "Do not straighten or force the limb.",
+            "Do not test it by making them move or walk on it."
+          ],
+          "next": "ice_fracture"
+        },
+        "ice_fracture": {
+          "type": "step",
+          "text": "Put a cold pack wrapped in cloth over the area for up to 20 minutes to ease pain and swelling.",
+          "next": "transport_fracture"
+        },
+        "transport_fracture": {
+          "type": "step",
+          "text": "They need an X-ray: go to urgent care or the emergency department now, keeping the limb supported and still. Call emergency services instead if you cannot move them without pain, or the limb is numb, blue or cold.",
+          "next": "monitor_fracture"
+        },
+        "monitor_fracture": {
+          "type": "monitor",
+          "text": "Keep the limb still and elevated if possible. Tell me if fingers or toes beyond the injury turn numb, blue or cold — that is urgent."
+        }
+      }
+    },
+    {
+      "id": "sprain_strain",
+      "family": "sprain",
+      "name": "Sprain or strain",
+      "age_group": "any",
+      "severity": "minor",
+      "ems": "self_care",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "sprained",
+          6
+        ],
+        [
+          "sprain",
+          6
+        ],
+        [
+          "twisted my ankle",
+          6
+        ],
+        [
+          "twisted ankle",
+          6
+        ],
+        [
+          "pulled a muscle",
+          6
+        ],
+        [
+          "rolled my ankle",
+          6
+        ],
+        [
+          "strained",
+          5
+        ],
+        [
+          "swollen ankle",
+          5
+        ],
+        [
+          "twisted knee",
+          6
+        ],
+        [
+          "twisted",
+          4
+        ],
+        [
+          "cannot walk",
+          4
+        ],
+        [
+          "rolled ankle",
+          6
+        ],
+        [
+          "pulled something",
+          6
+        ],
+        [
+          "calf",
+          3
+        ],
+        [
+          "ring off",
+          5
+        ],
+        [
+          "finger is twice the size",
+          7
+        ],
+        [
+          "twice the size",
+          6
+        ],
+        [
+          "puffed up",
+          5
+        ],
+        [
+          "turned over",
+          5
+        ],
+        [
+          "ankle turned",
+          7
+        ]
+      ],
+      "exemplars": [
+        "i twisted my ankle running",
+        "sprained wrist from falling",
+        "rolled my ankle it is swelling",
+        "pulled a muscle in my back lifting",
+        "my knee twisted and now it hurts to walk"
+      ],
+      "visual_findings": [
+        "swollen_limb",
+        "bruise"
+      ],
+      "entry": "q_fracture_doubt",
+      "nodes": {
+        "q_fracture_doubt": {
+          "type": "question",
+          "prompt": "Can they put any weight on it or use it at all, and does it look a normal shape?",
+          "yes": "rice_rest",
+          "no": "to_fracture",
+          "unsure": "to_fracture"
+        },
+        "to_fracture": {
+          "type": "escalate",
+          "protocol": "fracture",
+          "text": "Cannot bear weight or looks deformed — treat it as a possible break."
+        },
+        "rice_rest": {
+          "type": "step",
+          "text": "Rest it: stop the activity and take the weight off the joint.",
+          "next": "rice_ice"
+        },
+        "rice_ice": {
+          "type": "step",
+          "text": "Ice it: cold pack or ice wrapped in a cloth, 15 to 20 minutes every 2 to 3 hours for the first day or two.",
+          "donot": [
+            "Do not put ice directly on the skin.",
+            "Do not apply heat, alcohol rubs or massage in the first 2 days."
+          ],
+          "next": "rice_compress"
+        },
+        "rice_compress": {
+          "type": "step",
+          "text": "Compress it: wrap with an elastic bandage, snug but not tight — toes or fingers must stay pink and warm. Loosen it if it throbs.",
+          "next": "rice_elevate"
+        },
+        "rice_elevate": {
+          "type": "step",
+          "text": "Elevate it above heart level whenever sitting or lying, especially the first 48 hours.",
+          "next": "monitor_sprain"
+        },
+        "monitor_sprain": {
+          "type": "monitor",
+          "text": "See a doctor if they cannot bear weight after a day or two, the pain or swelling is severe or not improving, or anything feels numb. Gentle movement can restart as pain allows."
+        }
+      }
+    },
+    {
+      "id": "dislocation",
+      "family": "dislocation",
+      "name": "Dislocated joint",
+      "age_group": "any",
+      "severity": "urgent",
+      "ems": "conditional",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "dislocated",
+          7
+        ],
+        [
+          "dislocation",
+          7
+        ],
+        [
+          "shoulder popped out",
+          7
+        ],
+        [
+          "out of the socket",
+          7
+        ],
+        [
+          "kneecap popped",
+          6
+        ],
+        [
+          "finger out of joint",
+          6
+        ],
+        [
+          "off to the side",
+          4
+        ],
+        [
+          "out of joint",
+          7
+        ],
+        [
+          "popped out",
+          6
+        ],
+        [
+          "out of the joint",
+          8
+        ],
+        [
+          "bent sideways out",
+          8
+        ],
+        [
+          "pinky",
+          4
+        ],
+        [
+          "out at the joint",
+          8
+        ]
+      ],
+      "exemplars": [
+        "his shoulder popped out of the socket",
+        "dislocated my finger playing basketball",
+        "her kneecap popped out",
+        "shoulder dislocated again what do i do",
+        "elbow looks out of joint"
+      ],
+      "visual_findings": [
+        "deformed_limb",
+        "swollen_limb"
+      ],
+      "entry": "no_reduce",
+      "nodes": {
+        "no_reduce": {
+          "type": "step",
+          "text": "Do not try to pop the joint back in — that can tear vessels and nerves. Keep it exactly where it is.",
+          "donot": [
+            "Do not pull, twist or force the joint back into place.",
+            "Do not let them eat or drink — sedation may be needed to fix it."
+          ],
+          "next": "support_dislocation"
+        },
+        "support_dislocation": {
+          "type": "step",
+          "text": "Support the joint in the most comfortable position with a sling, cushion or rolled clothing. A wrapped cold pack over it eases pain, up to 20 minutes.",
+          "next": "q_circulation_d"
+        },
+        "q_circulation_d": {
+          "type": "question",
+          "prompt": "Below the joint — are fingers or toes pink, warm, and can they feel your touch?",
+          "yes": "transport_d",
+          "no": "ems_d",
+          "unsure": "ems_d"
+        },
+        "ems_d": {
+          "type": "step",
+          "text": "Call emergency services now — numb, blue or cold beyond the joint means blood flow or nerves are compromised.",
+          "flags": [
+            "ems"
+          ],
+          "next": "monitor_d"
+        },
+        "transport_d": {
+          "type": "step",
+          "text": "Get them to an emergency department now with the joint supported — dislocations need prompt professional reduction.",
+          "next": "monitor_d"
+        },
+        "monitor_d": {
+          "type": "monitor",
+          "text": "Keep it supported and still. Tell me if the hand or foot beyond it becomes numb, blue or cold."
+        }
+      }
+    },
+    {
+      "id": "crush_injury",
+      "family": "crush_injury",
+      "name": "Crush injury / trapped under weight",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "crushed",
+          6
+        ],
+        [
+          "trapped under",
+          6
+        ],
+        [
+          "pinned under",
+          6
+        ],
+        [
+          "run over",
+          5
+        ],
+        [
+          "caught in machine",
+          6
+        ],
+        [
+          "wall fell on",
+          6
+        ],
+        [
+          "car fell on him",
+          6
+        ],
+        [
+          "pinned",
+          6
+        ],
+        [
+          "forklift",
+          5
+        ],
+        [
+          "jack slipped",
+          6
+        ],
+        [
+          "fell across",
+          5
+        ],
+        [
+          "stuck under",
+          6
+        ],
+        [
+          "stuck",
+          3
+        ]
+      ],
+      "exemplars": [
+        "his leg is crushed under the car",
+        "she is pinned under a fallen wall",
+        "hand caught in the machine",
+        "he got run over and his leg is trapped",
+        "heavy shelf fell and crushed her foot"
+      ],
+      "visual_findings": [
+        "person_trapped",
+        "heavy_object_on_person"
+      ],
+      "entry": "q_can_release",
+      "nodes": {
+        "q_can_release": {
+          "type": "question",
+          "prompt": "Has the person been trapped for LESS than 15 minutes, and can you remove the weight safely without danger to you?",
+          "yes": "release_now",
+          "no": "do_not_release",
+          "unsure": "do_not_release"
+        },
+        "release_now": {
+          "type": "step",
+          "text": "Remove the weight now if it is safe, then control any bleeding with firm direct pressure and cover wounds with clean cloth.",
+          "next": "after_release"
+        },
+        "after_release": {
+          "type": "step",
+          "text": "Keep them still and warm, and treat what you find: pressure for bleeding, support for possible broken bones. Assume a spinal injury if the crush was to the body — keep them still.",
+          "next": "monitor_crush"
+        },
+        "do_not_release": {
+          "type": "step",
+          "text": "If they have been trapped more than 15 minutes, or you cannot lift it safely, leave the weight in place — releasing a long crush without medical care can cause deadly toxin release. Comfort them, keep them warm, and wait for rescuers.",
+          "donot": [
+            "Do not lift a weight that has crushed a limb for over 15 minutes.",
+            "Do not use a makeshift tourniquet on a crushed limb unless it is bleeding heavily."
+          ],
+          "next": "monitor_crush"
+        },
+        "monitor_crush": {
+          "type": "monitor",
+          "text": "Stay with them, keep them warm, and keep talking to them. Tell me immediately if they stop responding or their breathing changes."
+        }
+      }
+    },
+    {
+      "id": "chest_wound",
+      "family": "chest_wound",
+      "name": "Open chest wound",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "Stop the Bleed (ACS)",
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "stabbed in the chest",
+          8
+        ],
+        [
+          "chest wound",
+          7
+        ],
+        [
+          "shot in the chest",
+          8
+        ],
+        [
+          "hole in his chest",
+          7
+        ],
+        [
+          "sucking chest wound",
+          8
+        ],
+        [
+          "air bubbling from wound",
+          7
+        ],
+        [
+          "sucking",
+          5
+        ],
+        [
+          "sucking noise",
+          7
+        ],
+        [
+          "sucking sound",
+          7
+        ],
+        [
+          "bubbling",
+          5
+        ],
+        [
+          "ribs",
+          4
+        ],
+        [
+          "knife went into",
+          6
+        ],
+        [
+          "bullet",
+          7
+        ],
+        [
+          "bullet wound",
+          8
+        ],
+        [
+          "pink froth",
+          6
+        ],
+        [
+          "coughing blood",
+          6
+        ]
+      ],
+      "exemplars": [
+        "he was stabbed in the chest",
+        "gunshot to the chest he is breathing strangely",
+        "there is a hole in her chest and it makes bubbling sounds",
+        "open chest wound what do i do",
+        "chest stab wound air is coming out of it"
+      ],
+      "visual_findings": [
+        "chest_wound_open",
+        "heavy_bleeding"
+      ],
+      "entry": "position_chest",
+      "nodes": {
+        "position_chest": {
+          "type": "step",
+          "text": "Help them into the position where breathing feels easiest — usually sitting up or leaning toward the injured side. If an object is still in the chest, leave it in place.",
+          "next": "expose_seal"
+        },
+        "expose_seal": {
+          "type": "step",
+          "text": "Leave the wound open to the air — do not seal it airtight and do not pile dressings over it. If blood is flowing, press around the wound edges with a clean cloth, letting air still escape.",
+          "donot": [
+            "Do not tape plastic or airtight dressings over the wound.",
+            "Do not remove an embedded object."
+          ],
+          "next": "monitor_chest"
+        },
+        "monitor_chest": {
+          "type": "monitor",
+          "text": "Stay with them and keep them as still and calm as possible. Tell me immediately if breathing gets worse or they stop responding — if they become unresponsive we will start CPR."
+        }
+      }
+    },
+    {
+      "id": "abdominal_evisceration",
+      "family": "abdominal_wound",
+      "name": "Open abdominal wound",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "stabbed in the stomach",
+          8
+        ],
+        [
+          "stomach wound",
+          6
+        ],
+        [
+          "intestines out",
+          8
+        ],
+        [
+          "belly cut open",
+          7
+        ],
+        [
+          "abdominal wound",
+          7
+        ],
+        [
+          "guts",
+          6
+        ],
+        [
+          "stab to the stomach",
+          9
+        ],
+        [
+          "stab",
+          3
+        ],
+        [
+          "belly open",
+          6
+        ],
+        [
+          "gashed his belly",
+          7
+        ]
+      ],
+      "exemplars": [
+        "he was stabbed in the stomach",
+        "deep cut on the belly and something is bulging out",
+        "her intestines are showing from the wound",
+        "open wound on the abdomen bleeding a lot"
+      ],
+      "visual_findings": [
+        "abdominal_wound_open",
+        "heavy_bleeding"
+      ],
+      "entry": "position_abd",
+      "nodes": {
+        "position_abd": {
+          "type": "step",
+          "text": "Lay them on their back with knees bent up, supported by a rolled coat or pillow under the knees — this relaxes the belly.",
+          "next": "cover_abd"
+        },
+        "cover_abd": {
+          "type": "step",
+          "text": "If organs are visible, do not touch or push them back. Cover them with a moist, clean dressing or cloth, then loosely with plastic wrap or foil to keep them from drying. Otherwise, press firmly around the wound with clean cloth to slow bleeding.",
+          "donot": [
+            "Do not push organs back inside.",
+            "Do not press directly on exposed organs.",
+            "Do not give anything to eat or drink."
+          ],
+          "next": "monitor_abd"
+        },
+        "monitor_abd": {
+          "type": "monitor",
+          "text": "Keep them warm, still and reassured. Tell me if they become pale, cold, confused or unresponsive."
+        }
+      }
+    },
+    {
+      "id": "tooth_knocked_out",
+      "family": "dental",
+      "name": "Knocked-out tooth",
+      "age_group": "any",
+      "severity": "moderate",
+      "ems": "self_care",
+      "sources": [
+        "International Association of Dental Traumatology guidelines",
+        "AHA/ARC 2024 First Aid Focused Update"
+      ],
+      "keywords": [
+        [
+          "tooth knocked out",
+          8
+        ],
+        [
+          "knocked out tooth",
+          8
+        ],
+        [
+          "lost a tooth",
+          6
+        ],
+        [
+          "tooth fell out",
+          6
+        ],
+        [
+          "tooth came out",
+          6
+        ],
+        [
+          "broken tooth",
+          5
+        ],
+        [
+          "shove it back in",
+          5
+        ],
+        [
+          "tooth got knocked",
+          8
+        ]
+      ],
+      "exemplars": [
+        "his tooth got knocked out playing hockey",
+        "my tooth came out whole after a fall",
+        "kid knocked out a front tooth",
+        "tooth knocked out do i put it in milk",
+        "adult tooth fell out from a punch"
+      ],
+      "visual_findings": [
+        "missing_tooth",
+        "mouth_bleeding"
+      ],
+      "entry": "q_adult_tooth",
+      "nodes": {
+        "q_adult_tooth": {
+          "type": "question",
+          "prompt": "Is it an adult (permanent) tooth — not a baby tooth?",
+          "yes": "handle_crown",
+          "no": "baby_tooth",
+          "unsure": "handle_crown"
+        },
+        "baby_tooth": {
+          "type": "step",
+          "text": "Do not put a baby tooth back in — it can damage the adult tooth underneath. Have the child bite gently on a clean gauze pad to stop bleeding and see a dentist today.",
+          "next": "monitor_tooth"
+        },
+        "handle_crown": {
+          "type": "step",
+          "text": "Pick the tooth up by the crown — the white chewing part. Never touch the root. If dirty, rinse it briefly, a few seconds, in milk or saline; do not scrub or dry it.",
+          "donot": [
+            "Do not scrub or wipe the root.",
+            "Do not let the tooth dry out."
+          ],
+          "next": "reinsert"
+        },
+        "reinsert": {
+          "type": "step",
+          "text": "Best option: push it gently back into its socket right away, facing the right way, and have them bite softly on a cloth to hold it. If you cannot, store it in cold milk, saline, or inside their cheek if they are old enough not to swallow it.",
+          "donot": [
+            "Do not store the tooth in plain water."
+          ],
+          "next": "dentist_now"
+        },
+        "dentist_now": {
+          "type": "step",
+          "text": "Get to a dentist or emergency department immediately — the tooth survives best if replanted within 30 to 60 minutes.",
+          "next": "monitor_tooth"
+        },
+        "monitor_tooth": {
+          "type": "monitor",
+          "text": "Bite on gauze for bleeding gums. If there was a hard head knock too, watch for headache, vomiting or confusion — those need emergency care."
+        }
+      }
+    },
+    {
+      "id": "blister",
+      "family": "blister",
+      "name": "Blister",
+      "age_group": "any",
+      "severity": "minor",
+      "ems": "self_care",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "blister",
+          7
+        ],
+        [
+          "blisters",
+          7
+        ],
+        [
+          "blister popped",
+          6
+        ],
+        [
+          "blister on my foot",
+          7
+        ],
+        [
+          "bubble",
+          5
+        ],
+        [
+          "rubbed",
+          4
+        ],
+        [
+          "heel",
+          3
+        ],
+        [
+          "new boots",
+          5
+        ],
+        [
+          "new shoes",
+          5
+        ]
+      ],
+      "exemplars": [
+        "i have a big blister on my heel",
+        "should i pop this blister",
+        "blister from new shoes what do i do",
+        "my blister burst is that bad"
+      ],
+      "visual_findings": [
+        "blister_skin"
+      ],
+      "entry": "leave_blister",
+      "nodes": {
+        "leave_blister": {
+          "type": "step",
+          "text": "Leave it unpopped if you can — the skin over it is the best protection against infection. Wash gently, pat dry, and cover with a cushioned plaster or blister pad.",
+          "donot": [
+            "Do not deliberately pop a blister.",
+            "Do not peel off the skin over a burst blister."
+          ],
+          "next": "q_burst"
+        },
+        "q_burst": {
+          "type": "question",
+          "prompt": "Has it already burst?",
+          "yes": "burst_care",
+          "no": "monitor_blister",
+          "unsure": "monitor_blister"
+        },
+        "burst_care": {
+          "type": "step",
+          "text": "Let the fluid drain, wash with mild soap and water, keep the loose skin as a natural dressing, apply petroleum jelly or antibiotic ointment, and cover with a clean non-stick dressing. Change daily.",
+          "next": "monitor_blister"
+        },
+        "monitor_blister": {
+          "type": "monitor",
+          "text": "See a doctor if it becomes more red, warm, swollen, oozes pus, or if you have diabetes or poor circulation — foot wounds then need professional care."
+        }
+      }
+    },
+    {
+      "id": "splinter",
+      "family": "splinter",
+      "name": "Splinter",
+      "age_group": "any",
+      "severity": "minor",
+      "ems": "self_care",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "splinter",
+          7
+        ],
+        [
+          "sliver",
+          6
+        ],
+        [
+          "thorn in",
+          6
+        ],
+        [
+          "wood stuck in finger",
+          6
+        ],
+        [
+          "glass splinter",
+          6
+        ],
+        [
+          "thorn",
+          6
+        ],
+        [
+          "rose thorn",
+          7
+        ]
+      ],
+      "exemplars": [
+        "i have a splinter in my finger",
+        "how do i get a splinter out",
+        "kid has a thorn stuck in her hand",
+        "glass sliver in my foot"
+      ],
+      "visual_findings": [
+        "splinter_skin"
+      ],
+      "entry": "q_deep_splinter",
+      "nodes": {
+        "q_deep_splinter": {
+          "type": "question",
+          "prompt": "Is it small and near the surface — you can see its end?",
+          "yes": "remove_splinter",
+          "no": "deep_splinter",
+          "unsure": "deep_splinter"
+        },
+        "deep_splinter": {
+          "type": "step",
+          "text": "Deep, large, or fully buried splinters — especially glass, metal, or under a nail or near the eye — should be removed by a professional. Cover it lightly and see a doctor or urgent care.",
+          "donot": [
+            "Do not dig deeply into the skin with a needle."
+          ],
+          "next": "monitor_splinter"
+        },
+        "remove_splinter": {
+          "type": "step",
+          "text": "Wash the area and your hands with soap and water. Grip the splinter end with clean tweezers close to the skin and pull it out at the same angle it went in, slowly and steadily.",
+          "next": "after_splinter"
+        },
+        "after_splinter": {
+          "type": "step",
+          "text": "Squeeze gently to let a drop of blood flush the track, wash again, and cover with a plaster. Check tetanus status if it was dirty wood.",
+          "next": "monitor_splinter"
+        },
+        "monitor_splinter": {
+          "type": "monitor",
+          "text": "Watch for infection over the next days: growing redness, warmth, swelling or pus means see a doctor."
+        }
+      }
+    },
+    {
+      "id": "bruise",
+      "family": "bruise",
+      "name": "Bruise",
+      "age_group": "any",
+      "severity": "minor",
+      "ems": "self_care",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "bruise",
+          6
+        ],
+        [
+          "bruised",
+          6
+        ],
+        [
+          "black and blue",
+          5
+        ],
+        [
+          "hematoma",
+          5
+        ],
+        [
+          "bumped into",
+          3
+        ],
+        [
+          "black eye",
+          5
+        ],
+        [
+          "fastball",
+          4
+        ],
+        [
+          "hit by a ball",
+          5
+        ],
+        [
+          "swollen and dark",
+          6
+        ],
+        [
+          "swelling and dark",
+          6
+        ],
+        [
+          "purple",
+          4
+        ]
+      ],
+      "exemplars": [
+        "huge bruise forming on my shin",
+        "bumped my thigh and it is turning purple",
+        "how do i treat a bad bruise",
+        "kid has a black eye from a ball"
+      ],
+      "visual_findings": [
+        "bruise"
+      ],
+      "entry": "cold_bruise",
+      "nodes": {
+        "cold_bruise": {
+          "type": "step",
+          "text": "Put a cold pack or ice wrapped in a cloth on it for 15 to 20 minutes, several times over the first day. Elevate the area if you can.",
+          "donot": [
+            "Do not put ice directly on bare skin."
+          ],
+          "next": "monitor_bruise"
+        },
+        "monitor_bruise": {
+          "type": "monitor",
+          "text": "It should fade over 1 to 2 weeks. See a doctor if the swelling is severe, they take blood thinners, the bruise appeared with no injury, or pain makes the limb unusable — and for a black eye with any change in vision, get emergency care."
+        }
+      }
+    }
+  ]
+}

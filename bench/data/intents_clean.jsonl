@@ -1,0 +1,176 @@
+{"text": "grandpa fell down and his heart isnt beating", "expect": ["cardiac_arrest"]}
+{"text": "she suddenly dropped to the floor and there is no breathing at all", "expect": ["cardiac_arrest"]}
+{"text": "need cpr steps quickly", "expect": ["cardiac_arrest"]}
+{"text": "coworker collapsed at his desk not breathing", "expect": ["cardiac_arrest"]}
+{"text": "the man on the sidewalk is making weird gasping noises and wont respond", "expect": ["cardiac_arrest", "unconscious"]}
+{"text": "wife found grandma cold and blue this morning not breathing", "expect": ["cardiac_arrest"]}
+{"text": "my two month old went limp and isnt breathing", "expect": ["cardiac_arrest", "unconscious"]}
+{"text": "child fell in gym class no pulse now", "expect": ["cardiac_arrest"]}
+{"text": "he fainted and now he wont come around at all", "expect": ["unconscious", "fainting"]}
+{"text": "found my roommate unconscious on the kitchen floor", "expect": ["unconscious"]}
+{"text": "old lady collapsed at the bus stop but shes breathing", "expect": ["unconscious"]}
+{"text": "hes knocked out cold after the tackle", "expect": ["unconscious", "head_injury"]}
+{"text": "what is the recovery position exactly", "expect": ["unconscious"]}
+{"text": "steak went down the wrong pipe he cant talk", "expect": ["choking"]}
+{"text": "shes clutching her neck and turning red at the restaurant", "expect": ["choking"]}
+{"text": "grandma choking on a pill", "expect": ["choking"]}
+{"text": "my one year old put a lego in her mouth and is gagging silently", "expect": ["choking"]}
+{"text": "how do you do abdominal thrusts on someone", "expect": ["choking"]}
+{"text": "toddler grabbed a whole grape and now cant cough it out", "expect": ["choking"]}
+{"text": "kid went under at the pool party wasnt breathing when we got him out", "expect": ["drowning", "cardiac_arrest"]}
+{"text": "fisherman fell off the dock cant swim hes struggling", "expect": ["drowning"]}
+{"text": "she swallowed a lot of lake water and keeps coughing", "expect": ["drowning"]}
+{"text": "hes wheezing hard and his inhaler is empty", "expect": ["asthma"]}
+{"text": "daughters asthma is flaring she can barely talk", "expect": ["asthma"]}
+{"text": "how many puffs of ventolin during an attack", "expect": ["asthma"]}
+{"text": "my heart is racing hands tingling i feel like im dying but this happened before at exams", "expect": ["panic"]}
+{"text": "shes breathing super fast in the corner and cant calm herself", "expect": ["panic"]}
+{"text": "sons cough sounds exactly like a seal barking tonight", "expect": ["croup"]}
+{"text": "toddler making a squeaky noise breathing in with a harsh cough", "expect": ["croup"]}
+{"text": "found needles next to him hes barely breathing tiny pupils", "expect": ["overdose"]}
+{"text": "roommate took a bunch of oxys and is nodding off badly", "expect": ["overdose"]}
+{"text": "how does the narcan spray work", "expect": ["overdose"]}
+{"text": "sliced his thigh with the chainsaw blood is pumping out", "expect": ["severe_bleeding"]}
+{"text": "the cut is deep and pressure isnt stopping it", "expect": ["severe_bleeding"]}
+{"text": "she put her arm through a glass door huge amounts of blood", "expect": ["severe_bleeding"]}
+{"text": "when do you use a tourniquet", "expect": ["severe_bleeding"]}
+{"text": "nicked my thumb with the bread knife", "expect": ["minor_wound"]}
+{"text": "kid fell off the scooter and skinned both palms", "expect": ["minor_wound"]}
+{"text": "should i put anything on a shallow cut", "expect": ["minor_wound"]}
+{"text": "sons nose started gushing during the game", "expect": ["nosebleed"]}
+{"text": "nose bleeding again for the third time today", "expect": ["nosebleed"]}
+{"text": "the table saw took off two of his fingers", "expect": ["amputation"]}
+{"text": "her toe got severed by the mower whats the right way to store it", "expect": ["amputation"]}
+{"text": "theres a shard of glass still sticking out of his calf", "expect": ["embedded_object"]}
+{"text": "stepped on a nail and its still in his boot", "expect": ["embedded_object"]}
+{"text": "she fainted and smacked her head on the tile now has a lump", "expect": ["head_injury", "fainting"]}
+{"text": "hockey puck to the helmet hes dazed and asking the same question repeatedly", "expect": ["head_injury"]}
+{"text": "baby rolled off the changing table onto her head", "expect": ["head_injury"]}
+{"text": "he came off the motorbike and says his neck really hurts dont know if i should move him", "expect": ["spinal_injury"]}
+{"text": "she dove into the shallow end and now cant move her fingers", "expect": ["spinal_injury"]}
+{"text": "wrist bent the wrong way after he came off the skateboard", "expect": ["fracture"]}
+{"text": "i heard a snap in my ankle and it looks crooked", "expect": ["fracture"]}
+{"text": "shin bone is poking through the skin oh god", "expect": ["fracture"]}
+{"text": "rolled my ankle on the trail its ballooning", "expect": ["sprain"]}
+{"text": "pulled something in my calf sprinting", "expect": ["sprain"]}
+{"text": "his shoulder came out of its socket again playing rugby", "expect": ["dislocation"]}
+{"text": "my pinky is bent sideways out of the joint", "expect": ["dislocation"]}
+{"text": "the forklift pinned his foot for a while its crushed", "expect": ["crush_injury"]}
+{"text": "shelving unit fell across her legs shes stuck", "expect": ["crush_injury"]}
+{"text": "knife went into his ribs during the fight and theres a wheezing sound from the hole", "expect": ["chest_wound"]}
+{"text": "bullet wound in the chest hes coughing pink froth", "expect": ["chest_wound"]}
+{"text": "the fence post gashed his belly open something is bulging", "expect": ["abdominal_wound"]}
+{"text": "deep stab to the stomach lots of blood", "expect": ["abdominal_wound", "severe_bleeding"]}
+{"text": "elbow to the mouth knocked his front tooth clean out", "expect": ["dental"]}
+{"text": "daughters permanent tooth landed on the court do we use milk", "expect": ["dental"]}
+{"text": "new boots rubbed a huge bubble on my heel", "expect": ["blister"]}
+{"text": "got a water blister from raking leaves should it be drained", "expect": ["blister"]}
+{"text": "cant get this wood sliver out from under my skin", "expect": ["splinter"]}
+{"text": "rose thorn snapped off in her palm", "expect": ["splinter"]}
+{"text": "door slammed on my thigh massive purple mark forming", "expect": ["bruise"]}
+{"text": "caught a fastball on the forearm its swelling and dark", "expect": ["bruise"]}
+{"text": "grabbed the cast iron handle bare handed my palm is white", "expect": ["burn"]}
+{"text": "kettle tipped over onto the toddlers chest", "expect": ["burn"]}
+{"text": "hot soup spilled in her lap at dinner", "expect": ["burn"]}
+{"text": "how long should you run water over a scald", "expect": ["burn"]}
+{"text": "oven cleaner dripped on my wrist and its eating the skin", "expect": ["chemical_burn"]}
+{"text": "he mixed pool chemicals and splashed his forearm", "expect": ["chemical_burn"]}
+{"text": "hand sanitizer squirted right into my sons eye", "expect": ["eye_chemical"]}
+{"text": "oven spray mist got in her eyes theyre burning", "expect": ["eye_chemical"]}
+{"text": "sawdust blew into my eye and its scratching", "expect": ["eye_object"]}
+{"text": "an eyelash or bug is stuck under my eyelid", "expect": ["eye_object"]}
+{"text": "fell asleep on the beach now my back is lobster red", "expect": ["sunburn"]}
+{"text": "kids shoulders are peeling and red from the pool day", "expect": ["sunburn"]}
+{"text": "landscaper is pale sweaty and cramping in this heat", "expect": ["heat_illness"]}
+{"text": "feel woozy and drained after the hot yoga class", "expect": ["heat_illness"]}
+{"text": "runner is staggering and talking gibberish at the finish line", "expect": ["heat_stroke"]}
+{"text": "hes red hot dry skin and totally out of it in the sun", "expect": ["heat_stroke"]}
+{"text": "we found the hiker soaked and mumbling in the wind hes freezing", "expect": ["hypothermia"]}
+{"text": "grandad was outside for hours hes icy and sleepy", "expect": ["hypothermia"]}
+{"text": "my fingertips went white and wooden on the lift", "expect": ["frostbite"]}
+{"text": "toes are numb and waxy after snowshoeing", "expect": ["frostbite"]}
+{"text": "he was rewiring the outlet and got thrown back", "expect": ["electric_shock"]}
+{"text": "kid bit a phone charger cable and screamed", "expect": ["electric_shock"]}
+{"text": "golfer down after that flash of lightning", "expect": ["lightning"]}
+{"text": "storm hit and my friend was struck hes smoking slightly", "expect": ["lightning"]}
+{"text": "dad says it feels like a belt tightening around his chest", "expect": ["heart_attack"]}
+{"text": "left arm aching jaw hurts and hes gray and clammy", "expect": ["heart_attack"]}
+{"text": "should he chew an aspirin for chest pain", "expect": ["heart_attack"]}
+{"text": "moms smile is lopsided all of a sudden and her words are mush", "expect": ["stroke"]}
+{"text": "he cant lift his right arm and his speech is garbled", "expect": ["stroke"]}
+{"text": "half her face went slack mid sentence", "expect": ["stroke"]}
+{"text": "his whole face is puffing up after the shellfish and hes wheezy", "expect": ["anaphylaxis"]}
+{"text": "she has a nut allergy and just started coughing and breaking out everywhere", "expect": ["anaphylaxis"]}
+{"text": "where do i jab the epipen", "expect": ["anaphylaxis"]}
+{"text": "a few itchy bumps on his arm after the new detergent breathing fine", "expect": ["allergy_mild"]}
+{"text": "mild rash from strawberries no other symptoms", "expect": ["allergy_mild"]}
+{"text": "hes on the floor jerking and his eyes rolled back", "expect": ["seizure"]}
+{"text": "my brothers epilepsy is acting up hes convulsing", "expect": ["seizure"]}
+{"text": "she went stiff then started twitching all over", "expect": ["seizure"]}
+{"text": "babys got a 40 degree fever and just started shaking violently", "expect": ["febrile_seizure"]}
+{"text": "feverish toddler suddenly convulsed for a minute", "expect": ["febrile_seizure"]}
+{"text": "diabetic husband is sweaty confused and slurring like hes drunk but he hasnt drunk", "expect": ["diabetic"]}
+{"text": "her sugar reading is 42 and shes shaky", "expect": ["diabetic"]}
+{"text": "type one kid skipped breakfast after insulin and is wobbly", "expect": ["diabetic"]}
+{"text": "she went white and crumpled in the queue but is blinking awake now", "expect": ["fainting"]}
+{"text": "i keep almost blacking out when i stand up", "expect": ["fainting"]}
+{"text": "after the crash hes cold pale and sweating and super thirsty", "expect": ["shock"]}
+{"text": "shes shivery gray and spaced out since losing all that blood", "expect": ["shock", "severe_bleeding"]}
+{"text": "contractions every two minutes and she feels the need to push", "expect": ["childbirth"]}
+{"text": "babys head is already showing were stuck in traffic", "expect": ["childbirth"]}
+{"text": "cant stop throwing up since the buffet and im dizzy", "expect": ["dehydration"]}
+{"text": "toddler has had watery stools all day barely any wet nappies", "expect": ["dehydration"]}
+{"text": "how do you mix the sugar salt drink for diarrhea", "expect": ["dehydration"]}
+{"text": "my three year old got into the medicine cabinet and ate something", "expect": ["poisoning"]}
+{"text": "he drank from the weed killer bottle thinking it was juice", "expect": ["poisoning"]}
+{"text": "kid licked a detergent pod and is drooling", "expect": ["poisoning"]}
+{"text": "the boiler is acting up and were all headachy and sick", "expect": ["carbon_monoxide"]}
+{"text": "ran the bbq in the tent last night woke up dizzy and vomiting", "expect": ["carbon_monoxide"]}
+{"text": "my mate had like fifteen shots and now hes barely conscious", "expect": ["alcohol_poisoning"]}
+{"text": "shes vomiting in her sleep after the party cant really wake her", "expect": ["alcohol_poisoning"]}
+{"text": "something bit him in the tall grass two puncture marks swelling fast", "expect": ["snake_bite"]}
+{"text": "copperhead got my ankle on the trail", "expect": ["snake_bite"]}
+{"text": "wasp got me on the eyelid its puffing up", "expect": ["sting"]}
+{"text": "hornet sting and the stingers still in there", "expect": ["sting"]}
+{"text": "woke up with a painful bite and theres a violin marked spider in the bed", "expect": ["spider_bite"]}
+{"text": "redback got her while gardening", "expect": ["spider_bite"]}
+{"text": "theres a fat tick buried in the back of my knee", "expect": ["tick"]}
+{"text": "how do i pull off a tick without leaving the head", "expect": ["tick"]}
+{"text": "next doors german shepherd bit right through his sleeve", "expect": ["animal_bite"]}
+{"text": "a stray cat scratched and bit my daughter at the park", "expect": ["animal_bite"]}
+{"text": "a bat brushed my neck in the attic i might have been bitten", "expect": ["animal_bite"]}
+{"text": "something stung me in the surf long red welts across my leg", "expect": ["jellyfish"]}
+{"text": "bluebottle wrapped around his arm at the beach", "expect": ["jellyfish"]}
+{"text": "please someone anything happened i dont know what to do", "expect": ["general_help"]}
+{"text": "theres been a bad accident", "expect": ["general_help"]}
+{"text": "i cant get enough air right now", "expect": ["breathing_difficulty"]}
+{"text": "grandma says her breathing feels tight and scary", "expect": ["breathing_difficulty"]}
+{"text": "hes fighting for every breath no idea why", "expect": ["breathing_difficulty"]}
+{"text": "my chest hurts really bad", "expect": ["heart_attack"]}
+{"text": "i burned my tongue on pizza", "expect": ["burn"]}
+{"text": "she got acid on her face at the lab", "expect": ["chemical_burn"]}
+{"text": "hes drooling and cant swallow and his cough is barky", "expect": ["croup"]}
+{"text": "took too many sleeping pills on purpose an hour ago", "expect": ["poisoning", "overdose"]}
+{"text": "the baby swallowed a watch battery", "expect": ["poisoning"]}
+{"text": "he faceplanted off the ladder and now one pupil looks huge", "expect": ["head_injury"]}
+{"text": "tongue is swelling after the antibiotic", "expect": ["anaphylaxis"]}
+{"text": "elderly neighbour on blood thinners has a nosebleed that wont quit", "expect": ["nosebleed"]}
+{"text": "he got kicked by a horse in the ribs and is white as a sheet", "expect": ["shock", "general_help"]}
+{"text": "there is a fish hook stuck in her thumb", "expect": ["embedded_object", "splinter"]}
+{"text": "hiker with a twisted knee cant walk out", "expect": ["sprain", "fracture"]}
+{"text": "sons lips went blue in the cold pool", "expect": ["hypothermia", "cardiac_arrest"]}
+{"text": "i think my waters just broke and the pains are close", "expect": ["childbirth"]}
+{"text": "dog got hit by a car and bit me when i lifted him", "expect": ["animal_bite"]}
+{"text": "shes 34 weeks pregnant and just fainted in the shower", "expect": ["fainting"]}
+{"text": "paint thinner splashed in his mouth he spat it out", "expect": ["poisoning"]}
+{"text": "toddler pulled the iron cord and it landed on her foot", "expect": ["burn"]}
+{"text": "he was vaping something and now hes hallucinating and shaking", "expect": ["poisoning", "overdose"]}
+{"text": "cut on his scalp is bleeding through the towel", "expect": ["severe_bleeding", "minor_wound"]}
+{"text": "granddad choked on his dentures at lunch theyre out now but hes coughing", "expect": ["choking"]}
+{"text": "wasps swarmed him dozens of stings hes panicking but breathing", "expect": ["sting", "anaphylaxis"]}
+{"text": "she just delivered the baby and the placenta hasnt come", "expect": ["childbirth"]}
+{"text": "little one has croup again and calpol isnt helping", "expect": ["croup"]}
+{"text": "he sniffed glue and passed out in the shed", "expect": ["poisoning", "unconscious"]}
+{"text": "chest crushing feeling spreading to my shoulder cant catch breath", "expect": ["heart_attack"]}
+{"text": "shes acting drunk but only had water diabetic maybe", "expect": ["diabetic"]}
+{"text": "man overboard hes been in the cold water twenty minutes", "expect": ["drowning", "hypothermia"]}

@@ -1,0 +1,289 @@
+{
+  "protocols": [
+    {
+      "id": "general_help",
+      "family": "general_help",
+      "name": "Emergency triage (unknown situation)",
+      "age_group": "any",
+      "severity": "urgent",
+      "ems": "conditional",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "help",
+          2
+        ],
+        [
+          "emergency",
+          3
+        ],
+        [
+          "hurt",
+          2
+        ],
+        [
+          "accident",
+          3
+        ],
+        [
+          "injured",
+          3
+        ],
+        [
+          "something is wrong",
+          3
+        ],
+        [
+          "please help",
+          3
+        ],
+        [
+          "what do i do",
+          2
+        ],
+        [
+          "i do not know what to do",
+          4
+        ],
+        [
+          "something happened",
+          3
+        ],
+        [
+          "what to do",
+          2
+        ],
+        [
+          "bad accident",
+          4
+        ],
+        [
+          "someone is hurt",
+          4
+        ],
+        [
+          "not right",
+          4
+        ],
+        [
+          "is not right",
+          5
+        ],
+        [
+          "not himself",
+          5
+        ],
+        [
+          "not herself",
+          5
+        ],
+        [
+          "acting strange",
+          4
+        ]
+      ],
+      "exemplars": [
+        "help",
+        "help me please",
+        "emergency",
+        "there has been an accident",
+        "someone is hurt",
+        "i need help now",
+        "something is wrong with my friend",
+        "please help us",
+        "please i do not know what to do something happened",
+        "there was a bad accident someone is hurt"
+      ],
+      "visual_findings": [],
+      "entry": "q_responsive_g",
+      "nodes": {
+        "q_responsive_g": {
+          "type": "question",
+          "prompt": "I'm here to help. First: is the person awake and responding?",
+          "yes": "q_breathing_g",
+          "no": "to_unresponsive_g",
+          "unsure": "to_unresponsive_g"
+        },
+        "to_unresponsive_g": {
+          "type": "escalate",
+          "protocol": "unresponsive_breathing",
+          "text": "Not responding comes first."
+        },
+        "q_breathing_g": {
+          "type": "question",
+          "prompt": "Are they having any trouble breathing?",
+          "yes": "to_breathing_g",
+          "no": "q_bleeding_g",
+          "unsure": "q_bleeding_g"
+        },
+        "to_breathing_g": {
+          "type": "escalate",
+          "protocol": "breathing_difficulty",
+          "text": "Breathing comes first."
+        },
+        "q_bleeding_g": {
+          "type": "question",
+          "prompt": "Is there heavy bleeding?",
+          "yes": "to_bleeding_g",
+          "no": "describe_g",
+          "unsure": "describe_g"
+        },
+        "to_bleeding_g": {
+          "type": "escalate",
+          "protocol": "severe_bleeding",
+          "text": "We control the bleeding now."
+        },
+        "describe_g": {
+          "type": "handoff",
+          "text": "Okay. Tell me in a few words what happened or what hurts — for example: burned hand, chest pain, bad fall, swallowed something."
+        }
+      }
+    },
+    {
+      "id": "breathing_difficulty",
+      "family": "breathing_difficulty",
+      "name": "Trouble breathing (cause unknown)",
+      "age_group": "any",
+      "severity": "life_threatening",
+      "ems": "immediate",
+      "sources": [
+        "IFRC First Aid Guidelines 2020"
+      ],
+      "keywords": [
+        [
+          "can't breathe",
+          8
+        ],
+        [
+          "cannot breathe",
+          8
+        ],
+        [
+          "trouble breathing",
+          8
+        ],
+        [
+          "hard to breathe",
+          8
+        ],
+        [
+          "short of breath",
+          7
+        ],
+        [
+          "struggling to breathe",
+          8
+        ],
+        [
+          "breathing problem",
+          7
+        ],
+        [
+          "difficulty breathing",
+          8
+        ],
+        [
+          "gasping for air",
+          7
+        ],
+        [
+          "breathing wrong",
+          6
+        ],
+        [
+          "breathing all wrong",
+          7
+        ],
+        [
+          "snoring",
+          4
+        ],
+        [
+          "fighting for breath",
+          7
+        ],
+        [
+          "cannot get air",
+          7
+        ],
+        [
+          "tight and scary",
+          4
+        ]
+      ],
+      "exemplars": [
+        "i can't breathe",
+        "she is struggling to breathe",
+        "he says it is hard to breathe",
+        "my chest feels tight and i cannot get air",
+        "sudden shortness of breath",
+        "breathing very fast and shallow can't catch breath"
+      ],
+      "visual_findings": [
+        "labored_breathing",
+        "distress_face",
+        "cyanosis"
+      ],
+      "entry": "q_choke_bd",
+      "nodes": {
+        "q_choke_bd": {
+          "type": "question",
+          "prompt": "Were they eating or putting something in their mouth — could something be stuck in their throat?",
+          "yes": "to_choking_bd",
+          "no": "q_allergy_bd",
+          "unsure": "q_allergy_bd"
+        },
+        "to_choking_bd": {
+          "type": "escalate",
+          "protocol": "choking",
+          "text": "We treat this as choking."
+        },
+        "q_allergy_bd": {
+          "type": "question",
+          "prompt": "Could this be an allergic reaction — swelling lips or tongue, hives, or a known serious allergy?",
+          "yes": "to_ana_bd",
+          "no": "q_asthma_bd",
+          "unsure": "q_asthma_bd"
+        },
+        "to_ana_bd": {
+          "type": "escalate",
+          "protocol": "anaphylaxis",
+          "text": "We treat this as a severe allergic reaction."
+        },
+        "q_asthma_bd": {
+          "type": "question",
+          "prompt": "Do they have asthma?",
+          "yes": "to_asthma_bd",
+          "no": "sit_upright_bd",
+          "unsure": "sit_upright_bd"
+        },
+        "to_asthma_bd": {
+          "type": "escalate",
+          "protocol": "asthma_attack",
+          "text": "We follow the asthma steps."
+        },
+        "sit_upright_bd": {
+          "type": "step",
+          "text": "Help them into the position where breathing feels easiest — usually sitting upright, leaning slightly forward. Loosen tight clothing. Open a window for fresh air.",
+          "donot": [
+            "Do not lie them flat while they struggle to breathe.",
+            "Do not give food or drink.",
+            "Do not leave them alone."
+          ],
+          "next": "calm_bd"
+        },
+        "calm_bd": {
+          "type": "step",
+          "text": "Stay calm with them and encourage slow, steady breaths. If they have any prescribed inhaler or oxygen, help them use it.",
+          "next": "monitor_bd"
+        },
+        "monitor_bd": {
+          "type": "monitor",
+          "text": "Watch them constantly until help arrives. Tell me immediately if lips turn blue or gray, they can only speak single words, or they become drowsy or stop responding."
+        }
+      }
+    }
+  ]
+}
